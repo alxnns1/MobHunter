@@ -14,8 +14,8 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
 
-public class SushifishEntity extends AbstractGroupFishEntity {
-	public SushifishEntity(EntityType<?> type, World worldIn) {
+public class GoldenfishEntity extends AbstractGroupFishEntity {
+	public GoldenfishEntity(EntityType<?> type, World worldIn) {
 		super((EntityType<? extends AbstractGroupFishEntity>) type, worldIn);
 	}
 

@@ -14,7 +14,7 @@ public class ModItems {
 		//TOOLS
 		registerTool("machalite_pickaxe", ItemTier.IRON, 1, -2.8F, ModItemGroups.MOB_HUNTER_ITEMS_ITEM_GROUP);
 		registerTool("dragonite_pickaxe", ItemTier.IRON, 1, -2.8F, ModItemGroups.MOB_HUNTER_ITEMS_ITEM_GROUP);
-		registerTool("carbonite_pickaxe", ItemTier.DIAMOND, 1, -2.8F, ModItemGroups.MOB_HUNTER_ITEMS_ITEM_GROUP);
+		registerTool("carbalite_pickaxe", ItemTier.DIAMOND, 1, -2.8F, ModItemGroups.MOB_HUNTER_ITEMS_ITEM_GROUP);
 		registerTool("eltalite_pickaxe", ItemTier.NETHERITE, 1, -2.8F, ModItemGroups.MOB_HUNTER_ITEMS_ITEM_GROUP);
 		//ORES
 		ITEM_GROUP_ICON = registerItem("earth_crystal", ModItemGroups.MOB_HUNTER_ITEMS_ITEM_GROUP);

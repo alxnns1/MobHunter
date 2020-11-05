@@ -1,6 +1,8 @@
 package com.example.examplemod;
 
+import com.example.examplemod.entities.GoldenfishEntity;
 import com.example.examplemod.entities.SushifishEntity;
+import com.example.examplemod.entities.renderer.GoldenfishRenderer;
 import com.example.examplemod.entities.renderer.SushifishRenderer;
 import com.example.examplemod.init.ModEntities;
 import net.minecraft.block.Blocks;
@@ -52,13 +54,12 @@ public class MobHunter {
 	public void setupClient(final FMLClientSetupEvent event) {
 		// do something that can only be done on the client
 		LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().gameSettings);
-		RenderingRegistry.registerEntityRenderingHandler((EntityType<SushifishEntity>) ModEntities.ENTITY_TYPES[0], SushifishRenderer::new);
-
+		ModEntities.registerRenderers();
 	}
 
 	private void enqueueIMC(final InterModEnqueueEvent event) {
 		// some example code to dispatch IMC to another mod
-		InterModComms.sendTo("examplemod", "helloworld", () -> {
+		InterModComms.sendTo(MOD_ID, "helloworld", () -> {
 			LOGGER.info("Hello world from the MDK");
 			return "Hello world";
 		});

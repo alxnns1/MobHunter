@@ -53,6 +53,23 @@
 	"block.mobhunter.novacrystal_block": "Block of Novacrystal",
 	"block.mobhunter.purecrystal_block": "Block of Purecrystal",
 
+	"item.mobhunter.machalite_pickaxe": "Machalite Pickaxe",
+	"item.mobhunter.dragonite_pickaxe": "Dragonite Pickaxe",
+	"item.mobhunter.carbalite_pickaxe": "Carbalite Pickaxe",
+	"item.mobhunter.eltalite_pickaxe": "Eltalite Pickaxe",
+	"item.mobhunter.machalite_axe": "Machalite Axe",
+	"item.mobhunter.dragonite_axe": "Dragonite Axe",
+	"item.mobhunter.carbalite_axe": "Carbalite Axe",
+	"item.mobhunter.eltalite_axe": "Eltalite Axe",
+	"item.mobhunter.machalite_shovel": "Machalite Shovel",
+	"item.mobhunter.dragonite_shovel": "Dragonite Shovel",
+	"item.mobhunter.carbalite_shovel": "Carbalite Shovel",
+	"item.mobhunter.eltalite_shovel": "Eltalite Shovel",
+	"item.mobhunter.machalite_hoe": "Machalite Hoe",
+	"item.mobhunter.dragonite_hoe": "Dragonite Hoe",
+	"item.mobhunter.carbalite_hoe": "Carbalite Hoe",
+	"item.mobhunter.eltalite_hoe": "Eltalite Hoe",
+
 	"item.mobhunter.bealite_ingot": "Bealite Ingot",
 	"item.mobhunter.carbalite_ingot": "Carbalite Ingot",
 	"item.mobhunter.dragonite_ingot": "Dragonite Ingot",
@@ -82,6 +99,10 @@
 	"item.mobhunter.ancient_fish": "Ancient Fish",
 	"item.mobhunter.small_goldenfish": "Small Goldenfish",
 	"item.mobhunter.wanchovy": "Wanchovy",
-	"item.mobhunter.armored_bream": "Armored Bream",
-	"item.mobhunter.guardfish": "Guardfish"
+	"item.mobhunter.guardfish": "Guardfish",
+	"item.mobhunter.brocadefish": "Brocadefish",
+	"item.mobhunter.goldenfish": "Goldenfish",
+	"item.mobhunter.king_brocadefish": "King Brocadefish",
+	"item.mobhunter.premium_sashimi": "Premium Sashimi",
+	"item.mobhunter.silverfish": "Silverfish"
 }
