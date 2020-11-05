@@ -1,0 +1,10 @@
+  
+{
+	"type": "minecraft:smelting",
+	"ingredient": {
+		"item": "mobhunter:meldspar_ore"
+	},
+	"result": "mobhunter:meldspar_ingot",
+	"experience": 2,
+	"cookingtime": 200
+}

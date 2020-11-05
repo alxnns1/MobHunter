@@ -1,0 +1,12 @@
+  {
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "mobhunter:bealite_block"
+		}
+	],
+	"result": {
+		"item": "mobhunter:bealite_ingot",
+		"count": 9
+	}
+}

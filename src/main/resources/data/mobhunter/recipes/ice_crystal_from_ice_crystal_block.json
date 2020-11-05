@@ -1,0 +1,12 @@
+  {
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "mobhunter:ice_crystal_block"
+		}
+	],
+	"result": {
+		"item": "mobhunter:ice_crystal",
+		"count": 9
+	}
+}

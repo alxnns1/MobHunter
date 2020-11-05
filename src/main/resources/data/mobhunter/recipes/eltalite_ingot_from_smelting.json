@@ -1,0 +1,10 @@
+  
+{
+	"type": "minecraft:smelting",
+	"ingredient": {
+		"item": "mobhunter:eltalite_ore"
+	},
+	"result": "mobhunter:eltalite_ingot",
+	"experience": 2,
+	"cookingtime": 200
+}

@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"###",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "mobhunter:firecell_stone"
+		}
+	},
+	"result": {
+		"item": "mobhunter:firecell_stone_block"
+	}
+}

@@ -1,0 +1,12 @@
+  {
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "mobhunter:firecell_stone_block"
+		}
+	],
+	"result": {
+		"item": "mobhunter:firecell_stone",
+		"count": 9
+	}
+}

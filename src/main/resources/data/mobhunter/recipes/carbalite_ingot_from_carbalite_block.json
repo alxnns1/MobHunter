@@ -1,0 +1,12 @@
+  {
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "mobhunter:carbalite_block"
+		}
+	],
+	"result": {
+		"item": "mobhunter:carbalite_ingot",
+		"count": 9
+	}
+}

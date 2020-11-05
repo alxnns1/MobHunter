@@ -1,0 +1,12 @@
+  {
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "mobhunter:purecrystal_block"
+		}
+	],
+	"result": {
+		"item": "mobhunter:purecrystal",
+		"count": 9
+	}
+}
