@@ -46,8 +46,12 @@ public class ModItems {
 		registerItem("ancient_fish", ModItemGroups.MOB_HUNTER_ITEMS_ITEM_GROUP);
 		registerItem("small_goldenfish", ModItemGroups.MOB_HUNTER_ITEMS_ITEM_GROUP);
 		registerItem("wanchovy", ModItemGroups.MOB_HUNTER_ITEMS_ITEM_GROUP);
-		registerItem("armored_bream", ModItemGroups.MOB_HUNTER_ITEMS_ITEM_GROUP);
 		registerItem("guardfish", ModItemGroups.MOB_HUNTER_ITEMS_ITEM_GROUP);
+		registerItem("brocadefish", ModItemGroups.MOB_HUNTER_ITEMS_ITEM_GROUP);
+		registerItem("goldenfish", ModItemGroups.MOB_HUNTER_ITEMS_ITEM_GROUP);
+		registerItem("king_brocadefish", ModItemGroups.MOB_HUNTER_ITEMS_ITEM_GROUP);
+		registerItem("premium_sashimi", ModItemGroups.MOB_HUNTER_ITEMS_ITEM_GROUP);
+		registerItem("silverfish", ModItemGroups.MOB_HUNTER_ITEMS_ITEM_GROUP);
 
 		return ITEMS.toArray(new Item[0]);
 	}

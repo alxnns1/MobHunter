@@ -16,8 +16,12 @@
 	"entity.mobhunter.ancient_fish": "Ancient Fish",
 	"entity.mobhunter.small_goldenfish": "Small Goldenfish",
 	"entity.mobhunter.wanchovy": "Wanchovy",
-	"entity.mobhunter.armored_bream": "Armored Bream",
 	"entity.mobhunter.guardfish": "Guardfish",
+	"entity.mobhunter.brocadefish": "Brocadefish",
+	"entity.mobhunter.goldenfish": "Goldenfish",
+	"entity.mobhunter.king_brocadefish": "King Brocadefish",
+	"entity.mobhunter.premium_sashimi": "Premium Sashimi",
+	"entity.mobhunter.silverfish": "Silverfish",
 
 	"block.mobhunter.bealite_ore": "Bealite Ore",
 	"block.mobhunter.carbalite_ore": "Carbalite Ore",

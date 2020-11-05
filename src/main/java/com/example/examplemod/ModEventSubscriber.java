@@ -42,7 +42,7 @@ public class ModEventSubscriber {
 	@SubscribeEvent
 	public static void onEntitiesRegistry(final RegistryEvent.Register<EntityType<?>> entityTypeRegistryEvent) {
 		entityTypeRegistryEvent.getRegistry().registerAll(ModEntities.ENTITY_TYPES);
-		for (EntityType<?> entityType: ModEntities.ENTITY_TYPES) {
+		for (EntityType<?> entityType : ModEntities.ENTITY_TYPES) {
 			GlobalEntityTypeAttributes.put((EntityType<? extends LivingEntity>) entityType, SushifishEntity.getAttributes().create());
 		}
 	}

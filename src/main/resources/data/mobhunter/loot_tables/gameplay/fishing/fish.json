@@ -1,0 +1,110 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 21800,
+          "name": "mobhunter:sushifish"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 20500,
+          "name": "mobhunter:pin_tuna"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 17680,
+          "name": "mobhunter:whetfish"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 11620,
+          "name": "mobhunter:popfish"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 9540,
+          "name": "mobhunter:sleepyfish"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 6005,
+          "name": "mobhunter:small_goldenfish"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 4735,
+          "name": "mobhunter:burst_arowana"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 3040,
+          "name": "mobhunter:bomb_arowana"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 2840,
+          "name": "mobhunter:scatterfish"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 2000,
+          "name": "mobhunter:goldenfish"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1260,
+          "name": "mobhunter:wanchovy"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1005,
+          "name": "mobhunter:glutton_tuna"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 696,
+          "name": "mobhunter:speartuna"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 620,
+          "name": "mobhunter:gastronome_tuna"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 560,
+          "name": "mobhunter:ancient_fish"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 504,
+          "name": "mobhunter:silverfish"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 240,
+          "name": "mobhunter:premium_sashimi"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 200,
+          "name": "mobhunter:brocadefish"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 150,
+          "name": "mobhunter:guardfish"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 120,
+          "name": "mobhunter:king_brocadefish"
+        }
+      ]
+    }
+  ]
+}
