@@ -1,4 +1,4 @@
-package com.example.examplemod;
+package com.alxnns1.mobhunter;
 
 import net.minecraft.loot.LootEntry;
 import net.minecraft.loot.LootPool;
@@ -12,7 +12,7 @@ import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 
 import java.util.List;
 
-import static com.example.examplemod.MobHunter.MOD_ID;
+import static com.alxnns1.mobhunter.MobHunter.MOD_ID;
 
 @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ForgeEventSubscriber {

@@ -1,4 +1,4 @@
-package com.example.examplemod.init;
+package com.alxnns1.mobhunter.init;
 
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -6,7 +6,7 @@ import net.minecraft.item.ItemStack;
 import javax.annotation.Nonnull;
 import java.util.function.Supplier;
 
-import static com.example.examplemod.MobHunter.MOD_ID;
+import static com.alxnns1.mobhunter.MobHunter.MOD_ID;
 
 public class ModItemGroups {
 

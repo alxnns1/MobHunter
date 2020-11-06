@@ -1,10 +1,10 @@
-package com.example.examplemod.init;
+package com.alxnns1.mobhunter.init;
 
-import com.example.examplemod.MobHunter;
-import com.example.examplemod.entities.GoldenfishEntity;
-import com.example.examplemod.entities.SushifishEntity;
-import com.example.examplemod.entities.renderer.GoldenfishRenderer;
-import com.example.examplemod.entities.renderer.SushifishRenderer;
+import com.alxnns1.mobhunter.MobHunter;
+import com.alxnns1.mobhunter.entities.GoldenfishEntity;
+import com.alxnns1.mobhunter.entities.SushifishEntity;
+import com.alxnns1.mobhunter.entities.renderer.GoldenfishRenderer;
+import com.alxnns1.mobhunter.entities.renderer.SushifishRenderer;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;

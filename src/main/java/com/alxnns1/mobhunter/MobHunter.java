@@ -1,16 +1,10 @@
-package com.example.examplemod;
+package com.alxnns1.mobhunter;
 
-import com.example.examplemod.entities.GoldenfishEntity;
-import com.example.examplemod.entities.SushifishEntity;
-import com.example.examplemod.entities.renderer.GoldenfishRenderer;
-import com.example.examplemod.entities.renderer.SushifishRenderer;
-import com.example.examplemod.init.ModEntities;
+import com.alxnns1.mobhunter.init.ModEntities;
 import net.minecraft.block.Blocks;
-import net.minecraft.entity.EntityType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;

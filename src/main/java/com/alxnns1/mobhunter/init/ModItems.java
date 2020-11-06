@@ -1,4 +1,4 @@
-package com.example.examplemod.init;
+package com.alxnns1.mobhunter.init;
 
 import net.minecraft.item.*;
 

@@ -1,15 +1,11 @@
-package com.example.examplemod;
+package com.alxnns1.mobhunter;
 
-import com.example.examplemod.entities.GoldenfishEntity;
-import com.example.examplemod.entities.SushifishEntity;
-import com.example.examplemod.init.ModBlocks;
-import com.example.examplemod.init.ModEntities;
-import com.example.examplemod.init.ModItemGroups;
-import com.example.examplemod.init.ModItems;
+import com.alxnns1.mobhunter.init.ModBlocks;
+import com.alxnns1.mobhunter.init.ModEntities;
+import com.alxnns1.mobhunter.init.ModItemGroups;
+import com.alxnns1.mobhunter.init.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
@@ -20,7 +16,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 import java.util.Arrays;
 import java.util.Objects;
 
-import static com.example.examplemod.MobHunter.MOD_ID;
+import static com.alxnns1.mobhunter.MobHunter.MOD_ID;
 
 @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEventSubscriber {

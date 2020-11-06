@@ -1,6 +1,6 @@
-package com.example.examplemod.entities.model;
+package com.alxnns1.mobhunter.entities.model;
 
-import com.example.examplemod.entities.GoldenfishEntity;
+import com.alxnns1.mobhunter.entities.GoldenfishEntity;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import net.minecraft.client.renderer.entity.model.EntityModel;
