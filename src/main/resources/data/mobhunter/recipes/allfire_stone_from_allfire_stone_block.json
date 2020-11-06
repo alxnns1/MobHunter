@@ -1,0 +1,12 @@
+  {
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "mobhunter:allfire_stone_block"
+		}
+	],
+	"result": {
+		"item": "mobhunter:allfire_stone",
+		"count": 9
+	}
+}

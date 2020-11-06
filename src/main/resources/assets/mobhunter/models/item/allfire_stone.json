@@ -1,3 +1,6 @@
 {
-	"parent": "mobhunter:block/allfire_stone"
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "mobhunter:item/allfire_stone"
+	}
 }

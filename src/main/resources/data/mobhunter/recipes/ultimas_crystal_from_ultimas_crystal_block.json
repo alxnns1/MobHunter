@@ -1,0 +1,12 @@
+  {
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "mobhunter:ultimas_crystal_block"
+		}
+	],
+	"result": {
+		"item": "mobhunter:ultimas_crystal",
+		"count": 9
+	}
+}

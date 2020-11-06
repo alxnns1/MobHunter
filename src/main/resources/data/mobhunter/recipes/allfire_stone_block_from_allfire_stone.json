@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"###",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "mobhunter:allfire_stone"
+		}
+	},
+	"result": {
+		"item": "mobhunter:allfire_stone_block"
+	}
+}
