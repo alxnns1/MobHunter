@@ -1,0 +1,6 @@
+{
+	"parent": "item/handheld",
+	"textures": {
+		"layer0": "mobhunter:item/machalite_hoe"
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"XX",
+		" #",
+		" #"
+	],
+	"key": {
+		"#": {
+			"tag": "forge:rods/wooden"
+		},
+		"X": {
+			"item": "mobhunter:eltalite_ingot"
+		}
+	},
+	"result": {
+		"item": "mobhunter:eltalite_hoe"
+	}
+}

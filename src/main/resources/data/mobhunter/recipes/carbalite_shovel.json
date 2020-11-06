@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"X ",
+		"# ",
+		"# "
+	],
+	"key": {
+		"#": {
+			"tag": "forge:rods/wooden"
+		},
+		"X": {
+			"item": "mobhunter:carbalite_ingot"
+		}
+	},
+	"result": {
+		"item": "mobhunter:carbalite_shovel"
+	}
+}
