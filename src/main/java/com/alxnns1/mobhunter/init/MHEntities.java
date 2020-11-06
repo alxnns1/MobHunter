@@ -14,7 +14,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 
-public class ModEntities {
+public class MHEntities {
 
 	public static final EntityType<?>[] ENTITY_TYPES = new EntityType<?>[]{
 			entity("sushifish", SushifishEntity::new, SushifishEntity.getAttributes().create()),
@@ -22,12 +22,12 @@ public class ModEntities {
 	};
 
 	public static void registerRenderers() {
-		RenderingRegistry.registerEntityRenderingHandler((EntityType<SushifishEntity>) ModEntities.ENTITY_TYPES[0], SushifishRenderer::new);
-		RenderingRegistry.registerEntityRenderingHandler((EntityType<GoldenfishEntity>) ModEntities.ENTITY_TYPES[1], GoldenfishRenderer::new);
+		RenderingRegistry.registerEntityRenderingHandler((EntityType<SushifishEntity>) MHEntities.ENTITY_TYPES[0], SushifishRenderer::new);
+		RenderingRegistry.registerEntityRenderingHandler((EntityType<GoldenfishEntity>) MHEntities.ENTITY_TYPES[1], GoldenfishRenderer::new);
 	}
 
 	public static void registerEntities(final RegistryEvent.Register<EntityType<?>> entityTypeRegistryEvent) {
-		entityTypeRegistryEvent.getRegistry().registerAll(ModEntities.ENTITY_TYPES);
+		entityTypeRegistryEvent.getRegistry().registerAll(MHEntities.ENTITY_TYPES);
 	}
 
 	private static <T extends LivingEntity>  EntityType<?> entity(String name, EntityType.IFactory<T> entityFactory, AttributeModifierMap attributes) {

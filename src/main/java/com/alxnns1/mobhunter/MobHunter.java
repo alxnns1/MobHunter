@@ -1,6 +1,7 @@
 package com.alxnns1.mobhunter;
 
-import com.alxnns1.mobhunter.init.ModEntities;
+import com.alxnns1.mobhunter.init.MHEntities;
+import com.alxnns1.mobhunter.world.MHOreGen;
 import net.minecraft.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -23,7 +24,7 @@ public class MobHunter {
 
 	public static final String MOD_ID = "mobhunter";
 	// Directly reference a log4j logger.
-	private static final Logger LOGGER = LogManager.getLogger();
+	public static final Logger LOGGER = LogManager.getLogger();
 
 	public MobHunter() {
 		// Register the setup method for modloading
@@ -42,13 +43,13 @@ public class MobHunter {
 	private void setupCommon(final FMLCommonSetupEvent event) {
 		// some preinit code
 		LOGGER.info("HELLO FROM PREINIT");
-		LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+		MHOreGen.registerOres();
 	}
 
 	public void setupClient(final FMLClientSetupEvent event) {
 		// do something that can only be done on the client
 		LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().gameSettings);
-		ModEntities.registerRenderers();
+		MHEntities.registerRenderers();
 	}
 
 	private void enqueueIMC(final InterModEnqueueEvent event) {

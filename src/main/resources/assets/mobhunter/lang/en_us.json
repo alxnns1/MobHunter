@@ -37,6 +37,8 @@
 	"block.mobhunter.meldspar_ore": "Meldspar Ore",
 	"block.mobhunter.novacrystal_ore": "Novacrystal Ore",
 	"block.mobhunter.purecrystal_ore": "Purecrystal Ore",
+	"block.mobhunter.allfire_stone_ore": "Allfire Stone Ore",
+	"block.mobhunter.ultimas_crystal_ore": "Ultimas Crystal Ore",
 
 	"block.mobhunter.bealite_block": "Block of Bealite",
 	"block.mobhunter.carbalite_block": "Block of Carbalite",
@@ -52,6 +54,8 @@
 	"block.mobhunter.meldspar_block": "Block of Meldspar",
 	"block.mobhunter.novacrystal_block": "Block of Novacrystal",
 	"block.mobhunter.purecrystal_block": "Block of Purecrystal",
+	"block.mobhunter.allfire_stone_block": "Block of Allfire Stone",
+	"block.mobhunter.ultimas_crystal_block": "Block of Ultimas Crystal",
 
 	"item.mobhunter.machalite_pickaxe": "Machalite Pickaxe",
 	"item.mobhunter.dragonite_pickaxe": "Dragonite Pickaxe",
@@ -84,6 +88,8 @@
 	"item.mobhunter.meldspar_ingot": "Meldspar Ingot",
 	"item.mobhunter.novacrystal": "Novacrystal",
 	"item.mobhunter.purecrystal": "Purecrystal",
+	"item.mobhunter.allfire_stone": "Allfire Stone",
+	"item.mobhunter.ultimas_crystal": "Ultimas Crystal",
 
 	"item.mobhunter.whetfish": "Whetfish",
 	"item.mobhunter.sushifish": "Sushifish",
