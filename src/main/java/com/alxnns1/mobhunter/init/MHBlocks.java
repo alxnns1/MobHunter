@@ -9,42 +9,46 @@ import java.util.HashMap;
 
 public class MHBlocks {
 
-	public static final HashMap<String, Block> BLOCKS = new HashMap<String, Block>() {{
+	public static final HashMap<String, Block> BLOCKS = new HashMap<>();
+
+	public static Block[] register() {
 		//ORES
-		put("earth_crystal_ore", new OreBlock(properties(Material.IRON, true, ToolType.PICKAXE, 1, 3F, 3F)).setRegistryName("earth_crystal_ore"));
-		put("machalite_ore", new OreBlock(properties(Material.IRON, true, ToolType.PICKAXE, 1, 3F, 3F)).setRegistryName("machalite_ore"));
-		put("ice_crystal_ore", new OreBlock(properties(Material.IRON, true, ToolType.PICKAXE, 1, 3F, 3F)).setRegistryName("ice_crystal_ore"));
-		put("bealite_ore", new OreBlock(properties(Material.IRON, true, ToolType.PICKAXE, 1, 3F, 3F)).setRegistryName("bealite_ore"));
-		put("lightcrystal_ore", new OreBlock(properties(Material.IRON, true, ToolType.PICKAXE, 1, 3F, 3F).setLightLevel(s -> 7)).setRegistryName("lightcrystal_ore"));
-		put("dragonite_ore", new OreBlock(properties(Material.IRON, true, ToolType.PICKAXE, 1, 3F, 3F)).setRegistryName("dragonite_ore"));
-		put("firestone_ore", new OreBlock(properties(Material.IRON, true, ToolType.PICKAXE, 1, 3F, 3F)).setRegistryName("firestone_ore"));
-		put("carbalite_ore", new OreBlock(properties(Material.IRON, true, ToolType.PICKAXE, 2, 3F, 3F)).setRegistryName("carbalite_ore"));
-		put("eltalite_ore", new OreBlock(properties(Material.IRON, true, ToolType.PICKAXE, 3, 3F, 3F)).setRegistryName("eltalite_ore"));
-		put("meldspar_ore", new OreBlock(properties(Material.IRON, true, ToolType.PICKAXE, 3, 3F, 3F)).setRegistryName("meldspar_ore"));
-		put("novacrystal_ore", new OreBlock(properties(Material.IRON, true, ToolType.PICKAXE, 2, 3F, 3F).setLightLevel(s -> 14)).setRegistryName("novacrystal_ore"));
-		put("purecrystal_ore", new OreBlock(properties(Material.IRON, true, ToolType.PICKAXE, 3, 3F, 3F)).setRegistryName("purecrystal_ore"));
-		put("fucium_ore", new OreBlock(properties(Material.IRON, true, ToolType.PICKAXE, 2, 3F, 3F)).setRegistryName("fucium_ore"));
-		put("firecell_stone_ore", new OreBlock(properties(Material.IRON, true, ToolType.PICKAXE, 2, 3F, 3F)).setRegistryName("firecell_stone_ore"));
-		put("allfire_stone_ore", new OreBlock(properties(Material.IRON, true, ToolType.PICKAXE, 3, 3F, 3F)).setRegistryName("allfire_stone_ore"));
-		put("ultimas_crystal_ore", new OreBlock(properties(Material.IRON, true, ToolType.PICKAXE, 3, 3F, 3F)).setRegistryName("ultimas_crystal_ore"));
-		//ORE BLOCKS
-		put("earth_crystal_block", new OreBlock(properties(Material.IRON, true, ToolType.PICKAXE, 1, 3F, 3F)).setRegistryName("earth_crystal_block"));
-		put("machalite_block", new OreBlock(properties(Material.IRON, true, ToolType.PICKAXE, 1, 3F, 3F)).setRegistryName("machalite_block"));
-		put("ice_crystal_block", new OreBlock(properties(Material.IRON, true, ToolType.PICKAXE, 1, 3F, 3F)).setRegistryName("ice_crystal_block"));
-		put("bealite_block", new OreBlock(properties(Material.IRON, true, ToolType.PICKAXE, 1, 3F, 3F)).setRegistryName("bealite_block"));
-		put("lightcrystal_block", new OreBlock(properties(Material.IRON, true, ToolType.PICKAXE, 1, 3F, 3F).setLightLevel(s -> 7)).setRegistryName("lightcrystal_block"));
-		put("dragonite_block", new OreBlock(properties(Material.IRON, true, ToolType.PICKAXE, 1, 3F, 3F)).setRegistryName("dragonite_block"));
-		put("firestone_block", new OreBlock(properties(Material.IRON, true, ToolType.PICKAXE, 1, 3F, 3F)).setRegistryName("firestone_block"));
-		put("carbalite_block", new OreBlock(properties(Material.IRON, true, ToolType.PICKAXE, 2, 3F, 3F)).setRegistryName("carbalite_block"));
-		put("eltalite_block", new OreBlock(properties(Material.IRON, true, ToolType.PICKAXE, 3, 3F, 3F)).setRegistryName("eltalite_block"));
-		put("meldspar_block", new OreBlock(properties(Material.IRON, true, ToolType.PICKAXE, 3, 3F, 3F)).setRegistryName("meldspar_block"));
-		put("novacrystal_block", new OreBlock(properties(Material.IRON, true, ToolType.PICKAXE, 2, 3F, 3F).setLightLevel(s -> 14)).setRegistryName("novacrystal_block"));
-		put("purecrystal_block", new OreBlock(properties(Material.IRON, true, ToolType.PICKAXE, 3, 3F, 3F)).setRegistryName("purecrystal_block"));
-		put("fucium_block", new OreBlock(properties(Material.IRON, true, ToolType.PICKAXE, 2, 3F, 3F)).setRegistryName("fucium_block"));
-		put("firecell_stone_block", new OreBlock(properties(Material.IRON, true, ToolType.PICKAXE, 2, 3F, 3F)).setRegistryName("firecell_stone_block"));
-		put("allfire_stone_block", new OreBlock(properties(Material.IRON, true, ToolType.PICKAXE, 3, 3F, 3F)).setRegistryName("allfire_stone_block"));
-		put("ultimas_crystal_block", new OreBlock(properties(Material.IRON, true, ToolType.PICKAXE, 3, 3F, 3F)).setRegistryName("ultimas_crystal_block"));
-	}};
+		registerOreBlock("earth_crystal_ore", properties(Material.ROCK, true, ToolType.PICKAXE, 1, 3F, 3F));
+		registerOreBlock("machalite_ore", properties(Material.ROCK, true, ToolType.PICKAXE, 1, 3F, 3F));
+		registerOreBlock("ice_crystal_ore", properties(Material.ROCK, true, ToolType.PICKAXE, 1, 3F, 3F));
+		registerOreBlock("bealite_ore", properties(Material.ROCK, true, ToolType.PICKAXE, 1, 3F, 3F));
+		registerOreBlock("lightcrystal_ore", properties(Material.ROCK, true, ToolType.PICKAXE, 1, 3F, 3F).setLightLevel(s -> 7));
+		registerOreBlock("dragonite_ore", properties(Material.ROCK, true, ToolType.PICKAXE, 1, 3F, 3F));
+		registerOreBlock("firestone_ore", properties(Material.ROCK, true, ToolType.PICKAXE, 1, 3F, 3F));
+		registerOreBlock("carbalite_ore", properties(Material.ROCK, true, ToolType.PICKAXE, 2, 3F, 3F));
+		registerOreBlock("eltalite_ore", properties(Material.ROCK, true, ToolType.PICKAXE, 3, 3F, 3F));
+		registerOreBlock("meldspar_ore", properties(Material.ROCK, true, ToolType.PICKAXE, 3, 3F, 3F));
+		registerOreBlock("novacrystal_ore", properties(Material.ROCK, true, ToolType.PICKAXE, 2, 3F, 3F).setLightLevel(s -> 14));
+		registerOreBlock("purecrystal_ore", properties(Material.ROCK, true, ToolType.PICKAXE, 3, 3F, 3F));
+		registerOreBlock("fucium_ore", properties(Material.ROCK, true, ToolType.PICKAXE, 2, 3F, 3F));
+		registerOreBlock("firecell_stone_ore", properties(Material.ROCK, true, ToolType.PICKAXE, 2, 3F, 3F));
+		registerOreBlock("allfire_stone_ore", properties(Material.ROCK, true, ToolType.PICKAXE, 3, 3F, 3F));
+		registerOreBlock("ultimas_crystal_ore", properties(Material.ROCK, true, ToolType.PICKAXE, 3, 3F, 3F));
+		//COMPACT BLOCKS
+		registerBlock("earth_crystal_block", properties(Material.IRON, true, ToolType.PICKAXE, 1, 3F, 3F));
+		registerBlock("machalite_block", properties(Material.IRON, true, ToolType.PICKAXE, 1, 3F, 3F));
+		registerBlock("ice_crystal_block", properties(Material.IRON, true, ToolType.PICKAXE, 1, 3F, 3F));
+		registerBlock("bealite_block", properties(Material.IRON, true, ToolType.PICKAXE, 1, 3F, 3F));
+		registerBlock("lightcrystal_block", properties(Material.IRON, true, ToolType.PICKAXE, 1, 3F, 3F).setLightLevel(s -> 7));
+		registerBlock("dragonite_block", properties(Material.IRON, true, ToolType.PICKAXE, 1, 3F, 3F));
+		registerBlock("firestone_block", properties(Material.IRON, true, ToolType.PICKAXE, 1, 3F, 3F));
+		registerBlock("carbalite_block", properties(Material.IRON, true, ToolType.PICKAXE, 2, 3F, 3F));
+		registerBlock("eltalite_block", properties(Material.IRON, true, ToolType.PICKAXE, 3, 3F, 3F));
+		registerBlock("meldspar_block", properties(Material.IRON, true, ToolType.PICKAXE, 3, 3F, 3F));
+		registerBlock("novacrystal_block", properties(Material.IRON, true, ToolType.PICKAXE, 2, 3F, 3F).setLightLevel(s -> 14));
+		registerBlock("purecrystal_block", properties(Material.IRON, true, ToolType.PICKAXE, 3, 3F, 3F));
+		registerBlock("fucium_block", properties(Material.IRON, true, ToolType.PICKAXE, 2, 3F, 3F));
+		registerBlock("firecell_stone_block", properties(Material.IRON, true, ToolType.PICKAXE, 2, 3F, 3F));
+		registerBlock("allfire_stone_block", properties(Material.IRON, true, ToolType.PICKAXE, 3, 3F, 3F));
+		registerBlock("ultimas_crystal_block", properties(Material.IRON, true, ToolType.PICKAXE, 3, 3F, 3F));
+
+		return BLOCKS.values().toArray(new Block[0]);
+	}
 
 	private static Block.Properties properties(Material material, boolean requiresTool, ToolType toolType, int harvestLevel, float hardness, float resistance) {
 		Block.Properties properties = Block.Properties.create(material).harvestTool(toolType).harvestLevel(harvestLevel).hardnessAndResistance(hardness, resistance);
@@ -52,5 +56,15 @@ public class MHBlocks {
 			properties.setRequiresTool();
 		}
 		return properties;
+	}
+
+	private static void registerBlock(String name, Block.Properties properties) {
+		Block block = new Block(properties).setRegistryName(name);
+		BLOCKS.put(name, block);
+	}
+
+	private static void registerOreBlock(String name, Block.Properties properties) {
+		Block block = new OreBlock(properties).setRegistryName(name);
+		BLOCKS.put(name, block);
 	}
 }

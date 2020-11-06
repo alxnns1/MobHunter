@@ -2,13 +2,11 @@ package com.alxnns1.mobhunter.init;
 
 import net.minecraft.item.*;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
 public class MHItems {
 
-	private static ArrayList<Item> ITEMS = new ArrayList<>();
-
-	public static Item ITEM_GROUP_ICON;
+	public static final HashMap<String, Item> ITEMS = new HashMap<>();
 
 	public static Item[] register() {
 		//TOOLS
@@ -17,7 +15,7 @@ public class MHItems {
 		registerTool("carbalite_pickaxe", ItemTier.DIAMOND, 1, -2.8F, MHItemGroups.MOB_HUNTER_ITEMS_ITEM_GROUP);
 		registerTool("eltalite_pickaxe", ItemTier.NETHERITE, 1, -2.8F, MHItemGroups.MOB_HUNTER_ITEMS_ITEM_GROUP);
 		//ORES
-		ITEM_GROUP_ICON = registerItem("earth_crystal", MHItemGroups.MOB_HUNTER_ITEMS_ITEM_GROUP);
+		registerItem("earth_crystal", MHItemGroups.MOB_HUNTER_ITEMS_ITEM_GROUP);
 		registerItem("machalite_ingot", MHItemGroups.MOB_HUNTER_ITEMS_ITEM_GROUP);
 		registerItem("ice_crystal", MHItemGroups.MOB_HUNTER_ITEMS_ITEM_GROUP);
 		registerItem("bealite_ingot", MHItemGroups.MOB_HUNTER_ITEMS_ITEM_GROUP);
@@ -55,16 +53,16 @@ public class MHItems {
 		registerItem("premium_sashimi", MHItemGroups.MOB_HUNTER_ITEMS_ITEM_GROUP);
 		registerItem("silverfish", MHItemGroups.MOB_HUNTER_ITEMS_ITEM_GROUP);
 
-		return ITEMS.toArray(new Item[0]);
+		return ITEMS.values().toArray(new Item[0]);
 	}
 
-	private static Item registerItem(String name, ItemGroup itemGroup) {
+	private static void registerItem(String name, ItemGroup itemGroup) {
 		Item item = new Item(new Item.Properties().group(itemGroup)).setRegistryName(name);
-		ITEMS.add(item);
-		return item;
+		ITEMS.put(name, item);
 	}
 
 	private static void registerTool(String name, IItemTier itemTier, int attackDamage, float attackSpeed, ItemGroup itemGroup) {
-		ITEMS.add(new PickaxeItem(itemTier, attackDamage, attackSpeed, new Item.Properties().group(itemGroup)).setRegistryName(name));
+		Item item = new PickaxeItem(itemTier, attackDamage, attackSpeed, new Item.Properties().group(itemGroup)).setRegistryName(name);
+		ITEMS.put(name, item);
 	}
 }

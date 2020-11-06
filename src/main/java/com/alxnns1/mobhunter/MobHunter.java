@@ -2,7 +2,6 @@ package com.alxnns1.mobhunter;
 
 import com.alxnns1.mobhunter.init.MHEntities;
 import com.alxnns1.mobhunter.world.MHOreGen;
-import net.minecraft.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
@@ -18,12 +17,10 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.stream.Collectors;
 
-// The value here should match an entry in the META-INF/mods.toml file
-@Mod("mobhunter")
+@Mod(MobHunter.MOD_ID)
 public class MobHunter {
 
 	public static final String MOD_ID = "mobhunter";
-	// Directly reference a log4j logger.
 	public static final Logger LOGGER = LogManager.getLogger();
 
 	public MobHunter() {
@@ -42,13 +39,11 @@ public class MobHunter {
 
 	private void setupCommon(final FMLCommonSetupEvent event) {
 		// some preinit code
-		LOGGER.info("HELLO FROM PREINIT");
 		MHOreGen.registerOres();
 	}
 
 	public void setupClient(final FMLClientSetupEvent event) {
 		// do something that can only be done on the client
-		LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().gameSettings);
 		MHEntities.registerRenderers();
 	}
 
@@ -71,6 +66,5 @@ public class MobHunter {
 	@SubscribeEvent
 	public void onServerStarting(FMLServerStartingEvent event) {
 		// do something when the server starts
-		LOGGER.info("HELLO from server starting");
 	}
 }

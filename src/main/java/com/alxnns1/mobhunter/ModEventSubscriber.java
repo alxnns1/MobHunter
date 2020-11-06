@@ -33,7 +33,7 @@ public class ModEventSubscriber {
 
 	@SubscribeEvent
 	public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
-		blockRegistryEvent.getRegistry().registerAll(MHBlocks.BLOCKS.values().toArray(new Block[0]));
+		blockRegistryEvent.getRegistry().registerAll(MHBlocks.register());
 	}
 
 	@SubscribeEvent

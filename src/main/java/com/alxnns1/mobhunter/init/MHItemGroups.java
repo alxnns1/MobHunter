@@ -11,7 +11,7 @@ import static com.alxnns1.mobhunter.MobHunter.MOD_ID;
 public class MHItemGroups {
 
 	public static final ItemGroup MOB_HUNTER_BLOCKS_ITEM_GROUP = new MobHunterItemGroup("blocks", () -> new ItemStack(MHBlocks.BLOCKS.get("machalite_ore")));
-	public static final ItemGroup MOB_HUNTER_ITEMS_ITEM_GROUP = new MobHunterItemGroup("items", () -> new ItemStack(MHItems.ITEM_GROUP_ICON));
+	public static final ItemGroup MOB_HUNTER_ITEMS_ITEM_GROUP = new MobHunterItemGroup("items", () -> new ItemStack(MHItems.ITEMS.get("machalite_ingot")));
 
 	public static final class MobHunterItemGroup extends ItemGroup {
 
