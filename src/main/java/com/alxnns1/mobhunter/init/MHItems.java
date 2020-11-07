@@ -9,23 +9,6 @@ public class MHItems {
 	public static final HashMap<String, Item> ITEMS = new HashMap<>();
 
 	public static Item[] register() {
-		//TOOLS
-		registerPickaxe("machalite_pickaxe", ItemTier.IRON);
-		registerPickaxe("dragonite_pickaxe", ItemTier.IRON);
-		registerPickaxe("carbalite_pickaxe", ItemTier.DIAMOND);
-		registerPickaxe("eltalite_pickaxe", ItemTier.NETHERITE);
-		registerAxe("machalite_axe", ItemTier.IRON);
-		registerAxe("dragonite_axe", ItemTier.IRON);
-		registerAxe("carbalite_axe", ItemTier.DIAMOND);
-		registerAxe("eltalite_axe", ItemTier.NETHERITE);
-		registerShovel("machalite_shovel", ItemTier.IRON);
-		registerShovel("dragonite_shovel", ItemTier.IRON);
-		registerShovel("carbalite_shovel", ItemTier.DIAMOND);
-		registerShovel("eltalite_shovel", ItemTier.NETHERITE);
-		registerHoe("machalite_hoe", ItemTier.IRON);
-		registerHoe("dragonite_hoe", ItemTier.IRON);
-		registerHoe("carbalite_hoe", ItemTier.DIAMOND);
-		registerHoe("eltalite_hoe", ItemTier.NETHERITE);
 		//ORES
 		registerItem("earth_crystal");
 		registerItem("machalite_ingot");
@@ -64,6 +47,23 @@ public class MHItems {
 		registerItem("king_brocadefish");
 		registerItem("premium_sashimi");
 		registerItem("silverfish");
+		//TOOLS
+		registerPickaxe("machalite_pickaxe", MHItemTiers.MACHALITE);
+		registerPickaxe("dragonite_pickaxe", MHItemTiers.DRAGONITE);
+		registerPickaxe("carbalite_pickaxe", MHItemTiers.CARBALITE);
+		registerPickaxe("eltalite_pickaxe", MHItemTiers.ELTALITE);
+		registerAxe("machalite_axe", MHItemTiers.MACHALITE);
+		registerAxe("dragonite_axe", MHItemTiers.DRAGONITE);
+		registerAxe("carbalite_axe", MHItemTiers.CARBALITE);
+		registerAxe("eltalite_axe", MHItemTiers.ELTALITE);
+		registerShovel("machalite_shovel", MHItemTiers.MACHALITE);
+		registerShovel("dragonite_shovel", MHItemTiers.DRAGONITE);
+		registerShovel("carbalite_shovel", MHItemTiers.CARBALITE);
+		registerShovel("eltalite_shovel", MHItemTiers.ELTALITE);
+		registerHoe("machalite_hoe", MHItemTiers.MACHALITE);
+		registerHoe("dragonite_hoe", MHItemTiers.DRAGONITE);
+		registerHoe("carbalite_hoe", MHItemTiers.CARBALITE);
+		registerHoe("eltalite_hoe", MHItemTiers.ELTALITE);
 
 		return ITEMS.values().toArray(new Item[0]);
 	}
@@ -74,22 +74,22 @@ public class MHItems {
 	}
 
 	private static void registerPickaxe(String name, IItemTier itemTier) {
-		Item item = new PickaxeItem(itemTier, 1, -2.8F, new Item.Properties().group(MHItemGroups.MOB_HUNTER_ITEMS_ITEM_GROUP)).setRegistryName(name);
+		Item item = new PickaxeItem(itemTier, 1, -2.8F, new Item.Properties().group(MHItemGroups.MOB_HUNTER_TOOLS_ITEM_GROUP)).setRegistryName(name);
 		ITEMS.put(name, item);
 	}
 
 	private static void registerAxe(String name, IItemTier itemTier) {
-		Item item = new AxeItem(itemTier, 6F, -3.1F, new Item.Properties().group(MHItemGroups.MOB_HUNTER_ITEMS_ITEM_GROUP)).setRegistryName(name);
+		Item item = new AxeItem(itemTier, 6F, -3.1F, new Item.Properties().group(MHItemGroups.MOB_HUNTER_TOOLS_ITEM_GROUP)).setRegistryName(name);
 		ITEMS.put(name, item);
 	}
 
 	private static void registerShovel(String name, IItemTier itemTier) {
-		Item item = new ShovelItem(itemTier, 1.5F, -3F, new Item.Properties().group(MHItemGroups.MOB_HUNTER_ITEMS_ITEM_GROUP)).setRegistryName(name);
+		Item item = new ShovelItem(itemTier, 1.5F, -3F, new Item.Properties().group(MHItemGroups.MOB_HUNTER_TOOLS_ITEM_GROUP)).setRegistryName(name);
 		ITEMS.put(name, item);
 	}
 
 	private static void registerHoe(String name, IItemTier itemTier) {
-		Item item = new HoeItem(itemTier, 3, 0F, new Item.Properties().group(MHItemGroups.MOB_HUNTER_ITEMS_ITEM_GROUP)).setRegistryName(name);
+		Item item = new HoeItem(itemTier, 3, 0F, new Item.Properties().group(MHItemGroups.MOB_HUNTER_TOOLS_ITEM_GROUP)).setRegistryName(name);
 		ITEMS.put(name, item);
 	}
 }

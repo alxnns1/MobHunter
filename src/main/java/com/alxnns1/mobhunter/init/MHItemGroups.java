@@ -12,6 +12,7 @@ public class MHItemGroups {
 
 	public static final ItemGroup MOB_HUNTER_BLOCKS_ITEM_GROUP = new MobHunterItemGroup("blocks", () -> new ItemStack(MHBlocks.BLOCKS.get("machalite_ore")));
 	public static final ItemGroup MOB_HUNTER_ITEMS_ITEM_GROUP = new MobHunterItemGroup("items", () -> new ItemStack(MHItems.ITEMS.get("machalite_ingot")));
+	public static final ItemGroup MOB_HUNTER_TOOLS_ITEM_GROUP = new MobHunterItemGroup("tools", () -> new ItemStack(MHItems.ITEMS.get("machalite_pickaxe")));
 
 	public static final class MobHunterItemGroup extends ItemGroup {
 
