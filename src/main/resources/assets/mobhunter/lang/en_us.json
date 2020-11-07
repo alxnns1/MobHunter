@@ -1,6 +1,7 @@
 {
 	"itemGroup.mobhunter_blocks": "MobHunter Blocks",
 	"itemGroup.mobhunter_items": "MobHunter Items",
+	"itemGroup.mobhunter_tools": "MobHunter Tools",
 
 	"entity.mobhunter.whetfish": "Whetfish",
 	"entity.mobhunter.sushifish": "Sushifish",

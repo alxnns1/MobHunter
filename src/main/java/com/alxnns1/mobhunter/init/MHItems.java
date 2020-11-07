@@ -9,6 +9,10 @@ public class MHItems {
 	public static final HashMap<String, Item> ITEMS = new HashMap<>();
 
 	public static Item[] register() {
+		//ICONS
+		registerIcon("icon_blocks");
+		registerIcon("icon_items");
+		registerIcon("icon_tools");
 		//ORES
 		registerItem("earth_crystal");
 		registerItem("machalite_ingot");
@@ -66,6 +70,11 @@ public class MHItems {
 		registerHoe("eltalite_hoe", MHItemTiers.ELTALITE);
 
 		return ITEMS.values().toArray(new Item[0]);
+	}
+
+	private static void registerIcon(String name) {
+		Item item = new Item(new Item.Properties()).setRegistryName(name);
+		ITEMS.put(name, item);
 	}
 
 	private static void registerItem(String name) {
