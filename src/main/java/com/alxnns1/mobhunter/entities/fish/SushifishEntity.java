@@ -1,4 +1,4 @@
-package com.alxnns1.mobhunter.entities;
+package com.alxnns1.mobhunter.entities.fish;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.MobEntity;
@@ -15,8 +15,8 @@ import net.minecraft.world.World;
 import javax.annotation.Nonnull;
 
 public class SushifishEntity extends AbstractGroupFishEntity {
-	public SushifishEntity(EntityType<?> type, World worldIn) {
-		super((EntityType<? extends AbstractGroupFishEntity>) type, worldIn);
+	public SushifishEntity(EntityType<SushifishEntity> type, World worldIn) {
+		super(type, worldIn);
 	}
 
 	public static AttributeModifierMap.MutableAttribute getAttributes() {

@@ -3,6 +3,8 @@ package com.alxnns1.mobhunter;
 import com.alxnns1.mobhunter.init.MHBlocks;
 import com.alxnns1.mobhunter.init.MHEntities;
 import com.alxnns1.mobhunter.world.MHWorldGen;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
@@ -42,12 +44,13 @@ public class MobHunter {
 		// some preinit code
 		MHWorldGen.registerOres();
 		MHWorldGen.registerPlants();
-		MHBlocks.setRenderLayerForPlants();
 	}
 
+//	@OnlyIn(Dist.CLIENT)
 	public void setupClient(final FMLClientSetupEvent event) {
 		// do something that can only be done on the client
 		MHEntities.registerRenderers();
+		MHBlocks.setRenderLayerForPlants();
 	}
 
 	private void enqueueIMC(final InterModEnqueueEvent event) {

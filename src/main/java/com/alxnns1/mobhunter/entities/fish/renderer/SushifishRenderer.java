@@ -1,8 +1,8 @@
-package com.alxnns1.mobhunter.entities.renderer;
+package com.alxnns1.mobhunter.entities.fish.renderer;
 
 import com.alxnns1.mobhunter.MobHunter;
-import com.alxnns1.mobhunter.entities.SushifishEntity;
-import com.alxnns1.mobhunter.entities.model.SushifishModel;
+import com.alxnns1.mobhunter.entities.fish.SushifishEntity;
+import com.alxnns1.mobhunter.entities.fish.model.SushifishModel;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.util.ResourceLocation;

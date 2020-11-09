@@ -1,4 +1,4 @@
-package com.alxnns1.mobhunter.entities;
+package com.alxnns1.mobhunter.entities.fish;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.MobEntity;
@@ -15,8 +15,8 @@ import net.minecraft.world.World;
 import javax.annotation.Nonnull;
 
 public class GoldenfishEntity extends AbstractGroupFishEntity {
-	public GoldenfishEntity(EntityType<?> type, World worldIn) {
-		super((EntityType<? extends AbstractGroupFishEntity>) type, worldIn);
+	public GoldenfishEntity(EntityType<GoldenfishEntity> type, World worldIn) {
+		super(type, worldIn);
 	}
 
 	public static AttributeModifierMap.MutableAttribute getAttributes() {

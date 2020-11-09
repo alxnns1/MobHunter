@@ -1,6 +1,6 @@
-package com.alxnns1.mobhunter.entities.model;
+package com.alxnns1.mobhunter.entities.fish.model;
 
-import com.alxnns1.mobhunter.entities.SushifishEntity;
+import com.alxnns1.mobhunter.entities.fish.SushifishEntity;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import net.minecraft.client.renderer.entity.model.EntityModel;

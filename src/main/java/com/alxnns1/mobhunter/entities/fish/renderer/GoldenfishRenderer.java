@@ -1,8 +1,8 @@
-package com.alxnns1.mobhunter.entities.renderer;
+package com.alxnns1.mobhunter.entities.fish.renderer;
 
 import com.alxnns1.mobhunter.MobHunter;
-import com.alxnns1.mobhunter.entities.GoldenfishEntity;
-import com.alxnns1.mobhunter.entities.model.GoldenfishModel;
+import com.alxnns1.mobhunter.entities.fish.GoldenfishEntity;
+import com.alxnns1.mobhunter.entities.fish.model.GoldenfishModel;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.util.ResourceLocation;
