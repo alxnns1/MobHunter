@@ -1,7 +1,8 @@
 package com.alxnns1.mobhunter;
 
+import com.alxnns1.mobhunter.init.MHBlocks;
 import com.alxnns1.mobhunter.init.MHEntities;
-import com.alxnns1.mobhunter.world.MHOreGen;
+import com.alxnns1.mobhunter.world.MHWorldGen;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
@@ -39,7 +40,9 @@ public class MobHunter {
 
 	private void setupCommon(final FMLCommonSetupEvent event) {
 		// some preinit code
-		MHOreGen.registerOres();
+		MHWorldGen.registerOres();
+		MHWorldGen.registerPlants();
+		MHBlocks.setRenderLayerForPlants();
 	}
 
 	public void setupClient(final FMLClientSetupEvent event) {
@@ -58,7 +61,7 @@ public class MobHunter {
 	private void processIMC(final InterModProcessEvent event) {
 		// some example code to receive and process InterModComms from other mods
 		LOGGER.info("Got IMC {}", event.getIMCStream().
-				map(m -> m.getMessageSupplier().get()).
+				map(mapper -> mapper.getMessageSupplier().get()).
 				collect(Collectors.toList()));
 	}
 

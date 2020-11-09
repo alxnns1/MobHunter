@@ -5,14 +5,21 @@ import com.alxnns1.mobhunter.init.MHEntities;
 import com.alxnns1.mobhunter.init.MHItemGroups;
 import com.alxnns1.mobhunter.init.MHItems;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.client.renderer.color.BlockColors;
+import net.minecraft.client.renderer.color.IBlockColor;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockDisplayReader;
+import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.IForgeRegistry;
 
+import javax.annotation.Nullable;
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -39,5 +46,10 @@ public class ModEventSubscriber {
 	@SubscribeEvent
 	public static void onEntitiesRegistry(final RegistryEvent.Register<EntityType<?>> entityTypeRegistryEvent) {
 		MHEntities.registerEntities(entityTypeRegistryEvent);
+	}
+
+	@SubscribeEvent
+	public static void onBlockColorHandlerEvent(ColorHandlerEvent.Block event) {
+		MHBlocks.setColourForPlants(event);
 	}
 }

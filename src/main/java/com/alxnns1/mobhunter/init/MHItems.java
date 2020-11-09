@@ -10,7 +10,6 @@ public class MHItems {
 
 	public static Item[] register() {
 		//ICONS
-		registerIcon("icon_blocks");
 		registerIcon("icon_items");
 		registerIcon("icon_tools");
 		//ORES
