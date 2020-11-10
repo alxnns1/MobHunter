@@ -5,6 +5,8 @@ import com.alxnns1.mobhunter.entity.fish.GoldenfishEntity
 import com.alxnns1.mobhunter.entity.fish.SushifishEntity
 import com.alxnns1.mobhunter.entity.fish.renderer.GoldenfishRenderer
 import com.alxnns1.mobhunter.entity.fish.renderer.SushifishRenderer
+import com.alxnns1.mobhunter.entity.neopteran.HornetaurEntity
+import com.alxnns1.mobhunter.entity.neopteran.renderer.HornetaurRenderer
 import net.minecraft.entity.EntityClassification
 import net.minecraft.entity.EntityType
 import net.minecraft.entity.LivingEntity
@@ -21,16 +23,19 @@ import thedarkcolour.kotlinforforge.forge.objectHolder
 object MHEntities {
 	val SUSHIFISH: EntityType<SushifishEntity> by objectHolder("sushifish")
 	val GOLDENFISH: EntityType<GoldenfishEntity> by objectHolder("goldenfish")
+	val HORNETAUR: EntityType<HornetaurEntity> by objectHolder("hornetaur")
 
 	fun register(event: RegistryEvent.Register<EntityType<*>>): Unit = event.registry.registerAll(
 		fish("sushifish", ::SushifishEntity, SushifishEntity.createAttributes()),
-		fish("goldenfish", ::GoldenfishEntity, GoldenfishEntity.createAttributes())
+		fish("goldenfish", ::GoldenfishEntity, GoldenfishEntity.createAttributes()),
+		neopteran("hornetaur", ::HornetaurEntity, HornetaurEntity.createAttributes())
 	)
 
 	@OnlyIn(Dist.CLIENT)
 	fun registerRenderers() {
 		renderer(SUSHIFISH, ::SushifishRenderer)
 		renderer(GOLDENFISH, ::GoldenfishRenderer)
+		renderer(HORNETAUR, ::HornetaurRenderer)
 	}
 
 	private inline fun <reified T : LivingEntity> entity(
@@ -55,6 +60,15 @@ object MHEntities {
 		attributes: AttributeModifierMap
 	): EntityType<T> = entity(name, factory, EntityClassification.WATER_CREATURE, attributes) {
 		size(0.7F, 0.4F)
+		trackingRange(4)
+	}
+
+	private inline fun <reified T : LivingEntity> neopteran(
+		name: String,
+		factory: EntityType.IFactory<T>,
+		attributes: AttributeModifierMap
+	): EntityType<T> = entity(name, factory, EntityClassification.CREATURE, attributes) {
+		size(1F, 1F)
 		trackingRange(4)
 	}
 
