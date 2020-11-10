@@ -8,6 +8,12 @@ import net.minecraft.client.renderer.model.ModelRenderer
 import net.minecraft.util.math.MathHelper
 
 class SushifishModel : EntityModel<SushifishEntity>() {
+
+	init {
+		textureWidth = 32
+		textureHeight = 32
+	}
+	
 	private val head = ModelRenderer(this, 22, 0).apply {
 		addBox(-1F, -2F, -3F, 2F, 4F, 3F)
 		setRotationPoint(0F, 20F, -7F)
@@ -50,11 +56,6 @@ class SushifishModel : EntityModel<SushifishEntity>() {
 				setRotationPoint(0F, 0F, 8F);
 			}
 		)
-	}
-
-	init {
-		textureWidth = 32
-		textureHeight = 32
 	}
 
 	override fun render(
