@@ -10,7 +10,9 @@ import com.alxnns1.mobhunter.entity.neopteran.renderer.HornetaurRenderer
 import net.minecraft.entity.EntityClassification
 import net.minecraft.entity.EntityType
 import net.minecraft.entity.LivingEntity
-import net.minecraft.entity.ai.attributes.AttributeModifierMap
+import net.minecraft.entity.MobEntity
+import net.minecraft.entity.ai.attributes.Attribute
+import net.minecraft.entity.ai.attributes.Attributes
 import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes
 import net.minecraft.util.ResourceLocation
 import net.minecraftforge.api.distmarker.Dist
@@ -21,14 +23,15 @@ import net.minecraftforge.fml.client.registry.RenderingRegistry
 import thedarkcolour.kotlinforforge.forge.objectHolder
 
 object MHEntities {
-	val SUSHIFISH: EntityType<SushifishEntity> by objectHolder("sushifish")
-	val GOLDENFISH: EntityType<GoldenfishEntity> by objectHolder("goldenfish")
-	val HORNETAUR: EntityType<HornetaurEntity> by objectHolder("hornetaur")
+	private val SUSHIFISH: EntityType<SushifishEntity> by objectHolder("sushifish")
+	private val GOLDENFISH: EntityType<GoldenfishEntity> by objectHolder("goldenfish")
+	private val HORNETAUR: EntityType<HornetaurEntity> by objectHolder("hornetaur")
 
 	fun register(event: RegistryEvent.Register<EntityType<*>>): Unit = event.registry.registerAll(
-		fish("sushifish", ::SushifishEntity, SushifishEntity.createAttributes()),
-		fish("goldenfish", ::GoldenfishEntity, GoldenfishEntity.createAttributes()),
-		neopteran("hornetaur", ::HornetaurEntity, HornetaurEntity.createAttributes())
+		fish("sushifish", ::SushifishEntity, Attributes.MAX_HEALTH to 3.0),
+		fish("goldenfish", ::GoldenfishEntity, Attributes.MAX_HEALTH to 3.0),
+		neopteran("hornetaur", ::HornetaurEntity,
+			Attributes.MAX_HEALTH to 4.0, Attributes.MOVEMENT_SPEED to 0.2, Attributes.ATTACK_DAMAGE to 2.0)
 	)
 
 	@OnlyIn(Dist.CLIENT)
@@ -42,7 +45,7 @@ object MHEntities {
 		name: String,
 		factory: EntityType.IFactory<T>,
 		classification: EntityClassification,
-		attributes: AttributeModifierMap,
+		vararg attributes: Pair<Attribute, Double>,
 		typeBuilder: EntityType.Builder<T>.() -> Unit = {}
 	): EntityType<T> {
 		val type = EntityType.Builder.create(factory, classification)
@@ -50,15 +53,20 @@ object MHEntities {
 			.build(ResourceLocation(MobHunter.MOD_ID, name).toString())
 			.setRegistryName(name)
 		@Suppress("UNCHECKED_CAST")
-		GlobalEntityTypeAttributes.put(type as EntityType<T>, attributes)
+		GlobalEntityTypeAttributes.put(
+			type as EntityType<T>,
+			MobEntity.func_233666_p_()
+				.apply { attributes.forEach { createMutableAttribute(it.first, it.second) } }
+				.create()
+		)
 		return type
 	}
 
 	private inline fun <reified T : LivingEntity> fish(
 		name: String,
 		factory: EntityType.IFactory<T>,
-		attributes: AttributeModifierMap
-	): EntityType<T> = entity(name, factory, EntityClassification.WATER_CREATURE, attributes) {
+		vararg attributes: Pair<Attribute, Double>
+	): EntityType<T> = entity(name, factory, EntityClassification.WATER_CREATURE, *attributes) {
 		size(0.7F, 0.4F)
 		trackingRange(4)
 	}
@@ -66,8 +74,8 @@ object MHEntities {
 	private inline fun <reified T : LivingEntity> neopteran(
 		name: String,
 		factory: EntityType.IFactory<T>,
-		attributes: AttributeModifierMap
-	): EntityType<T> = entity(name, factory, EntityClassification.CREATURE, attributes) {
+		vararg attributes: Pair<Attribute, Double>
+	): EntityType<T> = entity(name, factory, EntityClassification.CREATURE, *attributes) {
 		size(1F, 1F)
 		trackingRange(4)
 	}

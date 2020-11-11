@@ -3,14 +3,8 @@ package com.alxnns1.mobhunter.entity.neopteran
 import net.minecraft.block.BlockState
 import net.minecraft.entity.EntityType
 import net.minecraft.entity.LivingEntity
-import net.minecraft.entity.MobEntity
-import net.minecraft.entity.ai.attributes.AttributeModifierMap
-import net.minecraft.entity.ai.attributes.Attributes
 import net.minecraft.entity.ai.goal.*
 import net.minecraft.entity.merchant.villager.AbstractVillagerEntity
-import net.minecraft.entity.merchant.villager.VillagerEntity
-import net.minecraft.entity.monster.MonsterEntity
-import net.minecraft.entity.passive.AnimalEntity
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.util.DamageSource
 import net.minecraft.util.SoundEvent
@@ -18,14 +12,12 @@ import net.minecraft.util.SoundEvents
 import net.minecraft.util.math.BlockPos
 import net.minecraft.world.World
 
-class HornetaurEntity(type: EntityType<HornetaurEntity>, world: World) : MonsterEntity(type, world) {
-	companion object {
-		fun createAttributes(): AttributeModifierMap = MobEntity.func_233666_p_()
-			.createMutableAttribute(Attributes.MAX_HEALTH, 4.0)
-			.createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.1)
-			.createMutableAttribute(Attributes.ATTACK_DAMAGE, 2.0)
-			.create()
-	}
+class HornetaurEntity(type: EntityType<HornetaurEntity>, world: World) : MHNeopteranEntity(type, world) {
+	// TODO: Remove - this is just here atm to demo scaling
+	override fun getMinScale(): Float = 0.5F
+
+	// TODO: Remove - this is just here atm to demo scaling
+	override fun getMaxScale(): Float = 2F
 
 	override fun registerGoals() {
 		goalSelector.addGoal(1, SwimGoal(this))

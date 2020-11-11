@@ -1,5 +1,6 @@
 package com.alxnns1.mobhunter
 
+import com.alxnns1.mobhunter.entity.MHEntity
 import com.alxnns1.mobhunter.init.MHBlocks
 import com.alxnns1.mobhunter.init.MHEntities
 import com.alxnns1.mobhunter.init.MHItems
@@ -11,6 +12,7 @@ import net.minecraft.loot.LootTables
 import net.minecraft.loot.TableLootEntry
 import net.minecraft.util.ResourceLocation
 import net.minecraftforge.event.LootTableLoadEvent
+import net.minecraftforge.event.entity.EntityEvent
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
@@ -39,6 +41,7 @@ object MobHunter {
 		}
 		FORGE_BUS.apply {
 			addListener(::lootTableLoad)
+			addListener(::entityConstructing)
 			addListener(MHWorldGen::generate)
 		}
 	}
@@ -61,6 +64,23 @@ object MobHunter {
 			lootEntries!!.add(TableLootEntry.builder(ResourceLocation(MOD_ID, "gameplay/fishing/fish")).weight(85).quality(-1).build())
 		} catch (e: Exception) {
 			LOGGER.error("Error trying to insert into loot table", e)
+		}
+	}
+
+	private fun entityConstructing(event: EntityEvent.EntityConstructing) {
+		val entity = event.entity
+		if (entity !is MHEntity || !entity.hasScale())
+			return
+
+		if (entity.world.isRemote) {
+			entity.dataManager.register(entity.getScaleKey(), 1F)
+		} else {
+			// Set scale server side only so that the value is synced to clients
+			val min = entity.getMinScale()
+			val max = entity.getMaxScale()
+			val scale = entity.world.rand.nextFloat() * (max - min) + min
+//			LOGGER.info("SCALE: ${entity::class.simpleName} -> $scale")
+			entity.dataManager.register(entity.getScaleKey(), scale)
 		}
 	}
 }
