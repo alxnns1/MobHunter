@@ -91,7 +91,7 @@ object MHItems {
 			spawnegg("sushifish_egg", 0xB07A4D, 0x734F32) { MHEntities.SUSHIFISH },
 			spawnegg("goldenfish_egg", 0xC8B235, 0x837422) { MHEntities.GOLDENFISH },
 			// Neopterans
-			spawnegg("hornetaur_egg", 0x40807B, 0xE65B00) { MHEntities.HORNETAUR }
+			spawnegg("hornetaur_egg", 0xD7822C, 0x2D1D16) { MHEntities.HORNETAUR }
 		)
 
 		// Item Blocks
