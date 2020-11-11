@@ -7,7 +7,6 @@ import com.alxnns1.mobhunter.entity.fish.renderer.GoldenfishRenderer
 import com.alxnns1.mobhunter.entity.fish.renderer.SushifishRenderer
 import com.alxnns1.mobhunter.entity.neopteran.HornetaurEntity
 import com.alxnns1.mobhunter.entity.neopteran.renderer.HornetaurRenderer
-import com.alxnns1.mobhunter.item.MHSpawnEggItem
 import net.minecraft.entity.EntityClassification
 import net.minecraft.entity.EntityType
 import net.minecraft.entity.LivingEntity
@@ -35,8 +34,6 @@ object MHEntities {
 			neopteran("hornetaur", ::HornetaurEntity,
 				Attributes.MAX_HEALTH to 4.0, Attributes.MOVEMENT_SPEED to 0.2, Attributes.ATTACK_DAMAGE to 2.0)
 		)
-
-		MHSpawnEggItem.initEggs()
 	}
 
 	@OnlyIn(Dist.CLIENT)

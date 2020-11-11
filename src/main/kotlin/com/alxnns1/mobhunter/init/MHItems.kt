@@ -5,6 +5,9 @@ import com.alxnns1.mobhunter.item.MHSpawnEggItem
 import net.minecraft.block.Block
 import net.minecraft.entity.EntityType
 import net.minecraft.item.*
+import net.minecraftforge.api.distmarker.Dist
+import net.minecraftforge.api.distmarker.OnlyIn
+import net.minecraftforge.client.event.ColorHandlerEvent
 import net.minecraftforge.event.RegistryEvent
 import thedarkcolour.kotlinforforge.forge.objectHolder
 
@@ -93,6 +96,15 @@ object MHItems {
 
 		// Item Blocks
 		MHBlocks.BLOCKS.forEach { registry.register(block(it)) }
+	}
+
+	@OnlyIn(Dist.CLIENT)
+	fun registerItemColours(event: ColorHandlerEvent.Item) {
+		// Need to register our spawn egg colours manually, as our eggs are inserted into SpawnEggItem.EGGS after the
+		//  list is used to register egg colours in vanilla
+		event.itemColors.register({ stack, tintIndex ->
+			(stack.item as MHSpawnEggItem).getColor(tintIndex)
+		}, *MHSpawnEggItem.getNewEggsArray())
 	}
 
 	private fun props(group: ItemGroup? = null): Item.Properties =

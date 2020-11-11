@@ -8,6 +8,8 @@ import net.minecraft.block.SoundType
 import net.minecraft.block.material.Material
 import net.minecraft.client.renderer.RenderType
 import net.minecraft.client.renderer.RenderTypeLookup
+import net.minecraftforge.api.distmarker.Dist
+import net.minecraftforge.api.distmarker.OnlyIn
 import net.minecraftforge.client.event.ColorHandlerEvent
 import net.minecraftforge.common.ToolType
 import net.minecraftforge.event.RegistryEvent
@@ -142,8 +144,10 @@ object MHBlocks {
 		)
 	}
 
+	@OnlyIn(Dist.CLIENT)
 	fun setRenderLayers(): Unit = PLANTS.forEach { RenderTypeLookup.setRenderLayer(it, RenderType.getCutoutMipped()) }
 
+	@OnlyIn(Dist.CLIENT)
 	fun registerBlockColours(event: ColorHandlerEvent.Block) {
 		event.blockColors.register(
 			{ state, _, _, _ -> state.block.let { if (it is MHPlant) it.colour else -1 } },

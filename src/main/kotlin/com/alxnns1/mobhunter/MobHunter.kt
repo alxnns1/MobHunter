@@ -4,6 +4,7 @@ import com.alxnns1.mobhunter.entity.MHEntity
 import com.alxnns1.mobhunter.init.MHBlocks
 import com.alxnns1.mobhunter.init.MHEntities
 import com.alxnns1.mobhunter.init.MHItems
+import com.alxnns1.mobhunter.item.MHSpawnEggItem
 import com.alxnns1.mobhunter.world.MHWorldGen
 import net.minecraft.item.ItemStack
 import net.minecraft.loot.LootEntry
@@ -11,6 +12,7 @@ import net.minecraft.loot.LootPool
 import net.minecraft.loot.LootTables
 import net.minecraft.loot.TableLootEntry
 import net.minecraft.util.ResourceLocation
+import net.minecraftforge.api.distmarker.Dist
 import net.minecraftforge.event.LootTableLoadEvent
 import net.minecraftforge.event.entity.EntityEvent
 import net.minecraftforge.fml.common.Mod
@@ -19,6 +21,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent
 import org.apache.logging.log4j.LogManager
 import thedarkcolour.kotlinforforge.forge.FORGE_BUS
 import thedarkcolour.kotlinforforge.forge.MOD_BUS
+import thedarkcolour.kotlinforforge.forge.runWhenOn
 
 @Mod(MobHunter.MOD_ID)
 object MobHunter {
@@ -37,7 +40,10 @@ object MobHunter {
 			addGenericListener(MHItems::register)
 			addGenericListener(MHBlocks::register)
 			addGenericListener(MHEntities::register)
-			addListener(MHBlocks::registerBlockColours)
+			runWhenOn(Dist.CLIENT) {
+				addListener(MHBlocks::registerBlockColours)
+				addListener(MHItems::registerItemColours)
+			}
 		}
 		FORGE_BUS.apply {
 			addListener(::lootTableLoad)
@@ -47,6 +53,7 @@ object MobHunter {
 	}
 
 	private fun setupCommon(event: FMLCommonSetupEvent) {
+		MHSpawnEggItem.initEggs()
 		MHWorldGen.register()
 	}
 
