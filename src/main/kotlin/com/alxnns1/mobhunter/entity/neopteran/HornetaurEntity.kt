@@ -1,8 +1,10 @@
 package com.alxnns1.mobhunter.entity.neopteran
 
 import net.minecraft.block.BlockState
+import net.minecraft.entity.EntitySize
 import net.minecraft.entity.EntityType
 import net.minecraft.entity.LivingEntity
+import net.minecraft.entity.Pose
 import net.minecraft.entity.ai.goal.*
 import net.minecraft.entity.merchant.villager.AbstractVillagerEntity
 import net.minecraft.entity.player.PlayerEntity
@@ -18,6 +20,8 @@ class HornetaurEntity(type: EntityType<HornetaurEntity>, world: World) : MHNeopt
 
 	// TODO: Remove - this is just here atm to demo scaling
 	override fun getMaxScale(): Float = 2F
+
+	override fun getStandingEyeHeight(poseIn: Pose, sizeIn: EntitySize) = sizeIn.height/2
 
 	override fun registerGoals() {
 		goalSelector.addGoal(1, SwimGoal(this))
