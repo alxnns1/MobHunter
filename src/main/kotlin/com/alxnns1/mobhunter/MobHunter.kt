@@ -5,6 +5,7 @@ import com.alxnns1.mobhunter.init.MHBlocks
 import com.alxnns1.mobhunter.init.MHEntities
 import com.alxnns1.mobhunter.init.MHItems
 import com.alxnns1.mobhunter.item.MHSpawnEggItem
+import com.alxnns1.mobhunter.world.MHMobSpawns
 import com.alxnns1.mobhunter.world.MHWorldGen
 import net.minecraft.item.ItemStack
 import net.minecraft.loot.LootEntry
@@ -49,6 +50,7 @@ object MobHunter {
 			addListener(::lootTableLoad)
 			addListener(::entityConstructing)
 			addListener(MHWorldGen::generate)
+			addListener(MHMobSpawns::register)
 		}
 	}
 
