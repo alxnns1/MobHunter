@@ -59,13 +59,13 @@ object MHWorldGen {
 
 		overworldPlants = listOf(
 			plant("overworld_herbs",
-				MHBlocks.HERB to 18,
 				MHBlocks.ANTIDOTE_HERB to 21,
-				MHBlocks.FIRE_HERB to 16,
-				MHBlocks.IVY to 14,
-				MHBlocks.SLEEP_HERB to 15,
-				MHBlocks.SAP_PLANT to 9,
-				MHBlocks.FELVINE to 8
+				MHBlocks.HERB to 18,
+				MHBlocks.IVY to 16,
+				MHBlocks.SAP_PLANT to 15,
+				MHBlocks.SLEEP_HERB to 14,
+				MHBlocks.FELVINE to 9,
+				MHBlocks.GLOAMGRASS_ROOT to 8
 			),
 			plant("overworld_mushrooms",
 				MHBlocks.BLUE_MUSHROOM to 20,
@@ -124,27 +124,27 @@ object MHWorldGen {
 		val category = event.category
 		val type = BiomeDictionary.Type.fromVanilla(category)
 
-		// Ores
-		gen.withFeatures(
-			GenerationStage.Decoration.UNDERGROUND_ORES,
-			when (type) {
-				BiomeDictionary.Type.NETHER -> netherOres
-				BiomeDictionary.Type.END, BiomeDictionary.Type.VOID -> endOres
-				BiomeDictionary.Type.WET, BiomeDictionary.Type.OCEAN, BiomeDictionary.Type.RIVER -> wetOres
-				BiomeDictionary.Type.COLD, BiomeDictionary.Type.SNOWY -> coldOres
-				else -> overworldOres
-			}
-		)
-
-		// Plants
-		when {
-			type == BiomeDictionary.Type.NETHER ->
+		when (type) {
+			BiomeDictionary.Type.NETHER -> {
+				gen.withFeatures(GenerationStage.Decoration.UNDERGROUND_ORES, netherOres)
 				gen.withFeatures(GenerationStage.Decoration.UNDERGROUND_DECORATION, netherPlants)
-			type == BiomeDictionary.Type.END || type == BiomeDictionary.Type.VOID ->
+			}
+			BiomeDictionary.Type.END, BiomeDictionary.Type.VOID -> {
+				gen.withFeatures(GenerationStage.Decoration.UNDERGROUND_ORES, endOres)
 				gen.withFeatures(GenerationStage.Decoration.VEGETAL_DECORATION, endPlants)
-			type == BiomeDictionary.Type.HOT || category == Biome.Category.DESERT ->
-				gen.withFeatures(GenerationStage.Decoration.VEGETAL_DECORATION, hotPlants)
-			else -> gen.withFeatures(GenerationStage.Decoration.VEGETAL_DECORATION, overworldPlants)
+			}
+			else -> {
+				gen.withFeatures(GenerationStage.Decoration.UNDERGROUND_ORES, overworldOres)
+				gen.withFeatures(GenerationStage.Decoration.VEGETAL_DECORATION, overworldPlants)
+			}
+		}
+		if (type == BiomeDictionary.Type.WET && type == BiomeDictionary.Type.OCEAN && type == BiomeDictionary.Type.RIVER) {
+			gen.withFeatures(GenerationStage.Decoration.UNDERGROUND_ORES, wetOres)
+		} else if (type == BiomeDictionary.Type.COLD && type == BiomeDictionary.Type.SNOWY) {
+			gen.withFeatures(GenerationStage.Decoration.UNDERGROUND_ORES, coldOres)
+			gen.withFeatures(GenerationStage.Decoration.VEGETAL_DECORATION, coldPlants)
+		} else if (type == BiomeDictionary.Type.HOT || category == Biome.Category.DESERT) {
+			gen.withFeatures(GenerationStage.Decoration.VEGETAL_DECORATION, hotPlants)
 		}
 	}
 
