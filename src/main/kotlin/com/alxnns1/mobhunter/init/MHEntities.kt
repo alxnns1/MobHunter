@@ -7,6 +7,7 @@ import com.alxnns1.mobhunter.entity.fish.renderer.GoldenfishRenderer
 import com.alxnns1.mobhunter.entity.fish.renderer.SushifishRenderer
 import com.alxnns1.mobhunter.entity.neopteran.HornetaurEntity
 import com.alxnns1.mobhunter.entity.neopteran.renderer.HornetaurRenderer
+import com.alxnns1.mobhunter.item.MHSpawnEggItem
 import net.minecraft.entity.EntityClassification
 import net.minecraft.entity.EntityType
 import net.minecraft.entity.LivingEntity
@@ -23,16 +24,20 @@ import net.minecraftforge.fml.client.registry.RenderingRegistry
 import thedarkcolour.kotlinforforge.forge.objectHolder
 
 object MHEntities {
-	private val SUSHIFISH: EntityType<SushifishEntity> by objectHolder("sushifish")
-	private val GOLDENFISH: EntityType<GoldenfishEntity> by objectHolder("goldenfish")
-	private val HORNETAUR: EntityType<HornetaurEntity> by objectHolder("hornetaur")
+	val SUSHIFISH: EntityType<SushifishEntity> by objectHolder("sushifish")
+	val GOLDENFISH: EntityType<GoldenfishEntity> by objectHolder("goldenfish")
+	val HORNETAUR: EntityType<HornetaurEntity> by objectHolder("hornetaur")
 
-	fun register(event: RegistryEvent.Register<EntityType<*>>): Unit = event.registry.registerAll(
-		fish("sushifish", ::SushifishEntity, Attributes.MAX_HEALTH to 3.0),
-		fish("goldenfish", ::GoldenfishEntity, Attributes.MAX_HEALTH to 3.0),
-		neopteran("hornetaur", ::HornetaurEntity,
-			Attributes.MAX_HEALTH to 4.0, Attributes.MOVEMENT_SPEED to 0.2, Attributes.ATTACK_DAMAGE to 2.0)
-	)
+	fun register(event: RegistryEvent.Register<EntityType<*>>) {
+		event.registry.registerAll(
+			fish("sushifish", ::SushifishEntity, Attributes.MAX_HEALTH to 3.0),
+			fish("goldenfish", ::GoldenfishEntity, Attributes.MAX_HEALTH to 3.0),
+			neopteran("hornetaur", ::HornetaurEntity,
+				Attributes.MAX_HEALTH to 4.0, Attributes.MOVEMENT_SPEED to 0.2, Attributes.ATTACK_DAMAGE to 2.0)
+		)
+
+		MHSpawnEggItem.initEggs()
+	}
 
 	@OnlyIn(Dist.CLIENT)
 	fun registerRenderers() {

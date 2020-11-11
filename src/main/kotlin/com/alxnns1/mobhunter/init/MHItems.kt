@@ -1,7 +1,9 @@
 package com.alxnns1.mobhunter.init
 
 import com.alxnns1.mobhunter.MobHunter
+import com.alxnns1.mobhunter.item.MHSpawnEggItem
 import net.minecraft.block.Block
+import net.minecraft.entity.EntityType
 import net.minecraft.item.*
 import net.minecraftforge.event.RegistryEvent
 import thedarkcolour.kotlinforforge.forge.objectHolder
@@ -16,6 +18,9 @@ object MHItems {
 	val DRAGONITE_INGOT: Item by objectHolder("dragonite_ingot")
 	val CARBALITE_INGOT: Item by objectHolder("carbalite_ingot")
 	val ELTALITE_INGOT: Item by objectHolder("eltalite_ingot")
+
+	// Spawn Eggs
+	val GOLDENFISH_EGG: Item by objectHolder("goldenfish_egg")
 
 	fun register(event: RegistryEvent.Register<Item>) {
 		val registry = event.registry
@@ -66,6 +71,14 @@ object MHItems {
 			*tools("dragonite", MHItemTier.DRAGONITE),
 			*tools("carbalite", MHItemTier.CARBALITE),
 			*tools("eltalite", MHItemTier.ELTALITE),
+
+			// Spawn Eggs
+
+			// Fish
+			spawnegg("sushifish_egg", 0xB07A4D, 0x734F32) { MHEntities.SUSHIFISH },
+			spawnegg("goldenfish_egg", 0xC8B235, 0x837422) { MHEntities.GOLDENFISH },
+			// Neopterans
+			spawnegg("hornetaur_egg", 0x40807B, 0xE65B00) { MHEntities.HORNETAUR }
 		)
 
 		// Item Blocks
@@ -100,4 +113,11 @@ object MHItems {
 
 	private fun block(block: Block): Item =
 		BlockItem(block, props(MobHunter.GROUP_BLOCKS)).setRegistryName(block.registryName)
+
+	private fun spawnegg(
+		name: String,
+		primaryColour: Int,
+		secondaryColour: Int,
+		entityTypeSupplier: () -> EntityType<*>
+	): Item = MHSpawnEggItem(entityTypeSupplier, primaryColour, secondaryColour, props(MobHunter.GROUP_ENTITIES)).setRegistryName(name)
 }

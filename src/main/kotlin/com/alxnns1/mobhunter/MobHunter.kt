@@ -14,7 +14,6 @@ import net.minecraft.util.ResourceLocation
 import net.minecraftforge.event.LootTableLoadEvent
 import net.minecraftforge.event.entity.EntityEvent
 import net.minecraftforge.fml.common.Mod
-import net.minecraftforge.fml.common.ObfuscationReflectionHelper
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent
 import org.apache.logging.log4j.LogManager
@@ -29,6 +28,7 @@ object MobHunter {
 	val GROUP_BLOCKS = MHItemGroup("blocks") { ItemStack(MHBlocks.MACHALITE_BLOCK) }
 	val GROUP_ITEMS = MHItemGroup("items") { ItemStack(MHItems.ICON_ITEMS) }
 	val GROUP_TOOLS = MHItemGroup("tools") { ItemStack(MHItems.ICON_TOOLS) }
+	val GROUP_ENTITIES = MHItemGroup("entities") { ItemStack(MHItems.GOLDENFISH_EGG) }
 
 	init {
 		MOD_BUS.apply {
@@ -59,11 +59,8 @@ object MobHunter {
 		if (event.name != LootTables.GAMEPLAY_FISHING)
 			return
 		val pool = event.table.getPool("main")
-		try {
-			val lootEntries = ObfuscationReflectionHelper.getPrivateValue<MutableList<LootEntry>, LootPool>(LootPool::class.java, pool, "field_186453_a")
-			lootEntries!!.add(TableLootEntry.builder(ResourceLocation(MOD_ID, "gameplay/fishing/fish")).weight(85).quality(-1).build())
-		} catch (e: Exception) {
-			LOGGER.error("Error trying to insert into loot table", e)
+		withPrivateValue<MutableList<LootEntry>, LootPool>(pool, "field_186453_a") {
+			it.add(TableLootEntry.builder(ResourceLocation(MOD_ID, "gameplay/fishing/fish")).weight(85).quality(-1).build())
 		}
 	}
 
