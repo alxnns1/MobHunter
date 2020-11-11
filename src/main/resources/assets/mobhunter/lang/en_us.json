@@ -3,6 +3,7 @@
 	"itemGroup.mobhunter_items": "MobHunter Items",
 	"itemGroup.mobhunter_tools": "MobHunter Tools",
 	"itemGroup.mobhunter_entities": "MobHunter Entities",
+
 	"entity.mobhunter.ancient_fish": "Ancient Fish",
 	"entity.mobhunter.brocadefish": "Brocadefish",
 	"entity.mobhunter.bomb_arowana": "Bomb Arowana",
@@ -143,6 +144,18 @@
 	"item.mobhunter.sushifish": "Sushifish",
 	"item.mobhunter.whetfish": "Whetfish",
 	"item.mobhunter.wanchovy": "Wanchovy",
+
+	"item.mobhunter.monster_broth": "Monster Broth",
+	"item.mobhunter.monster_essence": "Monster Essence",
+	"item.mobhunter.monster_fluid": "Monster Fluid",
+
+	"item.mobhunter.hornetaur_carapace": "Hornetaur Carapace",
+	"item.mobhunter.hornetaur_head": "Hornetaur Head",
+	"item.mobhunter.hornetaur_innerwing": "Hornetaur Innerwing",
+	"item.mobhunter.hornetaur_razorwing": "Hornetaur Razorwing",
+	"item.mobhunter.hornetaur_shell": "Hornetaur Shell",
+	"item.mobhunter.hornetaur_wing": "Hornetaur Wing",
+
 	"item.mobhunter.sushifish_egg": "Sushifish Spawn Egg",
 	"item.mobhunter.goldenfish_egg": "Goldenfish Spawn Egg",
 	"item.mobhunter.hornetaur_egg": "Hornetaur Spawn Egg"

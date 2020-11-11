@@ -66,6 +66,16 @@ object MHItems {
 			item("king_brocadefish"),
 			item("premium_sashimi"),
 			item("silverfish"),
+			//Neopteran
+			item("hornetaur_shell"),
+			item("hornetaur_wing"),
+			item("hornetaur_carapace"),
+			item("hornetaur_head"),
+			item("monster_fluid"),
+			item("hornetaur_razorwing"),
+			item("monster_broth"),
+			item("hornetaur_innerwing"),
+			item("monster_essence"),
 			// Tools
 			*tools("machalite", MHItemTier.MACHALITE),
 			*tools("dragonite", MHItemTier.DRAGONITE),
