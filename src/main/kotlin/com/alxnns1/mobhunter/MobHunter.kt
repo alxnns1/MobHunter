@@ -16,6 +16,7 @@ import net.minecraft.util.ResourceLocation
 import net.minecraftforge.api.distmarker.Dist
 import net.minecraftforge.event.LootTableLoadEvent
 import net.minecraftforge.event.entity.EntityEvent
+import net.minecraftforge.eventbus.api.EventPriority
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent
@@ -50,7 +51,7 @@ object MobHunter {
 			addListener(::lootTableLoad)
 			addListener(::entityConstructing)
 			addListener(MHWorldGen::generate)
-			addListener(MHMobSpawns::register)
+			addListener(EventPriority.HIGH, MHMobSpawns::register)
 		}
 	}
 
