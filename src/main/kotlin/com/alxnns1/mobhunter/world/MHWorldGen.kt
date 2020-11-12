@@ -12,7 +12,7 @@ import net.minecraft.world.gen.blockplacer.SimpleBlockPlacer
 import net.minecraft.world.gen.blockstateprovider.WeightedBlockStateProvider
 import net.minecraft.world.gen.feature.*
 import net.minecraft.world.gen.feature.template.RuleTest
-import net.minecraftforge.common.BiomeDictionary
+import net.minecraftforge.common.BiomeDictionary.Type.*
 import net.minecraftforge.common.world.BiomeGenerationSettingsBuilder
 import net.minecraftforge.event.world.BiomeLoadingEvent
 
@@ -122,14 +122,14 @@ object MHWorldGen {
 	fun generate(event: BiomeLoadingEvent) {
 		val gen = event.generation
 		val category = event.category
-		val type = BiomeDictionary.Type.fromVanilla(category)
+		val type = fromVanilla(category)
 
 		when (type) {
-			BiomeDictionary.Type.NETHER -> {
+			NETHER -> {
 				gen.withFeatures(GenerationStage.Decoration.UNDERGROUND_ORES, netherOres)
 				gen.withFeatures(GenerationStage.Decoration.UNDERGROUND_DECORATION, netherPlants)
 			}
-			BiomeDictionary.Type.END, BiomeDictionary.Type.VOID -> {
+			END, VOID -> {
 				gen.withFeatures(GenerationStage.Decoration.UNDERGROUND_ORES, endOres)
 				gen.withFeatures(GenerationStage.Decoration.VEGETAL_DECORATION, endPlants)
 			}
@@ -138,13 +138,17 @@ object MHWorldGen {
 				gen.withFeatures(GenerationStage.Decoration.VEGETAL_DECORATION, overworldPlants)
 			}
 		}
-		if (type == BiomeDictionary.Type.WET && type == BiomeDictionary.Type.OCEAN && type == BiomeDictionary.Type.RIVER) {
-			gen.withFeatures(GenerationStage.Decoration.UNDERGROUND_ORES, wetOres)
-		} else if (type == BiomeDictionary.Type.COLD && type == BiomeDictionary.Type.SNOWY) {
-			gen.withFeatures(GenerationStage.Decoration.UNDERGROUND_ORES, coldOres)
-			gen.withFeatures(GenerationStage.Decoration.VEGETAL_DECORATION, coldPlants)
-		} else if (type == BiomeDictionary.Type.HOT || category == Biome.Category.DESERT) {
-			gen.withFeatures(GenerationStage.Decoration.VEGETAL_DECORATION, hotPlants)
+		when {
+			type == WET || type == OCEAN || type == RIVER -> {
+				gen.withFeatures(GenerationStage.Decoration.UNDERGROUND_ORES, wetOres)
+			}
+			type == COLD || type == SNOWY -> {
+				gen.withFeatures(GenerationStage.Decoration.UNDERGROUND_ORES, coldOres)
+				gen.withFeatures(GenerationStage.Decoration.VEGETAL_DECORATION, coldPlants)
+			}
+			type == HOT || category == Biome.Category.DESERT -> {
+				gen.withFeatures(GenerationStage.Decoration.VEGETAL_DECORATION, hotPlants)
+			}
 		}
 	}
 
