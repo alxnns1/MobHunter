@@ -179,7 +179,7 @@ object MHWorldGen {
 					weightedBlocks.forEach { addWeightedBlockstate(it.first.defaultState, it.second) }
 				},
 				SimpleBlockPlacer.PLACER
-			).tries(64).build())
+			).tries(32).build())
 			.withPlacement(Features.Placements.VEGETATION_PLACEMENT)
 			.withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT)
 			.func_242731_b(2) // spread
