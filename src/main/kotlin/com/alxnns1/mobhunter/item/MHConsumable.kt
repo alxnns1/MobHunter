@@ -15,7 +15,8 @@ import net.minecraft.util.DrinkHelper
 import net.minecraft.util.Hand
 import net.minecraft.world.World
 
-class MHConsumable(properties: Properties, private vararg val potionEffectInstances: EffectInstance) : Item(properties) {
+class MHConsumable(properties: Properties, potionEffects: () -> Array<EffectInstance>) : Item(properties) {
+	private val potionEffects: Array<EffectInstance> by lazy(potionEffects)
 
 	override fun onItemUseFinish(stack: ItemStack, worldIn: World, entityLiving: LivingEntity): ItemStack? {
 		val playerEntity = if (entityLiving is PlayerEntity) entityLiving else null
@@ -23,7 +24,7 @@ class MHConsumable(properties: Properties, private vararg val potionEffectInstan
 			CriteriaTriggers.CONSUME_ITEM.trigger(playerEntity, stack)
 		}
 		if (!worldIn.isRemote) {
-			for (effectInstance in potionEffectInstances) {
+			for (effectInstance in potionEffects) {
 				if (effectInstance.potion.isInstant) {
 					effectInstance.potion.affectEntity(playerEntity, playerEntity, entityLiving, effectInstance.amplifier, 1.0)
 				} else {

@@ -1,15 +1,12 @@
 package com.alxnns1.mobhunter.init
 
 import com.alxnns1.mobhunter.MobHunter
-import com.alxnns1.mobhunter.effect.AntidoteEffect
 import com.alxnns1.mobhunter.item.MHConsumable
 import com.alxnns1.mobhunter.item.MHSpawnEggItem
 import net.minecraft.block.Block
 import net.minecraft.entity.EntityType
 import net.minecraft.item.*
-import net.minecraft.potion.Effect
 import net.minecraft.potion.EffectInstance
-import net.minecraft.potion.EffectType
 import net.minecraft.potion.Effects
 import net.minecraftforge.api.distmarker.Dist
 import net.minecraftforge.api.distmarker.OnlyIn
@@ -57,10 +54,10 @@ object MHItems {
 			icon("icon_items"),
 			icon("icon_tools"),
 			//CONSUMABLES
-			consumable("potion", EffectInstance(Effects.INSTANT_HEALTH, 0, 1)),
-			consumable("mega_potion", EffectInstance(Effects.INSTANT_HEALTH, 0, 2)),
-			consumable("antidote", EffectInstance(AntidoteEffect(), 0, 1)),
-			consumable("energy_drink", EffectInstance(Effects.SATURATION, 0, 1)),
+			consumable("potion") { arrayOf(EffectInstance(Effects.INSTANT_HEALTH, 0, 1)) },
+			consumable("mega_potion") { arrayOf(EffectInstance(Effects.INSTANT_HEALTH, 0, 2)) },
+			consumable("antidote") { arrayOf(EffectInstance(MHEffects.ANTIDOTE, 0, 1)) },
+			consumable("energy_drink") { arrayOf(EffectInstance(Effects.SATURATION, 0, 1)) },
 			//BREWING INTERMEDIARIES
 			item("blue_mushroom_intermediary"),
 			item("bitterbug_intermediary"),
@@ -177,7 +174,6 @@ object MHItems {
 		entityTypeSupplier: () -> EntityType<*>
 	): Item = MHSpawnEggItem(entityTypeSupplier, primaryColour, secondaryColour, props(MobHunter.GROUP_ENTITIES)).setRegistryName(name)
 
-	private fun consumable(name: String, vararg effectInstances: EffectInstance): Item {
-		return MHConsumable(props(), *effectInstances).setRegistryName(name)
-	}
+	private fun consumable(name: String, potionEffects: () -> Array<EffectInstance>): Item =
+		MHConsumable(props(MobHunter.GROUP_ITEMS), potionEffects).setRegistryName(name)
 }
