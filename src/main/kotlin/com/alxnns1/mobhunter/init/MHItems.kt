@@ -1,10 +1,16 @@
 package com.alxnns1.mobhunter.init
 
 import com.alxnns1.mobhunter.MobHunter
+import com.alxnns1.mobhunter.effect.AntidoteEffect
+import com.alxnns1.mobhunter.item.MHConsumable
 import com.alxnns1.mobhunter.item.MHSpawnEggItem
 import net.minecraft.block.Block
 import net.minecraft.entity.EntityType
 import net.minecraft.item.*
+import net.minecraft.potion.Effect
+import net.minecraft.potion.EffectInstance
+import net.minecraft.potion.EffectType
+import net.minecraft.potion.Effects
 import net.minecraftforge.api.distmarker.Dist
 import net.minecraftforge.api.distmarker.OnlyIn
 import net.minecraftforge.client.event.ColorHandlerEvent
@@ -16,11 +22,30 @@ object MHItems {
 	val ICON_ITEMS: Item by objectHolder("icon_items")
 	val ICON_TOOLS: Item by objectHolder("icon_tools")
 
+	//Consumables
+	val POTION:Item by objectHolder("potion")
+	val MEGA_POTION:Item by objectHolder("mega_potion")
+	val ANTIDOTE:Item by objectHolder("antidote")
+	val ENERGY_DRINK:Item by objectHolder("energy_drink")
+
+	//Brewing Intermediaries
+	val BLUE_MUSHROOM_INTERMEDIARY: Item by objectHolder("blue_mushroom_intermediary")
+	val BITTERBUG_INTERMEDIARY: Item by objectHolder("bitterbug_intermediary")
+	val NITROSHROOM_INTERMEDIARY: Item by objectHolder("nitroshroom_intermediary")
+
 	// Ores
 	val MACHALITE_INGOT: Item by objectHolder("machalite_ingot")
 	val DRAGONITE_INGOT: Item by objectHolder("dragonite_ingot")
 	val CARBALITE_INGOT: Item by objectHolder("carbalite_ingot")
 	val ELTALITE_INGOT: Item by objectHolder("eltalite_ingot")
+
+	//HERBS
+	val HERB: Item by objectHolder("herb")
+	val ANTIDOTE_HERB: Item by objectHolder("antidote_herb")
+
+	//MUSHROOMS
+	val BLUE_MUSHROOM: Item by objectHolder("blue_mushroom")
+	val NITROSHROOM: Item by objectHolder("nitroshroom")
 
 	// Spawn Eggs
 	val GOLDENFISH_EGG: Item by objectHolder("goldenfish_egg")
@@ -31,6 +56,15 @@ object MHItems {
 			// Icons
 			icon("icon_items"),
 			icon("icon_tools"),
+			//CONSUMABLES
+			consumable("potion", EffectInstance(Effects.INSTANT_HEALTH, 0, 1)),
+			consumable("mega_potion", EffectInstance(Effects.INSTANT_HEALTH, 0, 2)),
+			consumable("antidote", EffectInstance(AntidoteEffect(), 0, 1)),
+			consumable("energy_drink", EffectInstance(Effects.SATURATION, 0, 1)),
+			//BREWING INTERMEDIARIES
+			item("blue_mushroom_intermediary"),
+			item("bitterbug_intermediary"),
+			item("nitroshroom_intermediary"),
 			// Ores
 			item("earth_crystal"),
 			item("machalite_ingot"),
@@ -101,7 +135,7 @@ object MHItems {
 	@OnlyIn(Dist.CLIENT)
 	fun registerItemColours(event: ColorHandlerEvent.Item) {
 		// Need to register our spawn egg colours manually, as our eggs are inserted into SpawnEggItem.EGGS after the
-		//  list is used to register egg colours in vanilla
+		// list is used to register egg colours in vanilla
 		event.itemColors.register({ stack, tintIndex ->
 			(stack.item as MHSpawnEggItem).getColor(tintIndex)
 		}, *MHSpawnEggItem.getNewEggsArray())
@@ -142,4 +176,8 @@ object MHItems {
 		secondaryColour: Int,
 		entityTypeSupplier: () -> EntityType<*>
 	): Item = MHSpawnEggItem(entityTypeSupplier, primaryColour, secondaryColour, props(MobHunter.GROUP_ENTITIES)).setRegistryName(name)
+
+	private fun consumable(name: String, vararg effectInstances: EffectInstance): Item {
+		return MHConsumable(props(), *effectInstances).setRegistryName(name)
+	}
 }

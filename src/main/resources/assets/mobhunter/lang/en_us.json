@@ -4,6 +4,9 @@
 	"itemGroup.mobhunter_tools": "MobHunter Tools",
 	"itemGroup.mobhunter_entities": "MobHunter Entities",
 
+	"effect.mobhunter.antidote": "Antidote",
+	"effect.mobhunter.paralysis": "Paralysis",
+
 	"entity.mobhunter.ancient_fish": "Ancient Fish",
 	"entity.mobhunter.brocadefish": "Brocadefish",
 	"entity.mobhunter.bomb_arowana": "Bomb Arowana",
@@ -89,6 +92,15 @@
 	"block.mobhunter.purecrystal_block": "Block of Purecrystal",
 	"block.mobhunter.allfire_stone_block": "Block of Allfire Stone",
 	"block.mobhunter.ultimas_crystal_block": "Block of Ultimas Crystal",
+
+	"item.mobhunter.potion": "Potion",
+	"item.mobhunter.mega_potion": "Mega Potion",
+	"item.mobhunter.antidote": "Antidote",
+	"item.mobhunter.energy_drink": "Energy Drink",
+
+	"item.mobhunter.blue_mushroom_intermediary": "Blue Solution",
+	"item.mobhunter.bitterbug_intermediary": "Bitter Solution",
+	"item.mobhunter.nitroshroom_intermediary": "Nitro Solution",
 
 	"item.mobhunter.carbalite_axe": "Carbalite Axe",
 	"item.mobhunter.carbalite_hoe": "Carbalite Hoe",

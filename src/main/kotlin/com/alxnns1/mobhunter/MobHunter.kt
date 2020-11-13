@@ -1,9 +1,7 @@
 package com.alxnns1.mobhunter
 
 import com.alxnns1.mobhunter.entity.MHEntity
-import com.alxnns1.mobhunter.init.MHBlocks
-import com.alxnns1.mobhunter.init.MHEntities
-import com.alxnns1.mobhunter.init.MHItems
+import com.alxnns1.mobhunter.init.*
 import com.alxnns1.mobhunter.item.MHSpawnEggItem
 import com.alxnns1.mobhunter.world.MHMobSpawns
 import com.alxnns1.mobhunter.world.MHWorldGen
@@ -39,9 +37,11 @@ object MobHunter {
 		MOD_BUS.apply {
 			addListener(::setupCommon)
 			addListener(::setupClient)
+			addListener(MHBrewingRecipes::register)
 			addGenericListener(MHItems::register)
 			addGenericListener(MHBlocks::register)
 			addGenericListener(MHEntities::register)
+			addGenericListener(MHEffects::register)
 			runWhenOn(Dist.CLIENT) {
 				addListener(MHBlocks::registerBlockColours)
 				addListener(MHItems::registerItemColours)

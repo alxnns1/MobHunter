@@ -1,6 +1,5 @@
 package com.alxnns1.mobhunter.entity.neopteran
 
-import com.alxnns1.mobhunter.MobHunter
 import net.minecraft.block.BlockState
 import net.minecraft.block.Blocks
 import net.minecraft.entity.*
@@ -19,7 +18,7 @@ import net.minecraft.world.World
 
 class HornetaurEntity(type: EntityType<HornetaurEntity>, world: World) : MHNeopteranEntity(type, world) {
 
-	override fun getStandingEyeHeight(poseIn: Pose, sizeIn: EntitySize) = sizeIn.height/2
+	override fun getStandingEyeHeight(poseIn: Pose, sizeIn: EntitySize) = sizeIn.height / 2
 
 	override fun registerGoals() {
 		goalSelector.addGoal(1, SwimGoal(this))
@@ -57,7 +56,7 @@ class HornetaurEntity(type: EntityType<HornetaurEntity>, world: World) : MHNeopt
 	}
 
 	override fun onInitialSpawn(worldIn: IServerWorld, difficultyIn: DifficultyInstance, reason: SpawnReason, spawnDataIn: ILivingEntityData?, dataTag: CompoundNBT?): ILivingEntityData? {
-		MobHunter.LOGGER.error("Hornetaur spawned at ($posX, $posY, $posZ)")
+//		MobHunter.LOGGER.error("Hornetaur spawned at ($posX, $posY, $posZ)")
 		return super.onInitialSpawn(worldIn, difficultyIn, reason, spawnDataIn, dataTag)
 	}
 
