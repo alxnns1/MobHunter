@@ -10,19 +10,13 @@ import net.minecraftforge.common.BiomeDictionary.Type.*
 import net.minecraftforge.event.world.BiomeLoadingEvent
 
 object MHMobSpawns {
-	private var hasBeenInit = false
 	private val SPAWNS = mutableMapOf<BiomeDictionary.Type, MutableSet<Pair<EntityClassification, MobSpawnInfo.Spawners>>>()
 
-	private fun init() {
-		if (hasBeenInit)
-			return
-		hasBeenInit = true
-
+	fun init() {
 		spawn(CREATURE, MHEntities.HORNETAUR, 100, 1, 5, MESA, FOREST, PLAINS, MOUNTAIN, HILLS, SWAMP)
 	}
 
 	fun register(event: BiomeLoadingEvent) {
-		init()
 		val type = fromVanilla(event.category)
 		SPAWNS[type]?.forEach {
 			event.spawns.getSpawner(it.first).add(it.second)

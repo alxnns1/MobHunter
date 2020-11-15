@@ -57,6 +57,7 @@ object MobHunter {
 
 	private fun setupCommon(event: FMLCommonSetupEvent) {
 		MHSpawnEggItem.initEggs()
+		MHMobSpawns.init()
 		MHWorldGen.register()
 	}
 
