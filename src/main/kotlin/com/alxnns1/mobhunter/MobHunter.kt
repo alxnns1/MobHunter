@@ -39,6 +39,7 @@ object MobHunter {
 			addListener(::setupClient)
 			addListener(MHBrewingRecipes::register)
 			addGenericListener(MHItems::register)
+			addGenericListener(MHSwords::register)
 			addGenericListener(MHBlocks::register)
 			addGenericListener(MHEntities::register)
 			addGenericListener(MHEffects::register)
