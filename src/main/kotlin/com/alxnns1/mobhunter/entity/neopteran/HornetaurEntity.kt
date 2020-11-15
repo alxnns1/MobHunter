@@ -47,11 +47,11 @@ class HornetaurEntity(type: EntityType<HornetaurEntity>, world: World) : MHNeopt
 
 	override fun getBlockPathWeight(pos: BlockPos, worldIn: IWorldReader): Float {
 		return when {
-			worldIn.getBlockState(pos.down()).isIn(Blocks.GRASS_BLOCK) -> 10.0f
-			worldIn.getBlockState(pos.down()).isIn(Blocks.DIRT) -> 10.0f
-			worldIn.getBlockState(pos.down()).isIn(Blocks.SAND) -> 10.0f
-			worldIn.getBlockState(pos.down()).isIn(Blocks.GRAVEL) -> 10.0f
-			else -> 0f
+			worldIn.getBlockState(pos.down()).isIn(Blocks.GRASS_BLOCK) -> 1f
+			worldIn.getBlockState(pos.down()).isIn(Blocks.DIRT) -> 1f
+			worldIn.getBlockState(pos.down()).isIn(Blocks.SAND) -> 1f
+			worldIn.getBlockState(pos.down()).isIn(Blocks.GRAVEL) -> 1f
+			else -> -1f
 		}
 	}
 
