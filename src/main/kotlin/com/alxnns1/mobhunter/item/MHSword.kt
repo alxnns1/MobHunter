@@ -12,7 +12,7 @@ import net.minecraft.item.ItemStack
 import net.minecraft.item.SwordItem
 
 class MHSword(
-	private val sharpness: IntArray,
+	private val sharpness: List<Int>,
 	tier: IItemTier,
 	private val attackDamageIn: Int,
 	private val attackSpeedIn: Float,

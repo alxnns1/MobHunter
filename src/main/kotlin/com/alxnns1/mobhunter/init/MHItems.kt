@@ -18,12 +18,13 @@ object MHItems {
 	// Icons
 	val ICON_ITEMS: Item by objectHolder("icon_items")
 	val ICON_TOOLS: Item by objectHolder("icon_tools")
+	val ICON_SNS: Item by objectHolder("icon_sns")
 
 	//Consumables
-	val POTION:Item by objectHolder("potion")
-	val MEGA_POTION:Item by objectHolder("mega_potion")
-	val ANTIDOTE:Item by objectHolder("antidote")
-	val ENERGY_DRINK:Item by objectHolder("energy_drink")
+	val POTION: Item by objectHolder("potion")
+	val MEGA_POTION: Item by objectHolder("mega_potion")
+	val ANTIDOTE: Item by objectHolder("antidote")
+	val ENERGY_DRINK: Item by objectHolder("energy_drink")
 
 	//Brewing Intermediaries
 	val BLUE_MUSHROOM_INTERMEDIARY: Item by objectHolder("blue_mushroom_intermediary")
@@ -53,6 +54,7 @@ object MHItems {
 			// Icons
 			icon("icon_items"),
 			icon("icon_tools"),
+			icon("icon_sns"),
 			//CONSUMABLES
 			consumable("potion") { arrayOf(EffectInstance(Effects.INSTANT_HEALTH, 0, 1)) },
 			consumable("mega_potion") { arrayOf(EffectInstance(Effects.INSTANT_HEALTH, 0, 2)) },
