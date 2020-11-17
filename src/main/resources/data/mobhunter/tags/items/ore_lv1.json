@@ -1,0 +1,15 @@
+{
+  "values": [
+    "#forge:ingots/iron",
+    "#forge:ingots/gold",
+    "#forge:gems/lapis",
+    "#forge:gems/quartz",
+    "minecraft:flint",
+    "mobhunter:bealite_ingot",
+    "mobhunter:dragonite_ingot",
+    "mobhunter:earth_crystal",
+    "mobhunter:firestone",
+    "mobhunter:lightcrystal",
+    "mobhunter:machalite_ingot"
+  ]
+}

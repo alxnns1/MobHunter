@@ -20,13 +20,13 @@ object MHItems {
 	val ICON_TOOLS: Item by objectHolder("icon_tools")
 	val ICON_SNS: Item by objectHolder("icon_sns")
 
-	//Consumables
+	// Consumables
 	val POTION: Item by objectHolder("potion")
 	val MEGA_POTION: Item by objectHolder("mega_potion")
 	val ANTIDOTE: Item by objectHolder("antidote")
 	val ENERGY_DRINK: Item by objectHolder("energy_drink")
 
-	//Brewing Intermediaries
+	// Brewing Intermediaries
 	val BLUE_MUSHROOM_INTERMEDIARY: Item by objectHolder("blue_mushroom_intermediary")
 	val BITTERBUG_INTERMEDIARY: Item by objectHolder("bitterbug_intermediary")
 	val NITROSHROOM_INTERMEDIARY: Item by objectHolder("nitroshroom_intermediary")
@@ -37,11 +37,11 @@ object MHItems {
 	val CARBALITE_INGOT: Item by objectHolder("carbalite_ingot")
 	val ELTALITE_INGOT: Item by objectHolder("eltalite_ingot")
 
-	//HERBS
+	// Herbs
 	val HERB: Item by objectHolder("herb")
 	val ANTIDOTE_HERB: Item by objectHolder("antidote_herb")
 
-	//MUSHROOMS
+	// Mushrooms
 	val BLUE_MUSHROOM: Item by objectHolder("blue_mushroom")
 	val NITROSHROOM: Item by objectHolder("nitroshroom")
 
@@ -55,12 +55,12 @@ object MHItems {
 			icon("icon_items"),
 			icon("icon_tools"),
 			icon("icon_sns"),
-			//CONSUMABLES
+			// Consumables
 			consumable("potion") { arrayOf(EffectInstance(Effects.INSTANT_HEALTH, 0, 1)) },
 			consumable("mega_potion") { arrayOf(EffectInstance(Effects.INSTANT_HEALTH, 0, 2)) },
 			consumable("antidote") { arrayOf(EffectInstance(MHEffects.ANTIDOTE, 0, 1)) },
 			consumable("energy_drink") { arrayOf(EffectInstance(Effects.SATURATION, 0, 1)) },
-			//BREWING INTERMEDIARIES
+			// Brewing Intermediates
 			item("blue_mushroom_intermediary"),
 			item("bitterbug_intermediary"),
 			item("nitroshroom_intermediary"),
@@ -102,7 +102,29 @@ object MHItems {
 			item("king_brocadefish"),
 			item("premium_sashimi"),
 			item("silverfish"),
-			//Neopteran
+			// Bugs
+			item("insect_husk"),
+			item("godbug"),
+			item("bitterbug"),
+			item("flashbug"),
+			item("thunderbug"),
+			item("stinkhopper"),
+			item("snakebee_larva"),
+			item("carpenterbug"),
+			item("shiny_beetle"),
+			item("hercudrome"),
+			item("king_scarab"),
+			item("rare_scarab"),
+			item("emperor_hopper"),
+			item("flutterfly"),
+			item("stygian_worm"),
+			// Bones
+			item("small_monster_bone"),
+			item("medium_monster_bone"),
+			item("mystery_bone"),
+			item("unknown_skull"),
+			item("huge_unknown_skull"),
+			// Neopteran
 			item("hornetaur_shell"),
 			item("hornetaur_wing"),
 			item("hornetaur_carapace"),
@@ -117,9 +139,7 @@ object MHItems {
 			*tools("dragonite", MHItemTier.DRAGONITE),
 			*tools("carbalite", MHItemTier.CARBALITE),
 			*tools("eltalite", MHItemTier.ELTALITE),
-
 			// Spawn Eggs
-
 			// Fish
 			spawnegg("sushifish_egg", 0xB07A4D, 0x734F32) { MHEntities.SUSHIFISH },
 			spawnegg("goldenfish_egg", 0xC8B235, 0x837422) { MHEntities.GOLDENFISH },
