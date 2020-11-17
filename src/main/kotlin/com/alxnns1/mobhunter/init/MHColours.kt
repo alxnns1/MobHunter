@@ -1,14 +1,19 @@
 package com.alxnns1.mobhunter.init
 
 object MHColours {
-	const val RED = 0xe1505c
-	const val ORANGE = 0xf79a65
-	const val YELLOW = 0xf8ce67
-	const val GREEN = 0x6abe83
-	const val LIGHT_BLUE = 0x9cdef0
-	const val BLUE = 0x738cd6
-	const val PURPLE = 0xc3a3d1
-	const val PINK = 0xf8889d
-	const val GREY = 0xaaaaaa
-	const val WHITE = 0xf5f5f5
+	const val PINK = 0xff8099
+	const val RED = 0xff5464
+	const val DEEP_RED = 0xbf0003
+	const val ORANGE = 0xff9354
+	const val YELLOW = 0xffd154
+	const val DEEP_YELLOW = 0xebb93b
+	const val LIME = 0xcfff80
+	const val GREEN = 0x7bd496
+	const val DEEP_GREEN = 0x76bf50
+	const val CYAN = 0xabf0ff
+	const val BLUE = 0xabc4ff
+	const val DEEP_BLUE = 0x003cbf
+	const val PURPLE = 0xdfb6f2
+	const val GREY = 0xbfbfbf
+	const val WHITE = 0xffffff
 }
