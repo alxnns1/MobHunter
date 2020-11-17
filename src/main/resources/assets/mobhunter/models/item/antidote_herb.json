@@ -1,6 +1,6 @@
 {
 	"parent": "item/generated",
 	"textures": {
-		"layer0": "mobhunter:item/antidote_herb"
+		"layer0": "mobhunter:item/herb"
 	}
 }

@@ -1,6 +1,6 @@
 {
 	"parent": "item/generated",
 	"textures": {
-		"layer0": "mobhunter:item/dragonfell_berry"
+		"layer0": "mobhunter:item/berry"
 	}
 }

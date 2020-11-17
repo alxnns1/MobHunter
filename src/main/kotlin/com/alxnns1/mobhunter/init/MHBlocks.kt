@@ -17,7 +17,7 @@ import thedarkcolour.kotlinforforge.forge.objectHolder
 
 object MHBlocks {
 	val BLOCKS = mutableListOf<Block>()
-	val PLANTS = mutableListOf<MHPlant>()
+	private val PLANTS = mutableListOf<MHPlant>()
 
 	// Herbs
 	val HERB: Block by objectHolder("herb")

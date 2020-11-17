@@ -1,6 +1,6 @@
 {
 	"parent": "item/generated",
 	"textures": {
-		"layer0": "mobhunter:item/novacrystal"
+		"layer0": "mobhunter:item/ore"
 	}
 }

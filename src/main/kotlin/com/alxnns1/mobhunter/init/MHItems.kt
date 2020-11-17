@@ -1,8 +1,11 @@
 package com.alxnns1.mobhunter.init
 
 import com.alxnns1.mobhunter.MobHunter
+import com.alxnns1.mobhunter.block.MHPlant
 import com.alxnns1.mobhunter.item.MHConsumable
 import com.alxnns1.mobhunter.item.MHSpawnEggItem
+import com.alxnns1.mobhunter.item.MHTintBlockItem
+import com.alxnns1.mobhunter.item.MHTintItem
 import net.minecraft.block.Block
 import net.minecraft.entity.EntityType
 import net.minecraft.item.*
@@ -15,6 +18,9 @@ import net.minecraftforge.event.RegistryEvent
 import thedarkcolour.kotlinforforge.forge.objectHolder
 
 object MHItems {
+	private val TINT_BLOCK_ITEMS = mutableListOf<MHTintBlockItem>()
+	private val TINT_ITEMS = mutableListOf<MHTintItem>()
+
 	// Icons
 	val ICON_ITEMS: Item by objectHolder("icon_items")
 	val ICON_TOOLS: Item by objectHolder("icon_tools")
@@ -65,22 +71,22 @@ object MHItems {
 			item("bitterbug_intermediary"),
 			item("nitroshroom_intermediary"),
 			// Ores
-			item("earth_crystal"),
-			item("machalite_ingot"),
-			item("ice_crystal"),
-			item("bealite_ingot"),
-			item("lightcrystal"),
-			item("dragonite_ingot"),
-			item("firestone"),
-			item("carbalite_ingot"),
-			item("eltalite_ingot"),
-			item("meldspar_ingot"),
-			item("novacrystal"),
-			item("purecrystal"),
-			item("fucium_ingot"),
-			item("firecell_stone"),
-			item("allfire_stone"),
-			item("ultimas_crystal"),
+			tintItem("earth_crystal", MHColours.WHITE),
+			tintItem("machalite_ingot", MHColours.BLUE),
+			tintItem("ice_crystal", MHColours.CYAN),
+			tintItem("bealite_ingot", MHColours.CYAN),
+			tintItem("lightcrystal", MHColours.GREY),
+			tintItem("dragonite_ingot", MHColours.GREEN),
+			tintItem("firestone", MHColours.RED),
+			tintItem("carbalite_ingot", MHColours.PURPLE),
+			tintItem("eltalite_ingot", MHColours.RED),
+			tintItem("meldspar_ingot", MHColours.WHITE),
+			tintItem("novacrystal", MHColours.WHITE),
+			tintItem("purecrystal", MHColours.WHITE),
+			tintItem("fucium_ingot", MHColours.PINK),
+			tintItem("firecell_stone", MHColours.RED),
+			tintItem("allfire_stone", MHColours.RED),
+			tintItem("ultimas_crystal", MHColours.YELLOW),
 			// Fish
 			item("whetfish"),
 			item("sushifish"),
@@ -153,6 +159,12 @@ object MHItems {
 
 	@OnlyIn(Dist.CLIENT)
 	fun registerItemColours(event: ColorHandlerEvent.Item) {
+		event.itemColors.register({ stack, _ ->
+			(stack.item as MHTintBlockItem).colour
+		}, *TINT_BLOCK_ITEMS.toTypedArray())
+		event.itemColors.register({ stack, _ ->
+			(stack.item as MHTintItem).colour
+		}, *TINT_ITEMS.toTypedArray())
 		// Need to register our spawn egg colours manually, as our eggs are inserted into SpawnEggItem.EGGS after the
 		// list is used to register egg colours in vanilla
 		event.itemColors.register({ stack, tintIndex ->
@@ -166,6 +178,12 @@ object MHItems {
 	private fun icon(name: String): Item = Item(props()).setRegistryName(name)
 
 	private fun item(name: String): Item = Item(props(MobHunter.GROUP_ITEMS)).setRegistryName(name)
+
+	private fun tintItem(name: String, colour: Int): Item {
+		val item = MHTintItem(props(MobHunter.GROUP_ITEMS), colour).setRegistryName(name)
+		TINT_ITEMS.add(item as MHTintItem)
+		return item
+	}
 
 	private fun pickaxe(name: String, tier: IItemTier): Item =
 		PickaxeItem(tier, 1, -2.8F, props(MobHunter.GROUP_TOOLS)).setRegistryName(name)
@@ -186,8 +204,15 @@ object MHItems {
 		hoe("${materialName}_hoe", tier)
 	)
 
-	private fun block(block: Block): Item =
-		BlockItem(block, props(MobHunter.GROUP_BLOCKS)).setRegistryName(block.registryName)
+	private fun block(block: Block): Item {
+		return if (block is MHPlant) {
+			val item = MHTintBlockItem(block, props(MobHunter.GROUP_BLOCKS), block.colour).setRegistryName(block.registryName)
+			TINT_BLOCK_ITEMS.add(item as MHTintBlockItem)
+			item
+		} else {
+			BlockItem(block, props(MobHunter.GROUP_BLOCKS)).setRegistryName(block.registryName)
+		}
+	}
 
 	private fun spawnegg(
 		name: String,
