@@ -3,6 +3,7 @@ package com.alxnns1.mobhunter.world
 import com.alxnns1.mobhunter.MobHunter
 import com.alxnns1.mobhunter.init.MHBlocks
 import net.minecraft.block.Block
+import net.minecraft.block.Blocks
 import net.minecraft.util.ResourceLocation
 import net.minecraft.util.registry.Registry
 import net.minecraft.util.registry.WorldGenRegistries
@@ -11,6 +12,7 @@ import net.minecraft.world.gen.GenerationStage
 import net.minecraft.world.gen.blockplacer.SimpleBlockPlacer
 import net.minecraft.world.gen.blockstateprovider.WeightedBlockStateProvider
 import net.minecraft.world.gen.feature.*
+import net.minecraft.world.gen.feature.template.BlockMatchRuleTest
 import net.minecraft.world.gen.feature.template.RuleTest
 import net.minecraftforge.common.BiomeDictionary.Type.*
 import net.minecraftforge.common.world.BiomeGenerationSettingsBuilder
@@ -31,30 +33,30 @@ object MHWorldGen {
 
 	fun register() {
 		overworldOres = listOf(
-			ore(MHBlocks.EARTH_CRYSTAL_ORE, 16, 128, 12),
-			ore(MHBlocks.MACHALITE_ORE, 8, 64, 15),
-			ore(MHBlocks.LIGHTCRYSTAL_ORE, 12, 64, 9),
-			ore(MHBlocks.DRAGONITE_ORE, 8, 64, 11),
-			ore(MHBlocks.CARBALITE_ORE, 8, 32, 10),
-			ore(MHBlocks.NOVACRYSTAL_ORE, 12, 32, 8),
-			ore(MHBlocks.FUCIUM_ORE, 8, 32, 7)
+			ore(MHBlocks.EARTH_CRYSTAL_ORE, 128, 21),
+			ore(MHBlocks.DRAGONITE_ORE, 32, 16),
+			ore(MHBlocks.LIGHTCRYSTAL_ORE, 64, 13),
+			ore(MHBlocks.MACHALITE_ORE, 64, 12),
+			ore(MHBlocks.CARBALITE_ORE, 16, 7),
+			ore(MHBlocks.NOVACRYSTAL_ORE, 32, 5),
+			ore(MHBlocks.FUCIUM_ORE, 16, 4)
 		)
 		coldOres = listOf(
-			ore(MHBlocks.ICE_CRYSTAL_ORE, 16, 128, 15)
+			ore(MHBlocks.ICE_CRYSTAL_ORE, 128, 28)
 		)
 		wetOres = listOf(
-			ore(MHBlocks.BEALITE_ORE, 8, 64, 9)
+			ore(MHBlocks.BEALITE_ORE, 64, 15)
 		)
 		netherOres = listOf(
-			ore(MHBlocks.FIRESTONE_ORE, 8, 255, 12),
-			ore(MHBlocks.FIRECELL_STONE_ORE, 8, 255, 19),
-			ore(MHBlocks.ALLFIRE_STONE_ORE, 8, 255, 3),
-			ore(MHBlocks.ULTIMAS_CRYSTAL_ORE, 8, 255, 3)
+			ore(MHBlocks.FIRESTONE_ORE, 255, 20, OreFeatureConfig.FillerBlockType.BASE_STONE_NETHER),
+			ore(MHBlocks.FIRECELL_STONE_ORE, 255, 13, OreFeatureConfig.FillerBlockType.BASE_STONE_NETHER),
+			ore(MHBlocks.ALLFIRE_STONE_ORE, 255, 1, OreFeatureConfig.FillerBlockType.BASE_STONE_NETHER),
+			ore(MHBlocks.ULTIMAS_CRYSTAL_ORE, 255, 1, OreFeatureConfig.FillerBlockType.BASE_STONE_NETHER)
 		)
 		endOres = listOf(
-			ore(MHBlocks.ELTALITE_ORE, 8, 128, 6),
-			ore(MHBlocks.MELDSPAR_ORE, 8, 128, 4),
-			ore(MHBlocks.PURECRYSTAL_ORE, 8, 128, 6)
+			ore(MHBlocks.ELTALITE_ORE, 128, 1, BlockMatchRuleTest(Blocks.END_STONE)),
+			ore(MHBlocks.MELDSPAR_ORE, 128, 1, BlockMatchRuleTest(Blocks.END_STONE)),
+			ore(MHBlocks.PURECRYSTAL_ORE, 128, 1, BlockMatchRuleTest(Blocks.END_STONE))
 		)
 
 		overworldPlants = listOf(
@@ -162,13 +164,12 @@ object MHWorldGen {
 
 	private fun ore(
 		block: Block,
-		veinSize: Int,
 		range: Int,
 		spread: Int,
 		replaces: RuleTest = OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD
 	): ConfiguredFeature<*, *> = register(
 		block.registryName!!.path,
-		Feature.ORE.withConfiguration(OreFeatureConfig(replaces, block.defaultState, veinSize))
+		Feature.ORE.withConfiguration(OreFeatureConfig(replaces, block.defaultState, 8))
 			.range(range).square().func_242731_b(spread)
 	)
 
