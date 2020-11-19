@@ -25,16 +25,30 @@ object MHItems {
 	// Consumables
 	val POTION: Item by objectHolder("potion")
 	val MEGA_POTION: Item by objectHolder("mega_potion")
+	val NUTRIENTS: Item by objectHolder("nutrients")
+	val MEGA_NUTRIENTS: Item by objectHolder("mega_nutrients")
 	val ANTIDOTE: Item by objectHolder("antidote")
+	val IMMUNIZER: Item by objectHolder("immunizer")
+	val DEMONDRUG: Item by objectHolder("demondrug")
+	val MIGHT_PILL: Item by objectHolder("might_pill")
+	val ARMORSKIN: Item by objectHolder("armorskin")
+	val ADAMANT_PILL: Item by objectHolder("adamant_pill")
+	val COOL_DRINK: Item by objectHolder("cool_drink")
+	val HOT_DRINK: Item by objectHolder("hot_drink")
+	val CLEANSER: Item by objectHolder("cleanser")
+	val HERBAL_MEDICINE: Item by objectHolder("herbal_medicine")
+	val MAX_POTION: Item by objectHolder("max_potion")
 	val ENERGY_DRINK: Item by objectHolder("energy_drink")
 
 	// Brewing Intermediaries
 	val BLUE_MUSHROOM_INTERMEDIARY: Item by objectHolder("blue_mushroom_intermediary")
 	val BITTERBUG_INTERMEDIARY: Item by objectHolder("bitterbug_intermediary")
 	val NITROSHROOM_INTERMEDIARY: Item by objectHolder("nitroshroom_intermediary")
+	val CATALYST: Item by objectHolder("catalyst")
 
 	// Ores
 	val MACHALITE_INGOT: Item by objectHolder("machalite_ingot")
+	val ICE_CRYSTAL: Item by objectHolder("machalite_ingot")
 	val DRAGONITE_INGOT: Item by objectHolder("dragonite_ingot")
 	val CARBALITE_INGOT: Item by objectHolder("carbalite_ingot")
 	val ELTALITE_INGOT: Item by objectHolder("eltalite_ingot")
@@ -42,10 +56,24 @@ object MHItems {
 	// Herbs
 	val HERB: Item by objectHolder("herb")
 	val ANTIDOTE_HERB: Item by objectHolder("antidote_herb")
+	val GLOAMGRASS_ROOT: Item by objectHolder("gloamgrass_root")
+	val HOT_PEPPER: Item by objectHolder("hot_pepper")
 
 	// Mushrooms
 	val BLUE_MUSHROOM: Item by objectHolder("blue_mushroom")
 	val NITROSHROOM: Item by objectHolder("nitroshroom")
+	val DRAGON_TOADSTOOL: Item by objectHolder("dragon_toadstool")
+
+	// Berries
+	val MIGHT_SEED: Item by objectHolder("might_seed")
+	val ADAMANT_SEED: Item by objectHolder("adamant_seed")
+
+	// Fish
+	val POPFISH: Item by objectHolder("popfish")
+
+	// Insects
+	val BITTERBUG: Item by objectHolder("bitterbug")
+	val GODBUG: Item by objectHolder("godbug")
 
 	// Spawn Eggs
 	val GOLDENFISH_EGG: Item by objectHolder("goldenfish_egg")
@@ -58,14 +86,35 @@ object MHItems {
 			icon("icon_tools"),
 			icon("icon_sns"),
 			// Consumables
-			consumable("potion", MHColours.GREEN) { arrayOf(EffectInstance(Effects.INSTANT_HEALTH, 0, 1)) },
-			consumable("mega_potion", MHColours.GREEN) { arrayOf(EffectInstance(Effects.INSTANT_HEALTH, 0, 2)) },
-			consumable("antidote", MHColours.BLUE) { arrayOf(EffectInstance(MHEffects.ANTIDOTE, 0, 1)) },
-			consumable("energy_drink", MHColours.YELLOW) { arrayOf(EffectInstance(Effects.SATURATION, 0, 1)) },
+			consumable("potion", MHColours.GREEN) { arrayOf(EffectInstance(Effects.INSTANT_HEALTH)) },
+			consumable("mega_potion", MHColours.GREEN) { arrayOf(EffectInstance(Effects.INSTANT_HEALTH, 0, 1)) },
+			consumable("nutrients", MHColours.CYAN) { arrayOf(EffectInstance(Effects.ABSORPTION, 6000)) },
+			consumable("mega_nutrients", MHColours.CYAN) { arrayOf(EffectInstance(Effects.ABSORPTION, 6000, 1)) },
+			consumable("antidote", MHColours.BLUE) { arrayOf(EffectInstance(MHEffects.ANTIDOTE)) },
+			consumable("immunizer", MHColours.YELLOW) { arrayOf(EffectInstance(Effects.REGENERATION, 1200, 0)) },
+			consumable("dash_juice", MHColours.YELLOW) { arrayOf(EffectInstance(Effects.SATURATION, 0, 1)) },
+			consumable("mega_dash_juice", MHColours.YELLOW) { arrayOf(EffectInstance(Effects.SATURATION, 0, 3)) },
+			consumable("demondrug", MHColours.RED) { arrayOf(EffectInstance(Effects.STRENGTH, 6000, 1)) },
+			consumable("mega_demondrug", MHColours.RED) { arrayOf(EffectInstance(Effects.STRENGTH, 6000, 3)) },
+			consumable("might_pill", MHColours.RED) { arrayOf(EffectInstance(Effects.STRENGTH, 6000, 5)) },
+			consumable("armorskin", MHColours.ORANGE) { arrayOf(EffectInstance(Effects.RESISTANCE, 6000, 1)) },
+			consumable("mega_armorskin", MHColours.ORANGE) { arrayOf(EffectInstance(Effects.RESISTANCE, 6000, 3)) },
+			consumable("adamant_pill", MHColours.ORANGE) { arrayOf(EffectInstance(Effects.RESISTANCE, 6000, 5)) },
+			item("cool_drink", MHColours.WHITE), //some cooling effect
+			item("hot_drink", MHColours.RED), //some warming effect
+			item("cleanser", MHColours.CYAN), //same as milk
+			item("psychoserum", MHColours.ORANGE), //somehow know where monsters are
+			consumable("herbal_medicine", MHColours.WHITE) { arrayOf(EffectInstance(Effects.INSTANT_HEALTH), EffectInstance(MHEffects.ANTIDOTE)) },
+			consumable("max_potion", MHColours.YELLOW) { arrayOf(EffectInstance(Effects.INSTANT_HEALTH, 0, 4), EffectInstance(MHEffects.ANTIDOTE, 6000, 4)) },
+			consumable("ancient_potion", MHColours.RED) { arrayOf(EffectInstance(Effects.INSTANT_HEALTH, 0, 4), EffectInstance(MHEffects.ANTIDOTE, 12000, 4), EffectInstance(Effects.SATURATION, 12000, 9)) },
+			consumable("energy_drink", MHColours.YELLOW) { arrayOf(EffectInstance(Effects.SATURATION)) },
+			item("lifepowder", MHColours.WHITE), //splash instant health 2
+			consumable("dust_of_life", MHColours.GREEN) { arrayOf(EffectInstance(Effects.INSTANT_HEALTH, 0, 4)) },
 			// Brewing Intermediates
 			item("blue_mushroom_intermediary", MHColours.BLUE),
 			item("bitterbug_intermediary", MHColours.BLUE),
 			item("nitroshroom_intermediary", MHColours.RED),
+			item("catalyst", MHColours.GREY),
 			// Ores
 			item("earth_crystal", MHColours.WHITE),
 			item("machalite_ingot", MHColours.BLUE),
