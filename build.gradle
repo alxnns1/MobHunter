@@ -15,7 +15,7 @@ apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 apply plugin: 'kotlin'
 
-version = '1.16.3-0.3.0'
+version = '1.16.3-0.4.0'
 group = 'com.alxnns1.mobhunter' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'mobhunter'
 
