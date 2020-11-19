@@ -32,7 +32,7 @@ object MobHunter {
 	val GROUP_ITEMS = MHItemGroup("items") { ItemStack(MHItems.ICON_ITEMS) }
 	val GROUP_TOOLS = MHItemGroup("tools") { ItemStack(MHItems.ICON_TOOLS) }
 	val GROUP_SWORDS = MHItemGroup("swords") { ItemStack(MHItems.ICON_SNS) }
-	val GROUP_ENTITIES = MHItemGroup("entities") { ItemStack(MHItems.GOLDENFISH_EGG) }
+	val GROUP_ENTITIES = MHItemGroup("entities") { ItemStack(MHItems.ICON_MOBS) }
 
 	init {
 		MOD_BUS.apply {

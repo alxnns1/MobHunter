@@ -21,6 +21,7 @@ object MHItems {
 	val ICON_ITEMS: Item by objectHolder("icon_items")
 	val ICON_TOOLS: Item by objectHolder("icon_tools")
 	val ICON_SNS: Item by objectHolder("icon_sns")
+	val ICON_MOBS: Item by objectHolder("icon_mobs")
 
 	// Consumables
 	val POTION: Item by objectHolder("potion")
@@ -85,6 +86,7 @@ object MHItems {
 			icon("icon_items"),
 			icon("icon_tools"),
 			icon("icon_sns"),
+			icon("icon_mobs"),
 			// Consumables
 			consumable("potion", MHColours.GREEN) { arrayOf(EffectInstance(Effects.INSTANT_HEALTH)) },
 			consumable("mega_potion", MHColours.GREEN) { arrayOf(EffectInstance(Effects.INSTANT_HEALTH, 0, 1)) },
