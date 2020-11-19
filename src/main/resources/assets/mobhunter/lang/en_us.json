@@ -60,6 +60,7 @@
 	"block.mobhunter.paintberry": "Paintberry",
 	"block.mobhunter.scatternut": "Scatternut",
 
+	"block.mobhunter.allfire_stone_ore": "Allfire Stone Ore",
 	"block.mobhunter.bealite_ore": "Bealite Ore",
 	"block.mobhunter.carbalite_ore": "Carbalite Ore",
 	"block.mobhunter.dragonite_ore": "Dragonite Ore",
@@ -74,9 +75,9 @@
 	"block.mobhunter.meldspar_ore": "Meldspar Ore",
 	"block.mobhunter.novacrystal_ore": "Novacrystal Ore",
 	"block.mobhunter.purecrystal_ore": "Purecrystal Ore",
-	"block.mobhunter.allfire_stone_ore": "Allfire Stone Ore",
 	"block.mobhunter.ultimas_crystal_ore": "Ultimas Crystal Ore",
 
+	"block.mobhunter.allfire_stone_block": "Block of Allfire Stone",
 	"block.mobhunter.bealite_block": "Block of Bealite",
 	"block.mobhunter.carbalite_block": "Block of Carbalite",
 	"block.mobhunter.dragonite_block": "Block of Dragonite",
@@ -91,7 +92,6 @@
 	"block.mobhunter.meldspar_block": "Block of Meldspar",
 	"block.mobhunter.novacrystal_block": "Block of Novacrystal",
 	"block.mobhunter.purecrystal_block": "Block of Purecrystal",
-	"block.mobhunter.allfire_stone_block": "Block of Allfire Stone",
 	"block.mobhunter.ultimas_crystal_block": "Block of Ultimas Crystal",
 
 	"item.mobhunter.petrified_sword1": "Petrified Sword",
@@ -198,10 +198,10 @@
 	"item.mobhunter.thunderbug": "Thunderbug",
 
 	"item.mobhunter.small_monster_bone": "Small Monster Bone",
+	"item.mobhunter.huge_unknown_skull": "Huge Unknown Skull",
 	"item.mobhunter.medium_monster_bone": "Medium Monster Bone",
 	"item.mobhunter.mystery_bone": "Mystery Bone",
 	"item.mobhunter.unknown_skull": "Unknown Skull",
-	"item.mobhunter.huge_unknown_skull": "Huge Unknown Skull",
 
 	"item.mobhunter.monster_broth": "Monster Broth",
 	"item.mobhunter.monster_essence": "Monster Essence",

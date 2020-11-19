@@ -1,6 +1,6 @@
 {
 	"parent": "item/generated",
 	"textures": {
-		"layer0": "mobhunter:item/king_brocadefish"
+		"layer0": "mobhunter:item/fish"
 	}
 }

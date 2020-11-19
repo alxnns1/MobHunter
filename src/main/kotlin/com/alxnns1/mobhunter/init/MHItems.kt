@@ -2,10 +2,7 @@ package com.alxnns1.mobhunter.init
 
 import com.alxnns1.mobhunter.MobHunter
 import com.alxnns1.mobhunter.block.MHPlant
-import com.alxnns1.mobhunter.item.MHConsumable
-import com.alxnns1.mobhunter.item.MHSpawnEggItem
-import com.alxnns1.mobhunter.item.MHTintBlockItem
-import com.alxnns1.mobhunter.item.MHTintItem
+import com.alxnns1.mobhunter.item.*
 import net.minecraft.block.Block
 import net.minecraft.entity.EntityType
 import net.minecraft.item.*
@@ -18,8 +15,7 @@ import net.minecraftforge.event.RegistryEvent
 import thedarkcolour.kotlinforforge.forge.objectHolder
 
 object MHItems {
-	private val TINT_BLOCK_ITEMS = mutableListOf<MHTintBlockItem>()
-	private val TINT_ITEMS = mutableListOf<MHTintItem>()
+	private val TINT_ITEMS = mutableListOf<MHITintItem>()
 
 	// Icons
 	val ICON_ITEMS: Item by objectHolder("icon_items")
@@ -62,95 +58,95 @@ object MHItems {
 			icon("icon_tools"),
 			icon("icon_sns"),
 			// Consumables
-			consumable("potion") { arrayOf(EffectInstance(Effects.INSTANT_HEALTH, 0, 1)) },
-			consumable("mega_potion") { arrayOf(EffectInstance(Effects.INSTANT_HEALTH, 0, 2)) },
-			consumable("antidote") { arrayOf(EffectInstance(MHEffects.ANTIDOTE, 0, 1)) },
-			consumable("energy_drink") { arrayOf(EffectInstance(Effects.SATURATION, 0, 1)) },
+			consumable("potion", MHColours.GREEN) { arrayOf(EffectInstance(Effects.INSTANT_HEALTH, 0, 1)) },
+			consumable("mega_potion", MHColours.GREEN) { arrayOf(EffectInstance(Effects.INSTANT_HEALTH, 0, 2)) },
+			consumable("antidote", MHColours.BLUE) { arrayOf(EffectInstance(MHEffects.ANTIDOTE, 0, 1)) },
+			consumable("energy_drink", MHColours.YELLOW) { arrayOf(EffectInstance(Effects.SATURATION, 0, 1)) },
 			// Brewing Intermediates
-			item("blue_mushroom_intermediary"),
-			item("bitterbug_intermediary"),
-			item("nitroshroom_intermediary"),
+			item("blue_mushroom_intermediary", MHColours.BLUE),
+			item("bitterbug_intermediary", MHColours.BLUE),
+			item("nitroshroom_intermediary", MHColours.RED),
 			// Ores
-			tintItem("earth_crystal", MHColours.WHITE),
-			tintItem("machalite_ingot", MHColours.BLUE),
-			tintItem("ice_crystal", MHColours.CYAN),
-			tintItem("bealite_ingot", MHColours.CYAN),
-			tintItem("lightcrystal", MHColours.GREY),
-			tintItem("dragonite_ingot", MHColours.GREEN),
-			tintItem("firestone", MHColours.RED),
-			tintItem("carbalite_ingot", MHColours.PURPLE),
-			tintItem("eltalite_ingot", MHColours.RED),
-			tintItem("meldspar_ingot", MHColours.WHITE),
-			tintItem("novacrystal", MHColours.WHITE),
-			tintItem("purecrystal", MHColours.WHITE),
-			tintItem("fucium_ingot", MHColours.PINK),
-			tintItem("firecell_stone", MHColours.RED),
-			tintItem("allfire_stone", MHColours.RED),
-			tintItem("ultimas_crystal", MHColours.YELLOW),
+			item("earth_crystal", MHColours.WHITE),
+			item("machalite_ingot", MHColours.BLUE),
+			item("ice_crystal", MHColours.CYAN),
+			item("bealite_ingot", MHColours.CYAN),
+			item("lightcrystal", MHColours.GREY),
+			item("dragonite_ingot", MHColours.GREEN),
+			item("firestone", MHColours.RED),
+			item("allfire_stone", MHColours.RED),
+			item("carbalite_ingot", MHColours.PURPLE),
+			item("eltalite_ingot", MHColours.RED),
+			item("meldspar_ingot", MHColours.WHITE),
+			item("novacrystal", MHColours.WHITE),
+			item("purecrystal", MHColours.WHITE),
+			item("fucium_ingot", MHColours.PINK),
+			item("firecell_stone", MHColours.RED),
+			item("ultimas_crystal", MHColours.YELLOW),
 			// Fish
-			item("whetfish"),
-			item("sushifish"),
-			item("sleepyfish"),
-			item("pin_tuna"),
-			item("speartuna"),
-			item("popfish"),
-			item("scatterfish"),
-			item("burst_arowana"),
-			item("bomb_arowana"),
-			item("glutton_tuna"),
-			item("gastronome_tuna"),
-			item("ancient_fish"),
-			item("small_goldenfish"),
-			item("wanchovy"),
-			item("guardfish"),
-			item("brocadefish"),
-			item("goldenfish"),
-			item("king_brocadefish"),
-			item("premium_sashimi"),
-			item("silverfish"),
-			// Bugs
-			item("insect_husk"),
-			item("godbug"),
-			item("bitterbug"),
-			item("flashbug"),
-			item("thunderbug"),
-			item("stinkhopper"),
-			item("snakebee_larva"),
-			item("carpenterbug"),
-			item("shiny_beetle"),
-			item("hercudrome"),
-			item("king_scarab"),
-			item("rare_scarab"),
-			item("emperor_hopper"),
-			item("flutterfly"),
-			item("stygian_worm"),
+			item("whetfish", MHColours.YELLOW),
+			item("sushifish", MHColours.ORANGE),
+			item("sleepyfish", MHColours.CYAN),
+			item("pin_tuna", MHColours.GREY),
+			item("speartuna", MHColours.BLUE),
+			item("popfish", MHColours.GREY),
+			item("scatterfish", MHColours.GREY),
+			item("burst_arowana", MHColours.GREEN),
+			item("bomb_arowana", MHColours.PURPLE),
+			item("glutton_tuna", MHColours.ORANGE),
+			item("gastronome_tuna", MHColours.ORANGE),
+			item("ancient_fish", MHColours.WHITE),
+			item("small_goldenfish", MHColours.YELLOW),
+			item("wanchovy", MHColours.GREEN),
+			item("guardfish", MHColours.DEEP_YELLOW),
+			item("goldenfish", MHColours.YELLOW),
+			item("silverfish", MHColours.WHITE),
+			item("brocadefish", MHColours.BLUE),
+			item("king_brocadefish", MHColours.BLUE),
+			item("premium_sashimi", MHColours.WHITE),
+			// Insects
+			item("insect_husk", MHColours.GREY),
+			item("godbug", MHColours.WHITE),
+			item("bitterbug", MHColours.BLUE),
+			item("flashbug", MHColours.YELLOW),
+			item("thunderbug", MHColours.YELLOW),
+			item("stinkhopper", MHColours.RED),
+			item("snakebee_larva", MHColours.ORANGE),
+			item("carpenterbug", MHColours.GREY),
+			item("shiny_beetle", MHColours.GREEN),
+			item("hercudrome", MHColours.RED),
+			item("king_scarab", MHColours.PURPLE),
+			item("rare_scarab", MHColours.YELLOW),
+			item("emperor_hopper", MHColours.DEEP_YELLOW),
+			item("flutterfly", MHColours.WHITE),
+			item("stygian_worm", MHColours.GREY),
 			// Bones
-			item("small_monster_bone"),
-			item("medium_monster_bone"),
-			item("mystery_bone"),
-			item("unknown_skull"),
-			item("huge_unknown_skull"),
+			item("small_monster_bone", MHColours.YELLOW),
+			item("medium_monster_bone", MHColours.YELLOW),
+			item("mystery_bone", MHColours.YELLOW),
+			item("unknown_skull", MHColours.YELLOW),
+			item("huge_unknown_skull", MHColours.YELLOW),
 			// Neopteran
-			item("hornetaur_shell"),
-			item("hornetaur_wing"),
-			item("hornetaur_carapace"),
-			item("hornetaur_head"),
-			item("monster_fluid"),
-			item("hornetaur_razorwing"),
-			item("monster_broth"),
-			item("hornetaur_innerwing"),
-			item("monster_essence"),
+			item("monster_fluid", MHColours.CYAN),
+			item("monster_broth", MHColours.BLUE),
+			item("monster_essence", MHColours.BLUE),
+			item("hornetaur_shell", MHColours.DARK_GREY),
+			item("hornetaur_wing", MHColours.DARK_GREY),
+			item("hornetaur_carapace", MHColours.DARK_GREY),
+			item("hornetaur_head", MHColours.DARK_GREY),
+			item("hornetaur_razorwing", MHColours.DARK_GREY),
+			item("hornetaur_innerwing", MHColours.DARK_GREY),
 			// Tools
-			*tools("machalite", MHItemTier.MACHALITE),
-			*tools("dragonite", MHItemTier.DRAGONITE),
-			*tools("carbalite", MHItemTier.CARBALITE),
-			*tools("eltalite", MHItemTier.ELTALITE),
+			*tools("machalite", MHColours.BLUE, MHItemTier.MACHALITE),
+			*tools("dragonite", MHColours.GREEN, MHItemTier.DRAGONITE),
+			*tools("carbalite", MHColours.PURPLE, MHItemTier.CARBALITE),
+			*tools("eltalite", MHColours.RED, MHItemTier.ELTALITE),
 			// Spawn Eggs
 			// Fish
-			spawnegg("sushifish_egg", 0xB07A4D, 0x734F32) { MHEntities.SUSHIFISH },
-			spawnegg("goldenfish_egg", 0xC8B235, 0x837422) { MHEntities.GOLDENFISH },
+			spawnEgg("sushifish_egg", 0xB07A4D, 0x734F32) { MHEntities.SUSHIFISH },
+			spawnEgg("goldenfish_egg", 0xC8B235, 0x837422) { MHEntities.GOLDENFISH },
 			// Neopterans
-			spawnegg("hornetaur_egg", 0xD7822C, 0x2D1D16) { MHEntities.HORNETAUR }
+			spawnEgg("hornetaur_egg", 0xD7822C, 0x2D1D16) { MHEntities.HORNETAUR }
 		)
 
 		// Item Blocks
@@ -159,11 +155,8 @@ object MHItems {
 
 	@OnlyIn(Dist.CLIENT)
 	fun registerItemColours(event: ColorHandlerEvent.Item) {
-		event.itemColors.register({ stack, _ ->
-			(stack.item as MHTintBlockItem).colour
-		}, *TINT_BLOCK_ITEMS.toTypedArray())
-		event.itemColors.register({ stack, _ ->
-			(stack.item as MHTintItem).colour
+		event.itemColors.register({ stack, tintIndex ->
+			if (tintIndex == 0) (stack.item as MHITintItem).getColour() else -1
 		}, *TINT_ITEMS.toTypedArray())
 		// Need to register our spawn egg colours manually, as our eggs are inserted into SpawnEggItem.EGGS after the
 		// list is used to register egg colours in vanilla
@@ -177,50 +170,63 @@ object MHItems {
 
 	private fun icon(name: String): Item = Item(props()).setRegistryName(name)
 
-	private fun item(name: String): Item = Item(props(MobHunter.GROUP_ITEMS)).setRegistryName(name)
-
-	private fun tintItem(name: String, colour: Int): Item {
+	private fun item(name: String, colour: Int): Item {
 		val item = MHTintItem(props(MobHunter.GROUP_ITEMS), colour).setRegistryName(name)
-		TINT_ITEMS.add(item as MHTintItem)
+		TINT_ITEMS.add(item as MHITintItem)
 		return item
 	}
 
-	private fun pickaxe(name: String, tier: IItemTier): Item =
-		PickaxeItem(tier, 1, -2.8F, props(MobHunter.GROUP_TOOLS)).setRegistryName(name)
+	private fun pickaxe(name: String, colour: Int, tier: IItemTier): Item {
+		val item = MHPickaxeItem(tier, colour, props(MobHunter.GROUP_TOOLS)).setRegistryName(name)
+		TINT_ITEMS.add(item as MHITintItem)
+		return item
+	}
 
-	private fun axe(name: String, tier: IItemTier): Item =
-		AxeItem(tier, 6F, -3.1F, props(MobHunter.GROUP_TOOLS)).setRegistryName(name)
+	private fun axe(name: String, colour: Int, tier: IItemTier): Item {
+		val item = MHAxeItem(tier, colour, props(MobHunter.GROUP_TOOLS)).setRegistryName(name)
+		TINT_ITEMS.add(item as MHITintItem)
+		return item
+	}
 
-	private fun shovel(name: String, tier: IItemTier): Item =
-		ShovelItem(tier, 1.5F, -3F, props(MobHunter.GROUP_TOOLS)).setRegistryName(name)
+	private fun shovel(name: String, colour: Int, tier: IItemTier): Item {
+		val item = MHShovelItem(tier, colour, props(MobHunter.GROUP_TOOLS)).setRegistryName(name)
+		TINT_ITEMS.add(item as MHITintItem)
+		return item
+	}
 
-	private fun hoe(name: String, tier: IItemTier): Item =
-		HoeItem(tier, 3, 0F, props(MobHunter.GROUP_TOOLS)).setRegistryName(name)
+	private fun hoe(name: String, colour: Int, tier: IItemTier): Item {
+		val item = MHHoeItem(tier, colour, props(MobHunter.GROUP_TOOLS)).setRegistryName(name)
+		TINT_ITEMS.add(item as MHITintItem)
+		return item
+	}
 
-	private fun tools(materialName: String, tier: IItemTier): Array<Item> = arrayOf(
-		pickaxe("${materialName}_pickaxe", tier),
-		axe("${materialName}_axe", tier),
-		shovel("${materialName}_shovel", tier),
-		hoe("${materialName}_hoe", tier)
+	private fun tools(materialName: String, colour: Int, tier: IItemTier): Array<Item> = arrayOf(
+		pickaxe("${materialName}_pickaxe", colour, tier),
+		axe("${materialName}_axe", colour, tier),
+		shovel("${materialName}_shovel", colour, tier),
+		hoe("${materialName}_hoe", colour, tier)
 	)
 
 	private fun block(block: Block): Item {
 		return if (block is MHPlant) {
 			val item = MHTintBlockItem(block, props(MobHunter.GROUP_BLOCKS), block.colour).setRegistryName(block.registryName)
-			TINT_BLOCK_ITEMS.add(item as MHTintBlockItem)
+			TINT_ITEMS.add(item as MHTintBlockItem)
 			item
 		} else {
 			BlockItem(block, props(MobHunter.GROUP_BLOCKS)).setRegistryName(block.registryName)
 		}
 	}
 
-	private fun spawnegg(
+	private fun spawnEgg(
 		name: String,
 		primaryColour: Int,
 		secondaryColour: Int,
 		entityTypeSupplier: () -> EntityType<*>
 	): Item = MHSpawnEggItem(entityTypeSupplier, primaryColour, secondaryColour, props(MobHunter.GROUP_ENTITIES)).setRegistryName(name)
 
-	private fun consumable(name: String, potionEffects: () -> Array<EffectInstance>): Item =
-		MHConsumable(props(MobHunter.GROUP_ITEMS), potionEffects).setRegistryName(name)
+	private fun consumable(name: String, colour: Int, potionEffects: () -> Array<EffectInstance>): Item {
+		val item = MHConsumable(props(MobHunter.GROUP_ITEMS), colour, potionEffects).setRegistryName(name)
+		TINT_ITEMS.add(item as MHITintItem)
+		return item
+	}
 }

@@ -14,6 +14,7 @@ object MHColours {
 	const val BLUE = 0xabc4ff
 	const val DEEP_BLUE = 0x003cbf
 	const val PURPLE = 0xdfb6f2
+	const val DARK_GREY = 0x7f7f7f
 	const val GREY = 0xbfbfbf
 	const val WHITE = 0xffffff
 }

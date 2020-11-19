@@ -61,6 +61,7 @@ object MHBlocks {
 	val LIGHTCRYSTAL_ORE: Block by objectHolder("lightcrystal_ore")
 	val DRAGONITE_ORE: Block by objectHolder("dragonite_ore")
 	val FIRESTONE_ORE: Block by objectHolder("firestone_ore")
+	val ALLFIRE_STONE_ORE: Block by objectHolder("allfire_stone_ore")
 	val CARBALITE_ORE: Block by objectHolder("carbalite_ore")
 	val ELTALITE_ORE: Block by objectHolder("eltalite_ore")
 	val MELDSPAR_ORE: Block by objectHolder("meldspar_ore")
@@ -68,7 +69,6 @@ object MHBlocks {
 	val PURECRYSTAL_ORE: Block by objectHolder("purecrystal_ore")
 	val FUCIUM_ORE: Block by objectHolder("fucium_ore")
 	val FIRECELL_STONE_ORE: Block by objectHolder("firecell_stone_ore")
-	val ALLFIRE_STONE_ORE: Block by objectHolder("allfire_stone_ore")
 	val ULTIMAS_CRYSTAL_ORE: Block by objectHolder("ultimas_crystal_ore")
 
 	// Compact Blocks
@@ -115,6 +115,7 @@ object MHBlocks {
 			oreBlock("lightcrystal_ore", rockProps().setLightLevel { 7 }),
 			oreBlock("dragonite_ore"),
 			oreBlock("firestone_ore"),
+			oreBlock("allfire_stone_ore", rockProps(harvestLevel = 3)),
 			oreBlock("carbalite_ore", rockProps(harvestLevel = 2)),
 			oreBlock("eltalite_ore", rockProps(harvestLevel = 3)),
 			oreBlock("meldspar_ore", rockProps(harvestLevel = 3)),
@@ -122,7 +123,6 @@ object MHBlocks {
 			oreBlock("purecrystal_ore", rockProps(harvestLevel = 3)),
 			oreBlock("fucium_ore", rockProps(harvestLevel = 2)),
 			oreBlock("firecell_stone_ore", rockProps(harvestLevel = 2)),
-			oreBlock("allfire_stone_ore", rockProps(harvestLevel = 3)),
 			oreBlock("ultimas_crystal_ore", rockProps(harvestLevel = 3)),
 			// Compact Blocks
 			block("earth_crystal_block", rockProps(material = Material.IRON)),
@@ -132,6 +132,7 @@ object MHBlocks {
 			block("lightcrystal_block", rockProps(material = Material.IRON).setLightLevel { 7 }),
 			block("dragonite_block", rockProps(material = Material.IRON)),
 			block("firestone_block", rockProps(material = Material.IRON)),
+			block("allfire_stone_block", rockProps(material = Material.IRON, harvestLevel = 3)),
 			block("carbalite_block", rockProps(material = Material.IRON, harvestLevel = 2)),
 			block("eltalite_block", rockProps(material = Material.IRON, harvestLevel = 3)),
 			block("meldspar_block", rockProps(material = Material.IRON, harvestLevel = 3)),
@@ -139,7 +140,6 @@ object MHBlocks {
 			block("purecrystal_block", rockProps(material = Material.IRON, harvestLevel = 3)),
 			block("fucium_block", rockProps(material = Material.IRON, harvestLevel = 2)),
 			block("firecell_stone_block", rockProps(material = Material.IRON, harvestLevel = 2)),
-			block("allfire_stone_block", rockProps(material = Material.IRON, harvestLevel = 3)),
 			block("ultimas_crystal_block", rockProps(material = Material.IRON, harvestLevel = 3))
 		)
 	}

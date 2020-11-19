@@ -1,6 +1,6 @@
 {
 	"parent": "item/generated",
 	"textures": {
-		"layer0": "mobhunter:item/glutton_tuna"
+		"layer0": "mobhunter:item/fish"
 	}
 }

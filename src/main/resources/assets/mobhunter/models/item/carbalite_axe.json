@@ -1,6 +1,7 @@
 {
 	"parent": "item/handheld",
 	"textures": {
-		"layer0": "mobhunter:item/carbalite_axe"
+		"layer0": "mobhunter:item/axe_head",
+		"layer1": "mobhunter:item/axe_handle"
 	}
 }

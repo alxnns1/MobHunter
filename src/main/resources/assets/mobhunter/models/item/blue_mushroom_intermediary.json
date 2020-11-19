@@ -1,6 +1,7 @@
 {
 	"parent": "item/generated",
 	"textures": {
-		"layer0": "mobhunter:item/blue_mushroom_intermediary"
+		"layer0": "mobhunter:item/potion_centre",
+		"layer1": "mobhunter:item/potion_bottle"
 	}
 }

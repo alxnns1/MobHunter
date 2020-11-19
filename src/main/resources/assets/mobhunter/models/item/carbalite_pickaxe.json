@@ -1,6 +1,7 @@
 {
 	"parent": "item/handheld",
 	"textures": {
-		"layer0": "mobhunter:item/carbalite_pickaxe"
+		"layer0": "mobhunter:item/pickaxe_head",
+		"layer1": "mobhunter:item/pickaxe_handle"
 	}
 }

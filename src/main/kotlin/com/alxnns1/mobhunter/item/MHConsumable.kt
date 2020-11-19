@@ -15,7 +15,7 @@ import net.minecraft.util.DrinkHelper
 import net.minecraft.util.Hand
 import net.minecraft.world.World
 
-class MHConsumable(properties: Properties, potionEffects: () -> Array<EffectInstance>) : Item(properties) {
+class MHConsumable(properties: Properties, private val colour: Int, potionEffects: () -> Array<EffectInstance>) : Item(properties), MHITintItem {
 	private val potionEffects: Array<EffectInstance> by lazy(potionEffects)
 
 	override fun onItemUseFinish(stack: ItemStack, worldIn: World, entityLiving: LivingEntity): ItemStack? {
@@ -53,4 +53,6 @@ class MHConsumable(properties: Properties, potionEffects: () -> Array<EffectInst
 
 	override fun onItemRightClick(worldIn: World, playerIn: PlayerEntity, handIn: Hand): ActionResult<ItemStack> =
 		DrinkHelper.startDrinking(worldIn, playerIn, handIn)
+
+	override fun getColour() = colour
 }

@@ -1,6 +1,7 @@
 {
 	"parent": "item/handheld",
 	"textures": {
-		"layer0": "mobhunter:item/eltalite_shovel"
+		"layer0": "mobhunter:item/shovel_head",
+		"layer1": "mobhunter:item/shovel_handle"
 	}
 }
