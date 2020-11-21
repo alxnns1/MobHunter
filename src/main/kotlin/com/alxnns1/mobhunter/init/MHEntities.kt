@@ -27,14 +27,12 @@ object MHEntities {
 	val GOLDENFISH: EntityType<GoldenfishEntity> by objectHolder("goldenfish")
 	val HORNETAUR: EntityType<HornetaurEntity> by objectHolder("hornetaur")
 
-	fun register(event: RegistryEvent.Register<EntityType<*>>) {
-		event.registry.registerAll(
-			fish("sushifish", ::SushifishEntity, Attributes.MAX_HEALTH to 3.0),
-			fish("goldenfish", ::GoldenfishEntity, Attributes.MAX_HEALTH to 3.0),
-			neopteran("hornetaur", ::HornetaurEntity, 1f, 0.5f,
-				Attributes.MAX_HEALTH to 4.0, Attributes.MOVEMENT_SPEED to 0.2, Attributes.ATTACK_DAMAGE to 2.0)
-		)
-	}
+	fun register(event: RegistryEvent.Register<EntityType<*>>) = event.registry.registerAll(
+		fish("sushifish", ::SushifishEntity, Attributes.MAX_HEALTH to 3.0),
+		fish("goldenfish", ::GoldenfishEntity, Attributes.MAX_HEALTH to 3.0),
+		neopteran("hornetaur", ::HornetaurEntity, 1f, 0.5f,
+			Attributes.MAX_HEALTH to 4.0, Attributes.MOVEMENT_SPEED to 0.2, Attributes.ATTACK_DAMAGE to 2.0)
+	)
 
 	@OnlyIn(Dist.CLIENT)
 	fun registerRenderers() {

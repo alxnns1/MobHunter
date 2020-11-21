@@ -7,11 +7,11 @@ import net.minecraft.item.crafting.Ingredient
 import net.minecraft.potion.PotionUtils
 import net.minecraft.potion.Potions
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry
-import net.minecraftforge.fml.event.lifecycle.ParallelDispatchEvent
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent
 
 object MHBrewingRecipes {
 
-	fun register(event: ParallelDispatchEvent) {
+	fun register(event: FMLCommonSetupEvent) {
 		event.enqueueWork {
 			recipe(MHItems.BLUE_MUSHROOM, MHItems.BLUE_MUSHROOM_INTERMEDIARY)
 			recipe(MHItems.HERB, MHItems.BLUE_MUSHROOM_INTERMEDIARY, MHItems.POTION)

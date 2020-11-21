@@ -1,6 +1,6 @@
 package com.alxnns1.mobhunter.effect
 
-import com.alxnns1.mobhunter.init.MHColours
+import com.alxnns1.mobhunter.init.BLUE
 import net.minecraft.entity.Entity
 import net.minecraft.entity.LivingEntity
 import net.minecraft.potion.EffectInstance
@@ -10,7 +10,7 @@ import net.minecraft.potion.InstantEffect
 import net.minecraftforge.common.MinecraftForge
 import net.minecraftforge.event.entity.living.PotionEvent.PotionRemoveEvent
 
-class AntidoteEffect : InstantEffect(EffectType.BENEFICIAL, MHColours.BLUE) {
+class AntidoteEffect : InstantEffect(EffectType.BENEFICIAL, BLUE) {
 
 	override fun affectEntity(source: Entity?, indirectSource: Entity?, entityLivingBaseIn: LivingEntity, amplifier: Int, health: Double) {
 		val itr: MutableIterator<EffectInstance> = entityLivingBaseIn.activePotionEffects.iterator()
