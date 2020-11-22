@@ -50,6 +50,9 @@ object MHItems {
 	val NITROSHROOM_INTERMEDIARY: Item by objectHolder("nitroshroom_intermediary")
 	val CATALYST: Item by objectHolder("catalyst")
 
+	// Tools
+	val WHETSTONE: Item by objectHolder("whetstone")
+
 	// Ores
 	val MACHALITE_INGOT: Item by objectHolder("machalite_ingot")
 	val ICE_CRYSTAL: Item by objectHolder("machalite_ingot")
@@ -102,21 +105,27 @@ object MHItems {
 			consumable("armorskin", ORANGE) { arrayOf(EffectInstance(Effects.RESISTANCE, 6000, 1)) },
 			consumable("mega_armorskin", ORANGE) { arrayOf(EffectInstance(Effects.RESISTANCE, 6000, 3)) },
 			consumable("adamant_pill", ORANGE) { arrayOf(EffectInstance(Effects.RESISTANCE, 6000, 5)) },
-			item("cool_drink", WHITE), //some cooling effect
-			item("hot_drink", RED), //some warming effect
-			item("cleanser", CYAN), //same as milk
-			item("psychoserum", ORANGE), //somehow know where monsters are
+			item("cool_drink", WHITE), //TODO: some cooling effect
+			item("hot_drink", RED), //TODO: some warming effect
+			item("cleanser", CYAN), //TODO: same as milk
+			item("psychoserum", ORANGE), //TODO: somehow know where monsters are
 			consumable("herbal_medicine", WHITE) { arrayOf(EffectInstance(Effects.INSTANT_HEALTH), EffectInstance(MHEffects.ANTIDOTE)) },
 			consumable("max_potion", YELLOW) { arrayOf(EffectInstance(Effects.INSTANT_HEALTH, 0, 4), EffectInstance(MHEffects.ANTIDOTE, 6000, 4)) },
 			consumable("ancient_potion", RED) { arrayOf(EffectInstance(Effects.INSTANT_HEALTH, 0, 4), EffectInstance(MHEffects.ANTIDOTE, 12000, 4), EffectInstance(Effects.SATURATION, 12000, 9)) },
 			consumable("energy_drink", YELLOW) { arrayOf(EffectInstance(Effects.SATURATION)) },
-			item("lifepowder", WHITE), //splash instant health 2
+			item("lifepowder", WHITE), //TODO: splash instant health 2
 			consumable("dust_of_life", GREEN) { arrayOf(EffectInstance(Effects.INSTANT_HEALTH, 0, 4)) },
 			// Brewing Intermediates
 			item("blue_mushroom_intermediary", BLUE),
 			item("bitterbug_intermediary", BLUE),
 			item("nitroshroom_intermediary", RED),
 			item("catalyst", GREY),
+			// Tools
+			item("whetstone", YELLOW, MobHunter.GROUP_TOOLS),
+			*tools("machalite", BLUE, MHItemTier.MACHALITE),
+			*tools("dragonite", GREEN, MHItemTier.DRAGONITE),
+			*tools("carbalite", PURPLE, MHItemTier.CARBALITE),
+			*tools("eltalite", RED, MHItemTier.ELTALITE),
 			// Ores
 			item("earth_crystal", WHITE),
 			item("machalite_ingot", BLUE),
@@ -187,11 +196,6 @@ object MHItems {
 			item("hornetaur_head", DARK_GREY),
 			item("hornetaur_razorwing", DARK_GREY),
 			item("hornetaur_innerwing", DARK_GREY),
-			// Tools
-			*tools("machalite", BLUE, MHItemTier.MACHALITE),
-			*tools("dragonite", GREEN, MHItemTier.DRAGONITE),
-			*tools("carbalite", PURPLE, MHItemTier.CARBALITE),
-			*tools("eltalite", RED, MHItemTier.ELTALITE),
 			// Spawn Eggs
 			// Fish
 			spawnEgg("sushifish_egg", 0xB07A4D, 0x734F32) { MHEntities.SUSHIFISH },
@@ -221,8 +225,8 @@ object MHItems {
 
 	private fun icon(name: String): Item = Item(props()).setRegistryName(name)
 
-	private fun item(name: String, colour: Int): Item {
-		val item = MHTintItem(props(MobHunter.GROUP_ITEMS), colour).setRegistryName(name)
+	private fun item(name: String, colour: Int, itemGroup: ItemGroup = MobHunter.GROUP_ITEMS): Item {
+		val item = MHTintItem(props(itemGroup), colour).setRegistryName(name)
 		TINT_ITEMS.add(item as MHITintItem)
 		return item
 	}

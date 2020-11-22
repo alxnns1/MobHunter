@@ -43,4 +43,6 @@ class MHSword(
 		val sharpnessLevel = sharpness.first { damage <= it }
 		return SharpnessLevel.values()[sharpness.indexOf(sharpnessLevel)].multiplier
 	}
+
+	override fun getIsRepairable(toRepair: ItemStack, repair: ItemStack) = false
 }
