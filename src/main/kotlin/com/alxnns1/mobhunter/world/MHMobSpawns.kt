@@ -14,6 +14,7 @@ object MHMobSpawns {
 
 	fun init() {
 		spawn(CREATURE, MHEntities.HORNETAUR, 100, 1, 5, MESA, FOREST, PLAINS, MOUNTAIN, HILLS, SWAMP)
+		spawn(CREATURE, MHEntities.MOSSWINE, 10, 1, 3, MESA, FOREST, PLAINS, HILLS, SWAMP, WASTELAND)
 	}
 
 	fun register(event: BiomeLoadingEvent) {

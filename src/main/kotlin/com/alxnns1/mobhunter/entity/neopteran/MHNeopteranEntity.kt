@@ -8,10 +8,9 @@ import net.minecraft.entity.monster.MonsterEntity
 import net.minecraft.network.datasync.DataParameter
 import net.minecraft.world.World
 
+private val MH_SCALE: DataParameter<Float> = MHEntity.createScaleKey<MHNeopteranEntity>()
+
 abstract class MHNeopteranEntity(type: EntityType<out MHNeopteranEntity>, world: World) : CreatureEntity(type, world), MHEntity {
-	companion object {
-		val MH_SCALE: DataParameter<Float> = MHEntity.createScaleKey<MHNeopteranEntity>()
-	}
 
 	override fun getScaleKey(): DataParameter<Float> = MH_SCALE
 

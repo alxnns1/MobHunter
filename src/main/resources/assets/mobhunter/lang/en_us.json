@@ -49,6 +49,8 @@
 	"block.mobhunter.nitroshroom": "Nitroshroom",
 	"block.mobhunter.parashroom": "Parashroom",
 	"block.mobhunter.toadstool": "Toadstool",
+	"block.mobhunter.unique_mushroom": "Unique Mushroom",
+	"block.mobhunter.choice_mushroom": "Choice Mushroom",
 
 	"block.mobhunter.adamant_seed": "Adamant Seed",
 	"block.mobhunter.bomberry": "Bomberry",
@@ -236,6 +238,11 @@
 	"item.mobhunter.mystery_bone": "Mystery Bone",
 	"item.mobhunter.unknown_skull": "Unknown Skull",
 
+	"item.mobhunter.raw_meat": "Raw Meat",
+
+	"item.mobhunter.mosswine_hide": "Mosswine Hide",
+	"item.mobhunter.mosswine_thick_hide": "Mosswine Thick Hide",
+
 	"item.mobhunter.monster_broth": "Monster Broth",
 	"item.mobhunter.monster_essence": "Monster Essence",
 	"item.mobhunter.monster_fluid": "Monster Fluid",
@@ -249,5 +256,6 @@
 
 	"item.mobhunter.sushifish_egg": "Sushifish Spawn Egg",
 	"item.mobhunter.goldenfish_egg": "Goldenfish Spawn Egg",
+	"item.mobhunter.mosswine_egg": "Mosswine Spawn Egg",
 	"item.mobhunter.hornetaur_egg": "Hornetaur Spawn Egg"
 }

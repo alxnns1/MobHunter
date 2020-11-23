@@ -97,6 +97,8 @@ object MHBlocks {
 			plant("mopeshroom", CYAN),
 			plant("exciteshroom", PURPLE),
 			plant("dragon_toadstool", RED),
+			plant("unique_mushroom", WHITE),
+			plant("choice_mushroom", WHITE),
 			// Berries
 			plant("paintberry", PINK),
 			plant("might_seed", RED),

@@ -5,6 +5,8 @@ import com.alxnns1.mobhunter.entity.fish.GoldenfishEntity
 import com.alxnns1.mobhunter.entity.fish.SushifishEntity
 import com.alxnns1.mobhunter.entity.fish.renderer.GoldenfishRenderer
 import com.alxnns1.mobhunter.entity.fish.renderer.SushifishRenderer
+import com.alxnns1.mobhunter.entity.herbivore.MosswineEntity
+import com.alxnns1.mobhunter.entity.herbivore.renderer.MosswineRenderer
 import com.alxnns1.mobhunter.entity.neopteran.HornetaurEntity
 import com.alxnns1.mobhunter.entity.neopteran.renderer.HornetaurRenderer
 import net.minecraft.entity.EntityClassification
@@ -25,19 +27,23 @@ import thedarkcolour.kotlinforforge.forge.objectHolder
 object MHEntities {
 	val SUSHIFISH: EntityType<SushifishEntity> by objectHolder("sushifish")
 	val GOLDENFISH: EntityType<GoldenfishEntity> by objectHolder("goldenfish")
+	val MOSSWINE: EntityType<MosswineEntity> by objectHolder("mosswine")
 	val HORNETAUR: EntityType<HornetaurEntity> by objectHolder("hornetaur")
 
 	fun register(event: RegistryEvent.Register<EntityType<*>>) = event.registry.registerAll(
 		fish("sushifish", ::SushifishEntity, Attributes.MAX_HEALTH to 3.0),
 		fish("goldenfish", ::GoldenfishEntity, Attributes.MAX_HEALTH to 3.0),
+		herbivore("mosswine", ::MosswineEntity,
+			Attributes.MAX_HEALTH to 10.0, Attributes.MOVEMENT_SPEED to 0.25),
 		neopteran("hornetaur", ::HornetaurEntity, 1f, 0.5f,
-			Attributes.MAX_HEALTH to 4.0, Attributes.MOVEMENT_SPEED to 0.2, Attributes.ATTACK_DAMAGE to 2.0)
+			Attributes.MAX_HEALTH to 5.0, Attributes.MOVEMENT_SPEED to 0.2, Attributes.ATTACK_DAMAGE to 2.0)
 	)
 
 	@OnlyIn(Dist.CLIENT)
 	fun registerRenderers() {
 		renderer(SUSHIFISH, ::SushifishRenderer)
 		renderer(GOLDENFISH, ::GoldenfishRenderer)
+		renderer(MOSSWINE, ::MosswineRenderer)
 		renderer(HORNETAUR, ::HornetaurRenderer)
 	}
 
@@ -68,6 +74,15 @@ object MHEntities {
 		vararg attributes: Pair<Attribute, Double>
 	): EntityType<T> = entity(name, factory, EntityClassification.WATER_CREATURE, *attributes) {
 		size(0.7F, 0.4F)
+		trackingRange(4)
+	}
+
+	private inline fun <reified T : LivingEntity> herbivore(
+		name: String,
+		factory: EntityType.IFactory<T>,
+		vararg attributes: Pair<Attribute, Double>
+	): EntityType<T> = entity(name, factory, EntityClassification.CREATURE, *attributes) {
+		size(1F, 1F)
 		trackingRange(4)
 	}
 
