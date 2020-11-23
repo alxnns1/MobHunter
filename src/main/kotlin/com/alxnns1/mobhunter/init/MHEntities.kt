@@ -31,9 +31,9 @@ object MHEntities {
 	val HORNETAUR: EntityType<HornetaurEntity> by objectHolder("hornetaur")
 
 	fun register(event: RegistryEvent.Register<EntityType<*>>) = event.registry.registerAll(
-		fish("sushifish", ::SushifishEntity, Attributes.MAX_HEALTH to 3.0),
-		fish("goldenfish", ::GoldenfishEntity, Attributes.MAX_HEALTH to 3.0),
-		herbivore("mosswine", ::MosswineEntity,
+		fish("sushifish", ::SushifishEntity, 0.7F, 0.4F, Attributes.MAX_HEALTH to 3.0),
+		fish("goldenfish", ::GoldenfishEntity, 0.7F, 0.4F, Attributes.MAX_HEALTH to 3.0),
+		herbivore("mosswine", ::MosswineEntity, 1.4F, 1.4F,
 			Attributes.MAX_HEALTH to 10.0, Attributes.MOVEMENT_SPEED to 0.25),
 		neopteran("hornetaur", ::HornetaurEntity, 1f, 0.5f,
 			Attributes.MAX_HEALTH to 5.0, Attributes.MOVEMENT_SPEED to 0.2, Attributes.ATTACK_DAMAGE to 2.0)
@@ -71,18 +71,22 @@ object MHEntities {
 	private inline fun <reified T : LivingEntity> fish(
 		name: String,
 		factory: EntityType.IFactory<T>,
+		width: Float,
+		height: Float,
 		vararg attributes: Pair<Attribute, Double>
 	): EntityType<T> = entity(name, factory, EntityClassification.WATER_CREATURE, *attributes) {
-		size(0.7F, 0.4F)
+		size(width, height)
 		trackingRange(4)
 	}
 
 	private inline fun <reified T : LivingEntity> herbivore(
 		name: String,
 		factory: EntityType.IFactory<T>,
+		width: Float,
+		height: Float,
 		vararg attributes: Pair<Attribute, Double>
 	): EntityType<T> = entity(name, factory, EntityClassification.CREATURE, *attributes) {
-		size(1F, 1F)
+		size(width, height)
 		trackingRange(4)
 	}
 

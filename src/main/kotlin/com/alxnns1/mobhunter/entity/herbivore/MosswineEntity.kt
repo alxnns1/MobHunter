@@ -2,10 +2,9 @@ package com.alxnns1.mobhunter.entity.herbivore
 
 import com.alxnns1.mobhunter.MobHunter
 import com.alxnns1.mobhunter.entity.MHEntity
-import com.alxnns1.mobhunter.entity.neopteran.MHNeopteranEntity
 import net.minecraft.block.BlockState
-import net.minecraft.entity.AgeableEntity
-import net.minecraft.entity.EntityType
+import net.minecraft.block.Blocks
+import net.minecraft.entity.*
 import net.minecraft.entity.ai.goal.*
 import net.minecraft.entity.passive.AnimalEntity
 import net.minecraft.entity.player.PlayerEntity
@@ -18,17 +17,27 @@ import net.minecraft.util.ResourceLocation
 import net.minecraft.util.SoundEvent
 import net.minecraft.util.SoundEvents
 import net.minecraft.util.math.BlockPos
+import net.minecraft.world.IWorld
+import net.minecraft.world.IWorldReader
 import net.minecraft.world.World
 import net.minecraft.world.server.ServerWorld
 
 private val MH_SCALE: DataParameter<Float> = MHEntity.createScaleKey<MosswineEntity>()
 
-private val MOBHUNTER_MUSHROOMS = Ingredient.fromTag(ItemTags.getCollection()[ResourceLocation(MobHunter.MOD_ID, "mushroom")] ?: throw RuntimeException("Could not find \"mobhunter:mushroom\" Item Tag"))
-private val VANILLA_MUSHROOMS = Ingredient.fromTag(ItemTags.getCollection()[ResourceLocation("mushrooms")] ?: throw RuntimeException("Could not find \"minecraft:mushrooms\" Item Tag"))
+private val MOBHUNTER_MUSHROOMS = Ingredient.fromTag(ItemTags.getCollection()[ResourceLocation(MobHunter.MOD_ID, "mushroom")]
+	?: throw RuntimeException("Could not find \"mobhunter:mushroom\" Item Tag"))
+
+private val VANILLA_MUSHROOMS = Ingredient.fromTag(ItemTags.getCollection()[ResourceLocation("forge", "mushrooms")]
+	?: throw RuntimeException("Could not find \"forge:mushrooms\" Item Tag"))
 
 class MosswineEntity(type: EntityType<out AnimalEntity>, worldIn: World) : AnimalEntity(type, worldIn), MHEntity {
 
 	override fun getScaleKey() = MH_SCALE
+
+	override fun getMinScale(): Float = 1.5F
+	override fun getMaxScale(): Float = 1.5F
+
+	override fun getStandingEyeHeight(poseIn: Pose, sizeIn: EntitySize) = sizeIn.height / 2
 
 	override fun registerGoals() {
 		goalSelector.addGoal(0, SwimGoal(this))
@@ -55,4 +64,12 @@ class MosswineEntity(type: EntityType<out AnimalEntity>, worldIn: World) : Anima
 	}
 
 	override fun isBreedingItem(stack: ItemStack?) = MOBHUNTER_MUSHROOMS.test(stack) or VANILLA_MUSHROOMS.test(stack)
+
+	override fun getBlockPathWeight(pos: BlockPos, worldIn: IWorldReader): Float {
+		return if (worldIn.getBlockState(pos.down()).isIn(Blocks.WATER)) -1f else 0f
+	}
+
+	override fun canSpawn(worldIn: IWorld, spawnReasonIn: SpawnReason): Boolean {
+		return worldIn.getBlockState(position.down()).isIn(Blocks.GRASS_BLOCK) && worldIn.getLightSubtracted(position, 0) > 8
+	}
 }

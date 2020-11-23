@@ -2,17 +2,17 @@ package com.alxnns1.mobhunter.entity.neopteran
 
 import net.minecraft.block.BlockState
 import net.minecraft.block.Blocks
-import net.minecraft.entity.*
+import net.minecraft.entity.EntitySize
+import net.minecraft.entity.EntityType
+import net.minecraft.entity.LivingEntity
+import net.minecraft.entity.Pose
 import net.minecraft.entity.ai.goal.*
 import net.minecraft.entity.merchant.villager.AbstractVillagerEntity
 import net.minecraft.entity.player.PlayerEntity
-import net.minecraft.nbt.CompoundNBT
 import net.minecraft.util.DamageSource
 import net.minecraft.util.SoundEvent
 import net.minecraft.util.SoundEvents
 import net.minecraft.util.math.BlockPos
-import net.minecraft.world.DifficultyInstance
-import net.minecraft.world.IServerWorld
 import net.minecraft.world.IWorldReader
 import net.minecraft.world.World
 
@@ -53,11 +53,6 @@ class HornetaurEntity(type: EntityType<HornetaurEntity>, world: World) : MHNeopt
 			worldIn.getBlockState(pos.down()).isIn(Blocks.GRAVEL) -> 1f
 			else -> -1f
 		}
-	}
-
-	override fun onInitialSpawn(worldIn: IServerWorld, difficultyIn: DifficultyInstance, reason: SpawnReason, spawnDataIn: ILivingEntityData?, dataTag: CompoundNBT?): ILivingEntityData? {
-//		MobHunter.LOGGER.error("Hornetaur spawned at ($posX, $posY, $posZ)")
-		return super.onInitialSpawn(worldIn, difficultyIn, reason, spawnDataIn, dataTag)
 	}
 
 	override fun canDespawn(distanceToClosestPlayer: Double) = false
