@@ -23,8 +23,8 @@ import net.minecraft.world.server.ServerWorld
 
 private val MH_SCALE: DataParameter<Float> = MHEntity.createScaleKey<MosswineEntity>()
 
-private val TEMPTATION_ITEMS = Ingredient.fromTag(ItemTags.getCollection()[ResourceLocation(MobHunter.MOD_ID, "mushroom")]
-	?: throw RuntimeException("Could not find \"mushroom\" Item Tag"))
+private val MOBHUNTER_MUSHROOMS = Ingredient.fromTag(ItemTags.getCollection()[ResourceLocation(MobHunter.MOD_ID, "mushroom")] ?: throw RuntimeException("Could not find \"mobhunter:mushroom\" Item Tag"))
+private val VANILLA_MUSHROOMS = Ingredient.fromTag(ItemTags.getCollection()[ResourceLocation("mushrooms")] ?: throw RuntimeException("Could not find \"minecraft:mushrooms\" Item Tag"))
 
 class MosswineEntity(type: EntityType<out AnimalEntity>, worldIn: World) : AnimalEntity(type, worldIn), MHEntity {
 
@@ -34,7 +34,8 @@ class MosswineEntity(type: EntityType<out AnimalEntity>, worldIn: World) : Anima
 		goalSelector.addGoal(0, SwimGoal(this))
 		goalSelector.addGoal(1, PanicGoal(this, 1.25))
 		goalSelector.addGoal(3, BreedGoal(this, 1.0))
-		goalSelector.addGoal(4, TemptGoal(this, 1.2, false, TEMPTATION_ITEMS))
+		goalSelector.addGoal(4, TemptGoal(this, 1.2, false, MOBHUNTER_MUSHROOMS))
+		goalSelector.addGoal(4, TemptGoal(this, 1.2, false, VANILLA_MUSHROOMS))
 		goalSelector.addGoal(5, FollowParentGoal(this, 1.1))
 		goalSelector.addGoal(6, WaterAvoidingRandomWalkingGoal(this, 1.0))
 		goalSelector.addGoal(7, LookAtGoal(this, PlayerEntity::class.java, 6.0f))
@@ -53,5 +54,5 @@ class MosswineEntity(type: EntityType<out AnimalEntity>, worldIn: World) : Anima
 		return type.create(serverWorld) as MosswineEntity
 	}
 
-	override fun isBreedingItem(stack: ItemStack?) = TEMPTATION_ITEMS.test(stack)
+	override fun isBreedingItem(stack: ItemStack?) = MOBHUNTER_MUSHROOMS.test(stack) or VANILLA_MUSHROOMS.test(stack)
 }
