@@ -2,6 +2,7 @@ package com.alxnns1.mobhunter.entity.herbivore
 
 import com.alxnns1.mobhunter.MobHunter
 import com.alxnns1.mobhunter.entity.MHEntity
+import com.alxnns1.mobhunter.ingredientFromItemTag
 import com.alxnns1.mobhunter.init.MHSounds
 import net.minecraft.block.BlockState
 import net.minecraft.block.Blocks
@@ -10,9 +11,7 @@ import net.minecraft.entity.ai.goal.*
 import net.minecraft.entity.passive.AnimalEntity
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.ItemStack
-import net.minecraft.item.crafting.Ingredient
 import net.minecraft.network.datasync.DataParameter
-import net.minecraft.tags.ItemTags
 import net.minecraft.util.DamageSource
 import net.minecraft.util.ResourceLocation
 import net.minecraft.util.math.BlockPos
@@ -23,11 +22,8 @@ import net.minecraft.world.server.ServerWorld
 
 private val MH_SCALE: DataParameter<Float> = MHEntity.createScaleKey<MosswineEntity>()
 
-private val MOBHUNTER_MUSHROOMS = Ingredient.fromTag(ItemTags.getCollection()[ResourceLocation(MobHunter.MOD_ID, "mushroom")]
-	?: throw RuntimeException("Could not find \"mobhunter:mushroom\" Item Tag"))
-
-private val VANILLA_MUSHROOMS = Ingredient.fromTag(ItemTags.getCollection()[ResourceLocation("forge", "mushrooms")]
-	?: throw RuntimeException("Could not find \"forge:mushrooms\" Item Tag"))
+private val MOBHUNTER_MUSHROOMS = ingredientFromItemTag(ResourceLocation(MobHunter.MOD_ID, "mushroom"))
+private val VANILLA_MUSHROOMS = ingredientFromItemTag(ResourceLocation("forge", "mushrooms"))
 
 class MosswineEntity(type: EntityType<out AnimalEntity>, worldIn: World) : AnimalEntity(type, worldIn), MHEntity {
 
