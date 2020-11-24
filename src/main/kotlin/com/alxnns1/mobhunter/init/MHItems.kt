@@ -207,7 +207,7 @@ object MHItems {
 			// Herbivores
 			spawnEgg("mosswine_egg", 0xF6CFA5, 0x5C6E3E) { MHEntities.MOSSWINE },
 			// Neopterans
-			spawnEgg("hornetaur_egg", 0xD7822C, 0x2D1D16) { MHEntities.HORNETAUR }
+			spawnEgg("hornetaur_egg", 0x2D1D16, 0xD7822C) { MHEntities.HORNETAUR }
 		)
 
 		// Item Blocks

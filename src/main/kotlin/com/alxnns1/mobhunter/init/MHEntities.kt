@@ -34,7 +34,7 @@ object MHEntities {
 		fish("sushifish", ::SushifishEntity, 0.7F, 0.4F, Attributes.MAX_HEALTH to 3.0),
 		fish("goldenfish", ::GoldenfishEntity, 0.7F, 0.4F, Attributes.MAX_HEALTH to 3.0),
 		herbivore("mosswine", ::MosswineEntity, 1.4F, 1.4F,
-			Attributes.MAX_HEALTH to 10.0, Attributes.MOVEMENT_SPEED to 0.25),
+			Attributes.MAX_HEALTH to 10.0, Attributes.MOVEMENT_SPEED to 0.25, Attributes.ATTACK_DAMAGE to 1.0),
 		neopteran("hornetaur", ::HornetaurEntity, 1f, 0.5f,
 			Attributes.MAX_HEALTH to 5.0, Attributes.MOVEMENT_SPEED to 0.2, Attributes.ATTACK_DAMAGE to 2.0)
 	)

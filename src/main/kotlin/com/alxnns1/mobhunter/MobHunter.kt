@@ -42,6 +42,7 @@ object MobHunter {
 			addGenericListener(MHItems::register)
 			addGenericListener(MHSwords::register)
 			addGenericListener(MHBlocks::register)
+			addGenericListener(MHSounds::register)
 			addGenericListener(MHEntities::register)
 			addGenericListener(MHEffects::register)
 			runWhenOn(Dist.CLIENT) {

@@ -1,0 +1,52 @@
+{
+  "mosswine_ambient": {
+    "category": "entity",
+    "subtitle": "sound.mobhunter.mosswine_ambient",
+    "sounds": [
+      "mobhunter:mosswine_say1",
+      "mobhunter:mosswine_say2",
+      "mobhunter:mosswine_say3"
+    ]
+  },
+  "mosswine_step": {
+    "category": "entity",
+    "subtitle": "sound.mobhunter.mosswine_step",
+    "sounds": [
+      "mobhunter:mosswine_step1",
+      "mobhunter:mosswine_step2",
+      "mobhunter:mosswine_step3",
+      "mobhunter:mosswine_step4",
+      "mobhunter:mosswine_step5"
+    ]
+  },
+  "mosswine_hurt": {
+    "category": "entity",
+    "subtitle": "sound.mobhunter.mosswine_hurt",
+    "sounds": ["mobhunter:mosswine_say3"]
+  },
+  "mosswine_death": {
+    "category": "entity",
+    "subtitle": "sound.mobhunter.mosswine_death",
+    "sounds": ["mobhunter:mosswine_death"]
+  },
+  "hornetaur_ambient": {
+    "category": "entity",
+    "subtitle": "sound.mobhunter.hornetaur_ambient",
+    "sounds": ["mobhunter:hornetaur_ambient"]
+  },
+  "hornetaur_step": {
+    "category": "entity",
+    "subtitle": "sound.mobhunter.hornetaur_step",
+    "sounds": ["mobhunter:hornetaur_step"]
+  },
+  "hornetaur_hurt": {
+    "category": "entity",
+    "subtitle": "sound.mobhunter.hornetaur_hurt",
+    "sounds": ["mobhunter:hornetaur_hurt"]
+  },
+  "hornetaur_death": {
+    "category": "entity",
+    "subtitle": "sound.mobhunter.hornetaur_death",
+    "sounds": ["mobhunter:hornetaur_death"]
+  }
+}

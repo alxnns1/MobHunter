@@ -2,6 +2,7 @@ package com.alxnns1.mobhunter.entity.herbivore
 
 import com.alxnns1.mobhunter.MobHunter
 import com.alxnns1.mobhunter.entity.MHEntity
+import com.alxnns1.mobhunter.init.MHSounds
 import net.minecraft.block.BlockState
 import net.minecraft.block.Blocks
 import net.minecraft.entity.*
@@ -14,8 +15,6 @@ import net.minecraft.network.datasync.DataParameter
 import net.minecraft.tags.ItemTags
 import net.minecraft.util.DamageSource
 import net.minecraft.util.ResourceLocation
-import net.minecraft.util.SoundEvent
-import net.minecraft.util.SoundEvents
 import net.minecraft.util.math.BlockPos
 import net.minecraft.world.IWorld
 import net.minecraft.world.IWorldReader
@@ -42,6 +41,7 @@ class MosswineEntity(type: EntityType<out AnimalEntity>, worldIn: World) : Anima
 	override fun registerGoals() {
 		goalSelector.addGoal(0, SwimGoal(this))
 		goalSelector.addGoal(1, PanicGoal(this, 1.25))
+		goalSelector.addGoal(2, MeleeAttackGoal(this, 1.25, false))
 		goalSelector.addGoal(3, BreedGoal(this, 1.0))
 		goalSelector.addGoal(4, TemptGoal(this, 1.2, false, MOBHUNTER_MUSHROOMS))
 		goalSelector.addGoal(4, TemptGoal(this, 1.2, false, VANILLA_MUSHROOMS))
@@ -49,15 +49,16 @@ class MosswineEntity(type: EntityType<out AnimalEntity>, worldIn: World) : Anima
 		goalSelector.addGoal(6, WaterAvoidingRandomWalkingGoal(this, 1.0))
 		goalSelector.addGoal(7, LookAtGoal(this, PlayerEntity::class.java, 6.0f))
 		goalSelector.addGoal(8, LookRandomlyGoal(this))
+		targetSelector.addGoal(1, HurtByTargetGoal(this))
 	}
 
-	override fun getAmbientSound(): SoundEvent = SoundEvents.ENTITY_PIG_AMBIENT
+	override fun getAmbientSound() = MHSounds.MOSSWINE_AMBIENT
 
-	override fun getHurtSound(damageSourceIn: DamageSource?): SoundEvent = SoundEvents.ENTITY_PIG_HURT
+	override fun getHurtSound(damageSourceIn: DamageSource?) = MHSounds.MOSSWINE_HURT
 
-	override fun getDeathSound(): SoundEvent = SoundEvents.ENTITY_PIG_DEATH
+	override fun getDeathSound() = MHSounds.MOSSWINE_DEATH
 
-	override fun playStepSound(pos: BlockPos?, blockIn: BlockState?) = playSound(SoundEvents.ENTITY_PIG_STEP, 0.15f, 1.0f)
+	override fun playStepSound(pos: BlockPos?, blockIn: BlockState?) = playSound(MHSounds.MOSSWINE_STEP, 0.15f, 1.0f)
 
 	override fun func_241840_a(serverWorld: ServerWorld, ageableEntity: AgeableEntity): MosswineEntity {
 		return type.create(serverWorld) as MosswineEntity

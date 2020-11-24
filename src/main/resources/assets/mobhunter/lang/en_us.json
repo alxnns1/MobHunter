@@ -29,6 +29,19 @@
 	"entity.mobhunter.wanchovy": "Wanchovy",
 	"entity.mobhunter.whetfish": "Whetfish",
 
+	"entity.mobhunter.mosswine": "Mosswine",
+
+	"entity.mobhunter.hornetaur": "Hornetaur",
+
+	"sound.mobhunter.mosswine_ambient": "Mosswine oinks",
+	"sound.mobhunter.mosswine_death": "Mosswine dies",
+	"sound.mobhunter.mosswine_hurt": "Mosswine hurts",
+	"sound.mobhunter.mosswine_step": "Footsteps",
+	"sound.mobhunter.hornetaur_ambient": "Hornetaur hisses",
+	"sound.mobhunter.hornetaur_death": "Hornetaur dies",
+	"sound.mobhunter.hornetaur_hurt": "Hornetaur hurts",
+	"sound.mobhunter.hornetaur_step": "Skittering",
+
 	"block.mobhunter.antidote_herb": "Antidote Herb",
 	"block.mobhunter.dragonvine": "Dragonvine",
 	"block.mobhunter.felvine": "Felvine",
