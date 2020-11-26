@@ -29,9 +29,6 @@ class MosswineEntity(type: EntityType<out AnimalEntity>, worldIn: World) : Anima
 
 	override fun getScaleKey() = MH_SCALE
 
-	override fun getMinScale(): Float = 1.5F
-	override fun getMaxScale(): Float = 1.5F
-
 	override fun getStandingEyeHeight(poseIn: Pose, sizeIn: EntitySize) = sizeIn.height / 2
 
 	override fun registerGoals() {
