@@ -5,7 +5,9 @@ import com.alxnns1.mobhunter.entity.fish.GoldenfishEntity
 import com.alxnns1.mobhunter.entity.fish.SushifishEntity
 import com.alxnns1.mobhunter.entity.fish.renderer.GoldenfishRenderer
 import com.alxnns1.mobhunter.entity.fish.renderer.SushifishRenderer
+import com.alxnns1.mobhunter.entity.herbivore.KelbiEntity
 import com.alxnns1.mobhunter.entity.herbivore.MosswineEntity
+import com.alxnns1.mobhunter.entity.herbivore.renderer.KelbiRenderer
 import com.alxnns1.mobhunter.entity.herbivore.renderer.MosswineRenderer
 import com.alxnns1.mobhunter.entity.neopteran.HornetaurEntity
 import com.alxnns1.mobhunter.entity.neopteran.renderer.HornetaurRenderer
@@ -28,6 +30,7 @@ object MHEntities {
 	val SUSHIFISH: EntityType<SushifishEntity> by objectHolder("sushifish")
 	val GOLDENFISH: EntityType<GoldenfishEntity> by objectHolder("goldenfish")
 	val MOSSWINE: EntityType<MosswineEntity> by objectHolder("mosswine")
+//	val KELBI: EntityType<KelbiEntity> by objectHolder("kelbi") TODO: fish NPE at EntityRendererManager.java:239
 	val HORNETAUR: EntityType<HornetaurEntity> by objectHolder("hornetaur")
 
 	fun register(event: RegistryEvent.Register<EntityType<*>>) = event.registry.registerAll(
@@ -35,6 +38,8 @@ object MHEntities {
 		fish("goldenfish", ::GoldenfishEntity, 0.7F, 0.4F, Attributes.MAX_HEALTH to 3.0),
 		herbivore("mosswine", ::MosswineEntity, 1.4F, 1.4F,
 			Attributes.MAX_HEALTH to 10.0, Attributes.MOVEMENT_SPEED to 0.25, Attributes.ATTACK_DAMAGE to 1.0),
+//		herbivore("kelbi", ::KelbiEntity, 1.4F, 1.4F, TODO: fish NPE at EntityRendererManager.java:239
+//			Attributes.MAX_HEALTH to 10.0, Attributes.MOVEMENT_SPEED to 0.25, Attributes.ATTACK_DAMAGE to 1.0),
 		neopteran("hornetaur", ::HornetaurEntity, 1f, 0.5f,
 			Attributes.MAX_HEALTH to 5.0, Attributes.MOVEMENT_SPEED to 0.2, Attributes.ATTACK_DAMAGE to 2.0)
 	)
@@ -44,6 +49,7 @@ object MHEntities {
 		renderer(SUSHIFISH, ::SushifishRenderer)
 		renderer(GOLDENFISH, ::GoldenfishRenderer)
 		renderer(MOSSWINE, ::MosswineRenderer)
+//		renderer(KELBI, ::KelbiRenderer) TODO: fish NPE at EntityRendererManager.java:239
 		renderer(HORNETAUR, ::HornetaurRenderer)
 	}
 
