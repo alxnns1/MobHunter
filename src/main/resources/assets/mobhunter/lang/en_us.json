@@ -30,6 +30,7 @@
 	"entity.mobhunter.whetfish": "Whetfish",
 
 	"entity.mobhunter.mosswine": "Mosswine",
+	"entity.mobhunter.kelbi": "Kelbi",
 
 	"entity.mobhunter.hornetaur": "Hornetaur",
 
@@ -256,6 +257,12 @@
 	"item.mobhunter.mosswine_hide": "Mosswine Hide",
 	"item.mobhunter.mosswine_thick_hide": "Mosswine Thick Hide",
 
+	"item.mobhunter.kelbi_horn": "Kelbi Horn",
+	"item.mobhunter.warm_pelt": "Warm Pelt",
+	"item.mobhunter.high_quality_pelt": "High-quality Pelt",
+	"item.mobhunter.prized_pelt": "Prized Pelt",
+	"item.mobhunter.white_liver": "White Liver",
+
 	"item.mobhunter.monster_broth": "Monster Broth",
 	"item.mobhunter.monster_essence": "Monster Essence",
 	"item.mobhunter.monster_fluid": "Monster Fluid",
@@ -270,5 +277,6 @@
 	"item.mobhunter.sushifish_egg": "Sushifish Spawn Egg",
 	"item.mobhunter.goldenfish_egg": "Goldenfish Spawn Egg",
 	"item.mobhunter.mosswine_egg": "Mosswine Spawn Egg",
+	"item.mobhunter.kelbi_egg": "Kelbi Spawn Egg",
 	"item.mobhunter.hornetaur_egg": "Hornetaur Spawn Egg"
 }

@@ -13,8 +13,9 @@ object MHMobSpawns {
 	private val SPAWNS = mutableMapOf<BiomeDictionary.Type, MutableSet<Pair<EntityClassification, MobSpawnInfo.Spawners>>>()
 
 	fun init() {
-		spawn(CREATURE, MHEntities.HORNETAUR, 10, 4, 4, MESA, FOREST, PLAINS, MOUNTAIN, HILLS, SWAMP)
+		spawn(CREATURE, MHEntities.KELBI, 10, 4, 4, MESA, FOREST, PLAINS, MOUNTAIN, HILLS, SWAMP, SANDY, WASTELAND, BEACH)
 		spawn(CREATURE, MHEntities.MOSSWINE, 10, 4, 4, MESA, FOREST, PLAINS, HILLS, SWAMP, WASTELAND)
+		spawn(CREATURE, MHEntities.HORNETAUR, 10, 4, 4, MESA, FOREST, PLAINS, MOUNTAIN, HILLS, SWAMP)
 	}
 
 	fun register(event: BiomeLoadingEvent) {

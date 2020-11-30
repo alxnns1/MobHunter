@@ -29,18 +29,18 @@ import thedarkcolour.kotlinforforge.forge.objectHolder
 object MHEntities {
 	val SUSHIFISH: EntityType<SushifishEntity> by objectHolder("sushifish")
 	val GOLDENFISH: EntityType<GoldenfishEntity> by objectHolder("goldenfish")
+	val KELBI: EntityType<KelbiEntity> by objectHolder("kelbi")
 	val MOSSWINE: EntityType<MosswineEntity> by objectHolder("mosswine")
-//	val KELBI: EntityType<KelbiEntity> by objectHolder("kelbi") TODO: fish NPE at EntityRendererManager.java:239
 	val HORNETAUR: EntityType<HornetaurEntity> by objectHolder("hornetaur")
 
 	fun register(event: RegistryEvent.Register<EntityType<*>>) = event.registry.registerAll(
 		fish("sushifish", ::SushifishEntity, 0.7F, 0.4F, Attributes.MAX_HEALTH to 3.0),
 		fish("goldenfish", ::GoldenfishEntity, 0.7F, 0.4F, Attributes.MAX_HEALTH to 3.0),
-		herbivore("mosswine", ::MosswineEntity, 1.4F, 1.4F,
-			Attributes.MAX_HEALTH to 10.0, Attributes.MOVEMENT_SPEED to 0.25, Attributes.ATTACK_DAMAGE to 1.0),
-//		herbivore("kelbi", ::KelbiEntity, 1.4F, 1.4F, TODO: fish NPE at EntityRendererManager.java:239
-//			Attributes.MAX_HEALTH to 10.0, Attributes.MOVEMENT_SPEED to 0.25, Attributes.ATTACK_DAMAGE to 1.0),
-		neopteran("hornetaur", ::HornetaurEntity, 1f, 0.5f,
+		herbivore("kelbi", ::KelbiEntity, 0.75F, 1.125F,
+			Attributes.MAX_HEALTH to 7.0, Attributes.MOVEMENT_SPEED to 0.225, Attributes.ATTACK_DAMAGE to 1.0),
+		herbivore("mosswine", ::MosswineEntity, 1.25F, 1.4F,
+			Attributes.MAX_HEALTH to 10.0, Attributes.MOVEMENT_SPEED to 0.2, Attributes.ATTACK_DAMAGE to 1.0),
+		neopteran("hornetaur", ::HornetaurEntity, 0.9375f, 0.5f,
 			Attributes.MAX_HEALTH to 5.0, Attributes.MOVEMENT_SPEED to 0.2, Attributes.ATTACK_DAMAGE to 2.0)
 	)
 
@@ -48,8 +48,8 @@ object MHEntities {
 	fun registerRenderers() {
 		renderer(SUSHIFISH, ::SushifishRenderer)
 		renderer(GOLDENFISH, ::GoldenfishRenderer)
+		renderer(KELBI, ::KelbiRenderer)
 		renderer(MOSSWINE, ::MosswineRenderer)
-//		renderer(KELBI, ::KelbiRenderer) TODO: fish NPE at EntityRendererManager.java:239
 		renderer(HORNETAUR, ::HornetaurRenderer)
 	}
 

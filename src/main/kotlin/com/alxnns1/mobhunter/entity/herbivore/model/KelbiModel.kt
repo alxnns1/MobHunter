@@ -8,7 +8,6 @@ import net.minecraft.util.math.MathHelper
 import kotlin.math.PI
 import kotlin.math.abs
 
-//isChildHeadScaled, childHeadOffsetY, childHeadOffsetZ, childHeadScale, childBodyScale, childBodyOffsetY
 class KelbiModel : AgeableModel<KelbiEntity>(true, 4f, 4f, 2f, 2f, 24f) {
 
 	init {
@@ -16,11 +15,14 @@ class KelbiModel : AgeableModel<KelbiEntity>(true, 4f, 4f, 2f, 2f, 24f) {
 		textureWidth = 64
 	}
 
+	private var body = ModelRenderer(this, 0, 0).apply {
+		addBox(-4f, -8f, -15f, 8f, 8f, 15f)
+		setRotationPoint(0f, 14f, 7.5f)
+	}
+
 	private var neck = ModelRenderer(this, 0, 23).apply {
 		addBox(-2f, -2f, -4f, 4f, 4f, 6f)
-		setRotationPoint(0f, -8f, -15f)
-		rotateAngleX = -PI.toFloat() / 4
-		body.addChild(this)
+		setRotationPoint(0f, 6f, -7.5f)
 	}
 
 	private var head = ModelRenderer(this, 31, 0).apply {
@@ -32,7 +34,6 @@ class KelbiModel : AgeableModel<KelbiEntity>(true, 4f, 4f, 2f, 2f, 24f) {
 	private var ear1 = ModelRenderer(this, 31, 12).apply {
 		addBox(-3f, 0f, -1f, 3f, 1f, 2f)
 		setRotationPoint(-2f, -1f, -3f)
-		rotateAngleX = PI.toFloat() / 4
 		head.addChild(this)
 	}
 
@@ -40,7 +41,6 @@ class KelbiModel : AgeableModel<KelbiEntity>(true, 4f, 4f, 2f, 2f, 24f) {
 		mirror = true
 		addBox(0f, 0f, -1f, 3f, 1f, 2f)
 		setRotationPoint(2f, -1f, -3f)
-		rotateAngleX = PI.toFloat() / 4
 		head.addChild(this)
 	}
 
@@ -67,11 +67,6 @@ class KelbiModel : AgeableModel<KelbiEntity>(true, 4f, 4f, 2f, 2f, 24f) {
 		addBox(0f, 0f, 0f, 1f, 1f, 2f)
 		setRotationPoint(0f, 0f, -2f)
 		h2.addChild(this)
-	}
-
-	private var body = ModelRenderer(this, 0, 0).apply {
-		addBox(-4f, -8f, -15f, 8f, 8f, 15f)
-		setRotationPoint(0f, 14f, 7.5f)
 	}
 
 	private var leg1 = ModelRenderer(this, 0, 0).apply {
@@ -103,13 +98,15 @@ class KelbiModel : AgeableModel<KelbiEntity>(true, 4f, 4f, 2f, 2f, 24f) {
 	private var tail = ModelRenderer(this, 20, 23).apply {
 		addBox(-1.5f, 0f, -1f, 3f, 7f, 1f)
 		setRotationPoint(0f, -8f, 0f)
-		rotateAngleX = PI.toFloat() / 6
 		body.addChild(this)
 	}
 
 	override fun setRotationAngles(entityIn: KelbiEntity, limbSwing: Float, limbSwingAmount: Float, ageInTicks: Float, netHeadYaw: Float, headPitch: Float) {
 		head.rotateAngleX = headPitch / (180f / PI.toFloat())
+		ear1.rotateAngleX = PI.toFloat() / 4
+		ear2.rotateAngleX = PI.toFloat() / 4
 		neck.rotateAngleY = netHeadYaw / (180f / PI.toFloat())
+		neck.rotateAngleX = -PI.toFloat() / 4
 		leg1.rotateAngleX = MathHelper.cos(limbSwing * 0.6662f) * 1.4f * limbSwingAmount
 		leg2.rotateAngleX = MathHelper.cos(limbSwing * 0.6662f + PI.toFloat()) * 1.4f * limbSwingAmount
 		leg3.rotateAngleX = MathHelper.cos(limbSwing * 0.6662f + PI.toFloat()) * 1.4f * limbSwingAmount
@@ -117,10 +114,7 @@ class KelbiModel : AgeableModel<KelbiEntity>(true, 4f, 4f, 2f, 2f, 24f) {
 		tail.rotateAngleX = abs(MathHelper.cos(limbSwing * 0.6662f) * 1.4f * limbSwingAmount) / 2 + PI.toFloat() / 6
 	}
 
-	override fun getHeadParts(): MutableIterable<ModelRenderer> =
-		ImmutableList.of(head, h1, h2, h3, h4, ear1, ear2)
+	override fun getHeadParts(): MutableIterable<ModelRenderer> = ImmutableList.of()
 
-	override fun getBodyParts(): MutableIterable<ModelRenderer> =
-		ImmutableList.of(body, leg1, leg2, leg3, leg4, tail, neck)
-
+	override fun getBodyParts(): MutableIterable<ModelRenderer> = ImmutableList.of(neck, body)
 }

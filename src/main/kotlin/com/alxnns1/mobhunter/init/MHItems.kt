@@ -190,6 +190,11 @@ object MHItems {
 			item("raw_meat", RED),
 			item("mosswine_hide", PINK),
 			item("mosswine_thick_hide", PINK),
+			item("kelbi_horn", BLUE),
+			item("warm_pelt", GREEN),
+			item("high_quality_pelt", ORANGE),
+			item("prized_pelt", GREEN),
+			item("white_liver", WHITE),
 			// Neopteran
 			item("monster_fluid", CYAN),
 			item("monster_broth", BLUE),
@@ -205,8 +210,8 @@ object MHItems {
 			spawnEgg("sushifish_egg", 0xB07A4D, 0x734F32) { MHEntities.SUSHIFISH },
 			spawnEgg("goldenfish_egg", 0xC8B235, 0x837422) { MHEntities.GOLDENFISH },
 			// Herbivores
+			spawnEgg("kelbi_egg", 0x607675, 0xD7CCAC) { MHEntities.KELBI },
 			spawnEgg("mosswine_egg", 0xF6CFA5, 0x5C6E3E) { MHEntities.MOSSWINE },
-//			spawnEgg("kelbi_egg", 0x607675, 0xD7CCAC) { MHEntities.KELBI }, TODO: fish NPE at EntityRendererManager.java:239
 			// Neopterans
 			spawnEgg("hornetaur_egg", 0x2D1D16, 0xD7822C) { MHEntities.HORNETAUR }
 		)
