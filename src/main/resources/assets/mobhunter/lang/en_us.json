@@ -34,6 +34,10 @@
 
 	"entity.mobhunter.hornetaur": "Hornetaur",
 
+	"sound.mobhunter.kelbi_ambient": "Kelbi bleats",
+	"sound.mobhunter.kelbi_death": "Kelbi dies",
+	"sound.mobhunter.kelbi_hurt": "Kelbi hurts",
+	"sound.mobhunter.kelbi_step": "Footsteps",
 	"sound.mobhunter.mosswine_ambient": "Mosswine oinks",
 	"sound.mobhunter.mosswine_death": "Mosswine dies",
 	"sound.mobhunter.mosswine_hurt": "Mosswine hurts",

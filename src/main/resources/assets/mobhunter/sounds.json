@@ -1,4 +1,34 @@
 {
+  "kelbi_ambient": {
+    "category": "entity",
+    "subtitle": "sound.mobhunter.kelbi_ambient",
+    "sounds": [
+      "mobhunter:kelbi_say1",
+      "mobhunter:kelbi_say2",
+      "mobhunter:kelbi_say3",
+      "mobhunter:kelbi_say4",
+      "mobhunter:kelbi_say5",
+      "mobhunter:kelbi_say6"
+    ]
+  },
+  "kelbi_step": {
+    "category": "entity",
+    "subtitle": "sound.mobhunter.kelbi_step",
+    "sounds": ["mobhunter:kelbi_step"]
+  },
+  "kelbi_hurt": {
+    "category": "entity",
+    "subtitle": "sound.mobhunter.kelbi_hurt",
+    "sounds": [
+      "mobhunter:kelbi_hurt1",
+      "mobhunter:kelbi_hurt2"
+    ]
+  },
+  "kelbi_death": {
+    "category": "entity",
+    "subtitle": "sound.mobhunter.kelbi_death",
+    "sounds": ["mobhunter:kelbi_death"]
+  },
   "mosswine_ambient": {
     "category": "entity",
     "subtitle": "sound.mobhunter.mosswine_ambient",
@@ -22,7 +52,11 @@
   "mosswine_hurt": {
     "category": "entity",
     "subtitle": "sound.mobhunter.mosswine_hurt",
-    "sounds": ["mobhunter:mosswine_say3"]
+    "sounds": [
+      "mobhunter:mosswine_say1",
+      "mobhunter:mosswine_say2",
+      "mobhunter:mosswine_say3"
+    ]
   },
   "mosswine_death": {
     "category": "entity",

@@ -1,6 +1,8 @@
 package com.alxnns1.mobhunter.entity.herbivore
 
 import com.alxnns1.mobhunter.entity.MHEntity
+import com.alxnns1.mobhunter.init.MHSounds
+import net.minecraft.block.BlockState
 import net.minecraft.block.Blocks
 import net.minecraft.entity.*
 import net.minecraft.entity.ai.goal.*
@@ -10,6 +12,7 @@ import net.minecraft.item.ItemStack
 import net.minecraft.item.Items
 import net.minecraft.item.crafting.Ingredient
 import net.minecraft.network.datasync.DataParameter
+import net.minecraft.util.DamageSource
 import net.minecraft.util.math.BlockPos
 import net.minecraft.world.IWorld
 import net.minecraft.world.IWorldReader
@@ -38,13 +41,13 @@ class KelbiEntity(type: EntityType<out AnimalEntity>, worldIn: World) : AnimalEn
 		targetSelector.addGoal(1, HurtByTargetGoal(this))
 	}
 
-//	override fun getAmbientSound() = MHSounds.MOSSWINE_AMBIENT
+	override fun getAmbientSound() = MHSounds.KELBI_AMBIENT
 
-//	override fun getHurtSound(damageSourceIn: DamageSource?) = MHSounds.MOSSWINE_HURT
+	override fun getHurtSound(damageSourceIn: DamageSource?) = MHSounds.KELBI_HURT
 
-//	override fun getDeathSound() = MHSounds.MOSSWINE_DEATH
+	override fun getDeathSound() = MHSounds.KELBI_DEATH
 
-//	override fun playStepSound(pos: BlockPos?, blockIn: BlockState?) = playSound(MHSounds.MOSSWINE_STEP, 0.15f, 1.0f)
+	override fun playStepSound(pos: BlockPos?, blockIn: BlockState?) = playSound(MHSounds.KELBI_STEP, 0.15f, 1.0f)
 
 	override fun func_241840_a(serverWorld: ServerWorld, ageableEntity: AgeableEntity): KelbiEntity {
 		return type.create(serverWorld) as KelbiEntity

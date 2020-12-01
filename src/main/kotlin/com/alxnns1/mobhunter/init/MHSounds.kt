@@ -7,16 +7,23 @@ import net.minecraftforge.event.RegistryEvent
 import thedarkcolour.kotlinforforge.forge.objectHolder
 
 object MHSounds {
+	val KELBI_AMBIENT: SoundEvent by objectHolder("kelbi_ambient")
+	val KELBI_STEP: SoundEvent by objectHolder("kelbi_step")
+	val KELBI_HURT: SoundEvent by objectHolder("kelbi_hurt")
+	val KELBI_DEATH: SoundEvent by objectHolder("kelbi_death")
+
 	val MOSSWINE_AMBIENT: SoundEvent by objectHolder("mosswine_ambient")
 	val MOSSWINE_STEP: SoundEvent by objectHolder("mosswine_step")
 	val MOSSWINE_HURT: SoundEvent by objectHolder("mosswine_hurt")
 	val MOSSWINE_DEATH: SoundEvent by objectHolder("mosswine_death")
+
 	val HORNETAUR_AMBIENT: SoundEvent by objectHolder("hornetaur_ambient")
 	val HORNETAUR_STEP: SoundEvent by objectHolder("hornetaur_step")
 	val HORNETAUR_HURT: SoundEvent by objectHolder("hornetaur_hurt")
 	val HORNETAUR_DEATH: SoundEvent by objectHolder("hornetaur_death")
 
 	fun register(event: RegistryEvent.Register<SoundEvent>) = event.registry.registerAll(
+		*entitySounds("kelbi"),
 		*entitySounds("mosswine"),
 		*entitySounds("hornetaur")
 	)
