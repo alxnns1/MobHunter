@@ -186,15 +186,17 @@ object MHItems {
 			item("mystery_bone", YELLOW),
 			item("unknown_skull", YELLOW),
 			item("huge_unknown_skull", YELLOW),
+			item("brute_bone", WHITE),
+			item("jumbo_bone", WHITE),
+			item("stoutbone", WHITE),
 			// Herbivore
 			item("raw_meat", RED),
-			item("mosswine_hide", PINK),
-			item("mosswine_thick_hide", PINK),
 			item("kelbi_horn", BLUE),
 			item("warm_pelt", GREEN),
 			item("high_quality_pelt", ORANGE),
 			item("prized_pelt", GREEN),
 			item("white_liver", WHITE),
+			item("popo_tongue", RED),
 			// Neopteran
 			item("monster_fluid", CYAN),
 			item("monster_broth", BLUE),
@@ -205,6 +207,9 @@ object MHItems {
 			item("hornetaur_head", DARK_GREY),
 			item("hornetaur_razorwing", DARK_GREY),
 			item("hornetaur_innerwing", DARK_GREY),
+			// Fanged Beasts
+			item("mosswine_hide", PINK),
+			item("mosswine_thick_hide", PINK),
 			// Spawn Eggs
 			// Fish
 			spawnEgg("sushifish_egg", 0xB07A4D, 0x734F32) { MHEntities.SUSHIFISH },
@@ -212,6 +217,7 @@ object MHItems {
 			// Herbivores
 			spawnEgg("kelbi_egg", 0x607675, 0xD7CCAC) { MHEntities.KELBI },
 			spawnEgg("mosswine_egg", 0xF6CFA5, 0x5C6E3E) { MHEntities.MOSSWINE },
+			spawnEgg("popo_egg", 0x261510, 0xb9b3a8) { MHEntities.POPO },
 			// Neopterans
 			spawnEgg("hornetaur_egg", 0x2D1D16, 0xD7822C) { MHEntities.HORNETAUR }
 		)

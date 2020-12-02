@@ -29,8 +29,9 @@
 	"entity.mobhunter.wanchovy": "Wanchovy",
 	"entity.mobhunter.whetfish": "Whetfish",
 
-	"entity.mobhunter.mosswine": "Mosswine",
 	"entity.mobhunter.kelbi": "Kelbi",
+	"entity.mobhunter.mosswine": "Mosswine",
+	"entity.mobhunter.popo": "Popo",
 
 	"entity.mobhunter.hornetaur": "Hornetaur",
 
@@ -250,26 +251,24 @@
 	"item.mobhunter.stygian_worm": "Stygian Worm",
 	"item.mobhunter.thunderbug": "Thunderbug",
 
-	"item.mobhunter.small_monster_bone": "Small Monster Bone",
+	"item.mobhunter.brute_bone": "Brute Bone",
 	"item.mobhunter.huge_unknown_skull": "Huge Unknown Skull",
+	"item.mobhunter.jumbo_bone": "Jumbo Bone",
 	"item.mobhunter.medium_monster_bone": "Medium Monster Bone",
 	"item.mobhunter.mystery_bone": "Mystery Bone",
+	"item.mobhunter.small_monster_bone": "Small Monster Bone",
+	"item.mobhunter.stoutbone": "Stoutbone",
 	"item.mobhunter.unknown_skull": "Unknown Skull",
 
-	"item.mobhunter.raw_meat": "Raw Meat",
-
+	"item.mobhunter.high_quality_pelt": "High-quality Pelt",
+	"item.mobhunter.kelbi_horn": "Kelbi Horn",
 	"item.mobhunter.mosswine_hide": "Mosswine Hide",
 	"item.mobhunter.mosswine_thick_hide": "Mosswine Thick Hide",
-
-	"item.mobhunter.kelbi_horn": "Kelbi Horn",
-	"item.mobhunter.warm_pelt": "Warm Pelt",
-	"item.mobhunter.high_quality_pelt": "High-quality Pelt",
+	"item.mobhunter.popo_tongue": "Popo Tongue",
 	"item.mobhunter.prized_pelt": "Prized Pelt",
+	"item.mobhunter.raw_meat": "Raw Meat",
+	"item.mobhunter.warm_pelt": "Warm Pelt",
 	"item.mobhunter.white_liver": "White Liver",
-
-	"item.mobhunter.monster_broth": "Monster Broth",
-	"item.mobhunter.monster_essence": "Monster Essence",
-	"item.mobhunter.monster_fluid": "Monster Fluid",
 
 	"item.mobhunter.hornetaur_carapace": "Hornetaur Carapace",
 	"item.mobhunter.hornetaur_head": "Hornetaur Head",
@@ -277,10 +276,14 @@
 	"item.mobhunter.hornetaur_razorwing": "Hornetaur Razorwing",
 	"item.mobhunter.hornetaur_shell": "Hornetaur Shell",
 	"item.mobhunter.hornetaur_wing": "Hornetaur Wing",
+	"item.mobhunter.monster_essence": "Monster Essence",
+	"item.mobhunter.monster_broth": "Monster Broth",
+	"item.mobhunter.monster_fluid": "Monster Fluid",
 
 	"item.mobhunter.sushifish_egg": "Sushifish Spawn Egg",
 	"item.mobhunter.goldenfish_egg": "Goldenfish Spawn Egg",
-	"item.mobhunter.mosswine_egg": "Mosswine Spawn Egg",
 	"item.mobhunter.kelbi_egg": "Kelbi Spawn Egg",
+	"item.mobhunter.mosswine_egg": "Mosswine Spawn Egg",
+	"item.mobhunter.popo_egg": "Popo Spawn Egg",
 	"item.mobhunter.hornetaur_egg": "Hornetaur Spawn Egg"
 }

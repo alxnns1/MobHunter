@@ -3,7 +3,9 @@
     "minecraft:bone",
     "mobhunter:small_monster_bone",
     "mobhunter:mystery_bone",
+    "mobhunter:brute_bone",
     "mobhunter:medium_monster_bone",
-    "mobhunter:unknown_skull"
+    "mobhunter:unknown_skull",
+    "mobhunter:jumbo_bone"
   ]
 }

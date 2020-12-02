@@ -19,14 +19,14 @@ import net.minecraft.world.IWorldReader
 import net.minecraft.world.World
 import net.minecraft.world.server.ServerWorld
 
-private val MH_SCALE: DataParameter<Float> = MHEntity.createScaleKey<KelbiEntity>()
+private val MH_SCALE: DataParameter<Float> = MHEntity.createScaleKey<PopoEntity>()
 private val TEMPTATION_ITEMS = Ingredient.fromItems(Items.WHEAT, Items.SUGAR, Blocks.HAY_BLOCK.asItem(), Items.APPLE, Items.GOLDEN_CARROT, Items.GOLDEN_APPLE, Items.ENCHANTED_GOLDEN_APPLE)
 
-class KelbiEntity(type: EntityType<out AnimalEntity>, worldIn: World) : AnimalEntity(type, worldIn), MHEntity {
+class PopoEntity(type: EntityType<out AnimalEntity>, worldIn: World) : AnimalEntity(type, worldIn), MHEntity {
 
 	override fun getScaleKey() = MH_SCALE
 
-	override fun getStandingEyeHeight(poseIn: Pose, sizeIn: EntitySize) = sizeIn.height + 0.1875f
+	override fun getStandingEyeHeight(poseIn: Pose, sizeIn: EntitySize) = sizeIn.height
 
 	override fun registerGoals() {
 		goalSelector.addGoal(0, SwimGoal(this))
@@ -41,16 +41,16 @@ class KelbiEntity(type: EntityType<out AnimalEntity>, worldIn: World) : AnimalEn
 		targetSelector.addGoal(1, HurtByTargetGoal(this))
 	}
 
-	override fun getAmbientSound() = MHSounds.KELBI_AMBIENT
+	override fun getAmbientSound() = MHSounds.POPO_AMBIENT
 
-	override fun getHurtSound(damageSourceIn: DamageSource?) = MHSounds.KELBI_HURT
+	override fun getHurtSound(damageSourceIn: DamageSource?) = MHSounds.POPO_HURT
 
-	override fun getDeathSound() = MHSounds.KELBI_DEATH
+	override fun getDeathSound() = MHSounds.POPO_DEATH
 
-	override fun playStepSound(pos: BlockPos?, blockIn: BlockState?) = playSound(MHSounds.KELBI_STEP, 0.15f, 1.0f)
+	override fun playStepSound(pos: BlockPos?, blockIn: BlockState?) = playSound(MHSounds.POPO_STEP, 0.15f, 1.0f)
 
-	override fun func_241840_a(serverWorld: ServerWorld, ageableEntity: AgeableEntity): KelbiEntity {
-		return type.create(serverWorld) as KelbiEntity
+	override fun func_241840_a(serverWorld: ServerWorld, ageableEntity: AgeableEntity): PopoEntity {
+		return type.create(serverWorld) as PopoEntity
 	}
 
 	override fun isBreedingItem(stack: ItemStack?) = TEMPTATION_ITEMS.test(stack)

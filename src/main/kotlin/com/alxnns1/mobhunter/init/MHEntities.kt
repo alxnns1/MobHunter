@@ -7,8 +7,10 @@ import com.alxnns1.mobhunter.entity.fish.renderer.GoldenfishRenderer
 import com.alxnns1.mobhunter.entity.fish.renderer.SushifishRenderer
 import com.alxnns1.mobhunter.entity.herbivore.KelbiEntity
 import com.alxnns1.mobhunter.entity.herbivore.MosswineEntity
+import com.alxnns1.mobhunter.entity.herbivore.PopoEntity
 import com.alxnns1.mobhunter.entity.herbivore.renderer.KelbiRenderer
 import com.alxnns1.mobhunter.entity.herbivore.renderer.MosswineRenderer
+import com.alxnns1.mobhunter.entity.herbivore.renderer.PopoRenderer
 import com.alxnns1.mobhunter.entity.neopteran.HornetaurEntity
 import com.alxnns1.mobhunter.entity.neopteran.renderer.HornetaurRenderer
 import net.minecraft.entity.EntityClassification
@@ -31,6 +33,7 @@ object MHEntities {
 	val GOLDENFISH: EntityType<GoldenfishEntity> by objectHolder("goldenfish")
 	val KELBI: EntityType<KelbiEntity> by objectHolder("kelbi")
 	val MOSSWINE: EntityType<MosswineEntity> by objectHolder("mosswine")
+	val POPO: EntityType<PopoEntity> by objectHolder("popo")
 	val HORNETAUR: EntityType<HornetaurEntity> by objectHolder("hornetaur")
 
 	fun register(event: RegistryEvent.Register<EntityType<*>>) = event.registry.registerAll(
@@ -40,6 +43,8 @@ object MHEntities {
 			Attributes.MAX_HEALTH to 7.0, Attributes.MOVEMENT_SPEED to 0.225, Attributes.ATTACK_DAMAGE to 1.0),
 		herbivore("mosswine", ::MosswineEntity, 1.25F, 1.4F,
 			Attributes.MAX_HEALTH to 10.0, Attributes.MOVEMENT_SPEED to 0.2, Attributes.ATTACK_DAMAGE to 1.0),
+		herbivore("popo", ::PopoEntity, 3.0625F, 4F,
+			Attributes.MAX_HEALTH to 8.0, Attributes.MOVEMENT_SPEED to 0.2, Attributes.ATTACK_DAMAGE to 1.0),
 		neopteran("hornetaur", ::HornetaurEntity, 0.9375f, 0.5f,
 			Attributes.MAX_HEALTH to 5.0, Attributes.MOVEMENT_SPEED to 0.2, Attributes.ATTACK_DAMAGE to 2.0)
 	)
@@ -50,6 +55,7 @@ object MHEntities {
 		renderer(GOLDENFISH, ::GoldenfishRenderer)
 		renderer(KELBI, ::KelbiRenderer)
 		renderer(MOSSWINE, ::MosswineRenderer)
+		renderer(POPO, ::PopoRenderer)
 		renderer(HORNETAUR, ::HornetaurRenderer)
 	}
 

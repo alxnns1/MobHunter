@@ -63,6 +63,36 @@
     "subtitle": "sound.mobhunter.mosswine_death",
     "sounds": ["mobhunter:mosswine_death"]
   },
+  "popo_ambient": {
+    "category": "entity",
+    "subtitle": "sound.mobhunter.popo_ambient",
+    "sounds": [
+      "mobhunter:popo_say1",
+      "mobhunter:popo_say2",
+      "mobhunter:popo_say3",
+      "mobhunter:popo_say4",
+      "mobhunter:popo_say5"
+    ]
+  },
+  "popo_step": {
+    "category": "entity",
+    "subtitle": "sound.mobhunter.popo_step",
+    "sounds": ["mobhunter:popo_step"]
+  },
+  "popo_hurt": {
+    "category": "entity",
+    "subtitle": "sound.mobhunter.popo_hurt",
+    "sounds": [
+      "mobhunter:popo_hurt1",
+      "mobhunter:popo_hurt2",
+      "mobhunter:popo_hurt3"
+    ]
+  },
+  "popo_death": {
+    "category": "entity",
+    "subtitle": "sound.mobhunter.popo_death",
+    "sounds": ["mobhunter:popo_death"]
+  },
   "hornetaur_ambient": {
     "category": "entity",
     "subtitle": "sound.mobhunter.hornetaur_ambient",

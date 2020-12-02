@@ -17,6 +17,11 @@ object MHSounds {
 	val MOSSWINE_HURT: SoundEvent by objectHolder("mosswine_hurt")
 	val MOSSWINE_DEATH: SoundEvent by objectHolder("mosswine_death")
 
+	val POPO_AMBIENT: SoundEvent by objectHolder("popo_ambient")
+	val POPO_STEP: SoundEvent by objectHolder("popo_step")
+	val POPO_HURT: SoundEvent by objectHolder("popo_hurt")
+	val POPO_DEATH: SoundEvent by objectHolder("popo_death")
+
 	val HORNETAUR_AMBIENT: SoundEvent by objectHolder("hornetaur_ambient")
 	val HORNETAUR_STEP: SoundEvent by objectHolder("hornetaur_step")
 	val HORNETAUR_HURT: SoundEvent by objectHolder("hornetaur_hurt")
@@ -25,6 +30,7 @@ object MHSounds {
 	fun register(event: RegistryEvent.Register<SoundEvent>) = event.registry.registerAll(
 		*entitySounds("kelbi"),
 		*entitySounds("mosswine"),
+		*entitySounds("popo"),
 		*entitySounds("hornetaur")
 	)
 
