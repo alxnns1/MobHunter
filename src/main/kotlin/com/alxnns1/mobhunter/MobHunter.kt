@@ -45,6 +45,8 @@ object MobHunter {
 			addGenericListener(MHSounds::register)
 			addGenericListener(MHEntities::register)
 			addGenericListener(MHEffects::register)
+			addGenericListener(MHScreens::registerContainers)
+			addGenericListener(MHRecipes::registerSerializers)
 			runWhenOn(Dist.CLIENT) {
 				addListener(MHBlocks::registerBlockColours)
 				addListener(MHItems::registerItemColours)
@@ -67,6 +69,7 @@ object MobHunter {
 	private fun setupClient(event: FMLClientSetupEvent) {
 		MHEntities.registerRenderers()
 		MHBlocks.setRenderLayers()
+		MHScreens.registerScreens(event)
 	}
 
 	private fun lootTableLoad(event: LootTableLoadEvent) {

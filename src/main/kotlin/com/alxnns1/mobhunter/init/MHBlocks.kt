@@ -1,6 +1,7 @@
 package com.alxnns1.mobhunter.init
 
 import com.alxnns1.mobhunter.block.MHPlant
+import com.alxnns1.mobhunter.block.WeaponCraftingBlock
 import net.minecraft.block.AbstractBlock.Properties
 import net.minecraft.block.Block
 import net.minecraft.block.OreBlock
@@ -74,6 +75,9 @@ object MHBlocks {
 	// Compact Blocks
 	val MACHALITE_BLOCK: Block by objectHolder("machalite_block")
 
+	// Misc Blocks
+	val WEAPON_CRAFTING: Block by objectHolder("weapon_crafting")
+
 	fun register(event: RegistryEvent.Register<Block>) {
 		event.registry.registerAll(
 			// Herbs
@@ -142,7 +146,9 @@ object MHBlocks {
 			block("purecrystal_block", rockProps(material = Material.IRON, harvestLevel = 3)),
 			block("fucium_block", rockProps(material = Material.IRON, harvestLevel = 2)),
 			block("firecell_stone_block", rockProps(material = Material.IRON, harvestLevel = 2)),
-			block("ultimas_crystal_block", rockProps(material = Material.IRON, harvestLevel = 3))
+			block("ultimas_crystal_block", rockProps(material = Material.IRON, harvestLevel = 3)),
+			// Misc Blocks
+			miscBlock("weapon_crafting", WeaponCraftingBlock())
 		)
 	}
 
@@ -186,6 +192,11 @@ object MHBlocks {
 	}
 
 	private fun oreBlock(name: String, props: Properties = rockProps()): Block = OreBlock(props).also {
+		it.setRegistryName(name)
+		BLOCKS += it
+	}
+
+	private fun miscBlock(name: String, block: Block): Block = block.also {
 		it.setRegistryName(name)
 		BLOCKS += it
 	}

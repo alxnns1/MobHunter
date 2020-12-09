@@ -1,0 +1,12 @@
+{
+	"type": "mobhunter:weapon_crafting",
+	"ingredients": [
+		{
+			"item": "minecraft:iron_ingot",
+			"count": 3
+		}
+	],
+	"result": {
+		"item": "mobhunter:hunters_knife1"
+	}
+}
